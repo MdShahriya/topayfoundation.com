@@ -1,0 +1,230 @@
+/* General styles for the header */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 25px;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  flex-wrap: wrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+  color: #333333;
+}
+
+/* Header style when scrolled */
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* Adjust content padding to accommodate fixed header */
+body {
+  padding-top: 80px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Logo container */
+.logo {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: auto;
+  margin-right: 100px;
+}
+
+/* Logo link styles */
+.logo-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.3s ease;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+/* Navigation menu styles */
+.nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.nav ul li {
+  position: relative; /* To position the submenu */
+}
+
+.nav ul li a {
+  color: #333333;
+  text-decoration: none;
+  font-size: 1.3em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  font-family: 'Roboto', sans-serif;
+}
+
+.nav ul li a:hover {
+  color: #0066cc;
+}
+
+/* Submenu styles */
+.nav ul li .submenu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position below the main item */
+  left: 0;
+  background-color: #ffffff;
+  padding: 10px 0;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  min-width: 150px;
+}
+
+.nav ul li:hover .submenu {
+  display: block; /* Show submenu on hover */
+}
+
+/* Submenu item styles */
+.nav ul li .submenu li {
+  padding: 5px 20px;
+}
+
+.nav ul li .submenu li a {
+  color: #333333;
+  font-size: 1em;
+  padding: 8px 10px;
+  display: block;
+  text-decoration: none;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav ul li .submenu li a:hover {
+  color: #0066cc;
+}
+
+/* Icon styles */
+.nav ul li a i {
+  font-size: 1.2em;
+  transition: transform 0.2s ease;
+}
+
+/* Hamburger menu styles */
+.hamburger {
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger .bar {
+  width: 28px;
+  height: 4px;
+  background-color: #333333;
+  transition: background-color 0.3s ease;
+}
+
+.hamburger.open .bar {
+  background-color: #0066cc;
+}
+
+/* Navigation styles for small screens */
+.nav {
+  display: flex;
+}
+
+.nav.open {
+  display: block;
+}
+
+/* Responsive submenu positioning for mobile */
+@media (max-width: 768px) {
+  .header {
+    justify-content: space-between;
+    padding: 15px 20px;
+  }
+
+  .logo {
+    width: 60px;
+  }
+
+  .nav {
+    display: none;
+    position: absolute;
+    justify-content: center;
+    top: 70px;
+    right: 15px;
+    background-color: #ffffff;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 15px 0;
+    max-width: 280px;
+  }
+
+  .nav.open {
+    display: block;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav ul li a {
+    font-size: 1.4em;
+    padding: 5px 20px;
+  }
+
+  .nav ul li a:hover {
+    background-color: #f0f0f0;
+  }
+
+  /* Submenu styles for mobile */
+  .nav ul li .submenu {
+    position: relative;
+    top: 0;
+    left: 0;
+    box-shadow: none;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    min-width: auto;
+  }
+}
+
+/* Overlay styles */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 999;
+  display: none;
+}
+
+.overlay.show {
+  display: block;
+}

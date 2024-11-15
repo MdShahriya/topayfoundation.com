@@ -1,0 +1,208 @@
+/* Proofcoin Page Container */
+.proofcoin-page {
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  color: rgb(5, 3, 21);
+  background-color: rgb(185, 249, 255);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Hero Section */
+.heo {
+  padding: 40px 20px;
+  background: rgb(186, 223, 226);
+  color: rgb(5, 3, 21);
+  border-radius: 15px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.heo h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+}
+
+.heo p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.cta-btton,
+.earn-btton {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  margin: 10px;
+  color: rgb(251, 251, 254);
+}
+
+.cta-btton {
+  background-color: rgb(41, 100, 124);
+}
+
+.earn-btton {
+  background-color: rgb(41, 100, 124);
+}
+
+.cta-btton:hover {
+  background-color: rgb(67, 59, 255);
+}
+
+.earn-btton:hover {
+  background-color: rgb(47, 39, 206);
+}
+
+/* About Section */
+.abot {
+  margin: 40px auto;
+  padding: 30px;
+  background: rgb(47, 39, 206);
+  color: rgb(186, 223, 226);
+  border-radius: 15px;
+  max-width: 800px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.about p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Tokenomics Section */
+.tokenomics {
+  margin: 40px auto;
+  padding: 30px;
+  color: rgb(186, 223, 226);
+  border-radius: 15px;
+  max-width: 800px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 16px rgba(105, 105, 105, 0.1);
+}
+
+.tokenomics::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); /* White overlay with some transparency */
+  backdrop-filter: blur(10px); /* Adjust the blur intensity */
+  border-radius: 15px; /* Matches parent border radius */
+  z-index: -1; /* Keeps the overlay behind the content */
+}
+
+.tokenomics-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  color: rgb(247, 251, 255);
+}
+
+.tokenomics-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Roadmap Section */
+.roadmp {
+  margin: 40px auto;
+  padding: 30px;
+  background: rgb(186, 223, 226);
+  color: rgb(5, 3, 21);
+  border-radius: 15px;
+  max-width: 800px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.roadmp-list {
+  list-style: none;
+  padding: 0;
+}
+
+.roadmp-list li {
+  margin: 40px auto;
+  padding: 30px;
+  background: rgb(186, 223, 226);
+  color: rgb(5, 3, 21);
+  border-radius: 15px;
+  max-width: 800px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Community Section */
+.community {
+  margin: 40px auto;
+  padding: 30px;
+  background: rgb(186, 223, 226);
+  color: rgb(5, 3, 21);
+  border-radius: 15px;
+  max-width: 800px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+.Note {
+  color: rgb(240, 70, 70);
+}
+.social-inks {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  text-decoration: underline;
+}
+
+.social-inks a {
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.social-inks a:hover {
+  color: rgb(47, 39, 206);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-liks {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    padding: 1rem 0;
+    z-index: 5;
+  }
+
+  .nav-liks.open {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}

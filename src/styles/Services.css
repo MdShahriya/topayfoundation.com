@@ -1,0 +1,92 @@
+/* Basic styling for the Services section */
+.services {
+  padding: 50px 80px; /* Further increased left and right padding */
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.services-header {
+  margin-bottom: 40px;
+}
+
+.services-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.services-header p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Styling for the "Coming Soon" section */
+.services-coming-soon {
+  margin-bottom: 40px;
+}
+
+.services-coming-soon h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.services-coming-soon p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Placeholder service cards */
+.services-placeholder {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.service {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service a {
+  text-decoration: none;
+}
+
+.service:hover {
+  transform: translateY(-0px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.service h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1c95e0;
+  margin-bottom: 10px;
+}
+
+.service p {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .services-placeholder {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .service {
+    width: 100%;
+    max-width: 400px;
+  }
+}

@@ -1,0 +1,84 @@
+/* Roadmap Section Styling */
+.roadmap {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f0f4f9 0%, #e0e7ff 100%);
+    color: #333;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.roadmap h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    background: linear-gradient(90deg, #004e92, #000428);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.roadmap-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.roadmap-item {
+    background: rgba(255, 255, 255, 0.85);
+    margin: 15px;
+    padding: 25px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 350px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.roadmap-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.roadmap-item h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #004e92;
+}
+
+.roadmap-item ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.roadmap-item ul li {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+/* Keyframe animation for future potential */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .roadmap h2 {
+        font-size: 2rem;
+    }
+
+    .roadmap-item {
+        max-width: 100%;
+    }
+}

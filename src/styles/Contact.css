@@ -1,0 +1,114 @@
+/* Contact section styling */
+.contact-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+}
+
+.contact-paragraph {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #555;
+  line-height: 1.6;
+  font-family: 'Arial', sans-serif;
+}
+
+.social-media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-button {
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  min-width: 120px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#twitter {
+  background-color: #1da1f2;
+}
+
+#linktree {
+  background-color: #39e09b;
+}
+
+#facebook {
+  background-color: #1877f2;
+}
+
+#telegram {
+  background-color: #0088cc;
+}
+
+#youtube {
+  background-color: #ff0000;
+}
+
+.social-button:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.social-button:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .contact-heading {
+    font-size: 2rem;
+  }
+
+  .contact-paragraph {
+    font-size: 1rem;
+  }
+
+  .social-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+.email-contact {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.email-label {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.email-link {
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.email-link:hover {
+  text-decoration: underline;
+}

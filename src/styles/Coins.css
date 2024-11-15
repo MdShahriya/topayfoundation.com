@@ -1,0 +1,80 @@
+/* Basic styling for the coins page */
+.coins-page {
+  padding: 20px;
+  margin: 0 auto; /* Center the content */
+  max-width: 1200px; /* Set a max width for larger screens */
+  text-align: center; /* Center align text */
+}
+
+/* Center the title */
+.coins-page h1 {
+  margin-bottom: 20px; /* Space below the title */
+}
+
+/* Coin list with added padding */
+.coins-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Center align items */
+}
+
+/* Style for each coin item */
+.coin-item {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+}
+
+.coin-item:hover {
+  background-color: #f1f1f1; /* Slightly darker background on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Button styling */
+.details {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px; /* Margin to ensure space above the button */
+}
+
+.details:hover {
+  background-color: #0056b3;
+}
+
+.details.disabled {
+  background-color: #7b7b7b; /* Light gray background */
+  color: #fffdfd; /* Dark gray text */
+  cursor: not-allowed; /* Not-allowed cursor */
+  opacity: 0.6; /* Make it slightly transparent */
+  border: none; /* Remove border */
+}
+
+.details.disabled:hover {
+  background-color: #7b7b7b; /* Same color on hover */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .coin-item {
+    width: 90%; /* Adjust width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .coin-item {
+    width: 95%; /* Further adjust width on very small screens */
+  }
+}
