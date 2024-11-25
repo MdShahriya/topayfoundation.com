@@ -41,9 +41,9 @@ function Home() {
   ];
 
   const partners = [
-    { name: 'Partner 1', logo: '/images/partner1.png' },
-    { name: 'Partner 2', logo: '/images/partner2.png' },
-    { name: 'Partner 3', logo: '/images/partner3.png' },
+    { name: 'Partner 1', logo: '/images/Logo.png' },
+    { name: 'Partner 2', logo: '/images/Logo.png' },
+    { name: 'Partner 3', logo: '/images/Logo.png' },
   ];
 
   return (
@@ -137,7 +137,7 @@ function Home() {
         </section>
       </BoxReveal>*/}
 
-      {/* Partners Section 
+      {/* Partners Section */}
       <BoxReveal animationDuration="1s" triggerOffset={150}>
         <section className="partners">
           <h2 className="section-title">Our Partners</h2>
@@ -149,7 +149,7 @@ function Home() {
             ))}
           </div>
         </section>
-      </BoxReveal>*/}
+      </BoxReveal>
     </div>
   );
 }

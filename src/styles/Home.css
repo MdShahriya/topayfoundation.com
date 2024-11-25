@@ -1,7 +1,7 @@
 /* General Styles */
 .home-container {
   font-family: 'Roboto Mono', monospace;
-  background: linear-gradient(to bottom, #f8f9fa, #ffffff);
+  background: rgb(255, 255, 255);
   color: #212529;
   min-height: 100vh;
   display: flex;
@@ -158,8 +158,7 @@
 }
 
 .feature-card:hover,
-.testimonial-card:hover,
-.partner-card:hover {
+.testimonial-card:hover{
   transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
@@ -179,6 +178,7 @@
 
 .partner-card img {
   max-width: 100px;
+  filter: grayscale(100%) contrast(159%);
 }
 
 /* Footer Styles */

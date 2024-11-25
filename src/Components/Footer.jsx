@@ -27,7 +27,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>Operated by <strong>TOPAY</strong></p>
+        <p>Operated by <strong>TOPAY SOCIETY</strong></p>
         <div className="footer-icons">
           <a href="https://www.linkedin.com/company/105530643/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
           <a href="https://t.me/TOPEXfoundation" target="_blank" rel="noopener noreferrer"><FaTelegram /></a>

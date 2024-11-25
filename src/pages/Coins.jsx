@@ -7,7 +7,8 @@ function Coins() {
       id: 1,
       name: 'Proofcoin',
       symbol: 'PROOF',
-      url: 'https://www.topfoundation.co/Proofcoin', // Add URL for Proofcoin
+      launchDate: 'Coming Soon',
+      url: '#', // Add URL for Proofcoin
     },
     { id: 2, name: '🔒', symbol: 'SOON', launchDate: 'Coming Soon', description: 'SOON', details: 'SOON', contractAddress: 'SOON', url: '#' },
     { id: 3, name: '🔒', symbol: 'SOON', launchDate: 'Coming Soon', description: 'SOON', details: 'SOON', contractAddress: 'SOON', url: '#' },
