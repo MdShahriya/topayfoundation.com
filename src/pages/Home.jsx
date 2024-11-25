@@ -121,7 +121,7 @@ function Home() {
         </section>
       </BoxReveal>
 
-      {/* Testimonials Section */}
+      {/* Testimonials Section 
       <BoxReveal animationDuration="1s" triggerOffset={150}>
         <section className="testimonials">
           <h2 className="section-title">What People Are Saying</h2>
@@ -135,9 +135,9 @@ function Home() {
             ))}
           </div>
         </section>
-      </BoxReveal>
+      </BoxReveal>*/}
 
-      {/* Partners Section */}
+      {/* Partners Section 
       <BoxReveal animationDuration="1s" triggerOffset={150}>
         <section className="partners">
           <h2 className="section-title">Our Partners</h2>
@@ -149,7 +149,7 @@ function Home() {
             ))}
           </div>
         </section>
-      </BoxReveal>
+      </BoxReveal>*/}
     </div>
   );
 }

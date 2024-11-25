@@ -1,58 +1,76 @@
 import React from 'react';
-import Chart from 'chart.js/auto';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
 import '../styles/Proofcoin.css';
 import tokenomicsImage from '../assets/images/Tokenomics.png'; // Adjust the path as needed
-
-Chart.register(ChartDataLabels);
+import memeImage from '../assets/images/PPGIF.gif'; // Placeholder for a fun meme image
 
 function Proofcoin() {
-  // Tokenomics data for Proofcoin
   return (
     <div className="proofcoin-page">
       {/* Hero Section */}
-      <section className="heo">
-        <div className="social-inks">
-          <a href="/Whitepapers/Proofcoin-wp.pdf" target="_blank" rel="noopener noreferrer">WhitePaper</a>
+      <section className="hero">
+        <div className="hero-content">
+          <img src={memeImage} className="meme-mascot" />
+          <h1>Welcome to Proofcoin 🚀</h1>
+          <p>The Memecoin That’s Actually Useful (and Hilarious)! 😂</p>
+          <p>Proofcoin rewards your inner gentleness while powering the ultimate memecoin ecosystem.</p>
+          <div className="hero-buttons">
+            <a href="/Whitepapers/Proofcoin-wp.pdf" target="_blank" rel="noopener noreferrer">
+              <button className="btn whitepaper-btn">Read the Whitepaper 📄</button>
+            </a>
+            <a href="" target="_blank" rel="noopener noreferrer">
+              <button className="btn buy-btn">Buy Proofcoin 💸</button>
+            </a>
+            <a href="https://t.me/proofcoin_bot" target="_blank" rel="noopener noreferrer">
+              <button className="btn earn-btn">Earn $Proofcoin 💎</button>
+            </a>
+          </div>
         </div>
-      <p className='Note'><strong>NOTE : Airdrop supply is Limited! more details in Social Updates</strong></p>
-        <h2>Welcome to Proofcoin - The Gentle Memecoin</h2>
-        <p>Reward token for Gentle and platform use.</p>
-        <h3>About Proofcoin</h3>
-        <p>Proofcoin is a utility memecoin that will have many use case in our ecosystem...</p>
-        
-        <a href="" target="_blank" rel="noopener noreferrer">
-          <button className="cta-btton">Buy Proofcoin</button>
-        </a>
-        <a href="https://t.me/proofcoin_bot" target="_blank" rel="noopener noreferrer">
-          <button className="earn-btton">Earn $Proofcoin</button>
-        </a>
-      </section>      
+      </section>
+
       {/* Tokenomics Section */}
-      <section id="tokenomics" className="tokenomics">
-  <div className="tokenomics-content">
-    <img src={tokenomicsImage} className="tokenomics-image" />
-  </div>
-</section>
+      <section className="tokenomics">
+        <h2>Tokenomics 🤑</h2>
+        <p>How Proofcoin is distributed to the *gentle* moon! 🌕</p>
+        <div className="tokenomics-content">
+          <img src={tokenomicsImage} alt="Tokenomics" className="tokenomics-image" />
+        </div>
+      </section>
 
       {/* Roadmap Section */}
-      <section id="roadmp" className="roadmp">
-        <h3>Roadmap</h3>
+      <section className="roadmap">
+        <h2>Roadmap 🛤️</h2>
+        <p>Our journey to meme greatness:</p>
         <ul className="roadmap-list">
-          <li>      <p className='Note'><strong>NOTE : Airdrop supply is Limited! more details in Social Updates</strong></p>
-          <h4>Phase 1</h4><p>Launch Proofcoin bot for Community Airdrop</p></li>
-          <li><h4>Phase 2</h4><p>1st-4th round presale</p></li>
-          <li><h4>Phase 3</h4><p>Snapshot of Airdrop</p></li>
-          <li><h4>Phase 4</h4><p>listing & Airdrop distribution</p></li>
+          <li>
+            <h3>Phase 1 - 🌱</h3>
+            <p>Launch Proofcoin bot for Community Airdrop.</p>
+          </li>
+          <li>
+            <h3>Phase 2 - 🚀</h3>
+            <p>1st-4th round presale.</p>
+          </li>
+          <li>
+            <h3>Phase 3 - 📸</h3>
+            <p>Snapshot of Airdrop eligibility.</p>
+          </li>
+          <li>
+            <h3>Phase 4 - 🌕</h3>
+            <p>Exchange listing and Airdrop distribution.</p>
+          </li>
         </ul>
-        </section>
+      </section>
+
       {/* Community Section */}
-      <section id='community' className='community'>
-        <h3>Join the Community</h3>
-        <p>Follow us on social media and join our Telegram to stay updated!</p>
-        <div className="social-inks">
-          <a href="https://twitter.com/proofcoin_ton" target="_blank" rel="noopener noreferrer">Twitter</a>
-          <a href="https://t.me/proofcointon" target="_blank" rel="noopener noreferrer">Telegram</a>
+      <section className="community">
+        <h2>Join the Proofcoin Community 💬</h2>
+        <p>Stay updated on our journey to the memecoin hall of fame!</p>
+        <div className="social-links">
+          <a href="https://twitter.com/proofcoin_ton" target="_blank" rel="noopener noreferrer" className="twitter-link">
+            Twitter 🐦
+          </a>
+          <a href="https://t.me/proofcointon" target="_blank" rel="noopener noreferrer" className="telegram-link">
+            Telegram 💬
+          </a>
         </div>
       </section>
     </div>
