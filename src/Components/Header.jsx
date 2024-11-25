@@ -58,9 +58,6 @@ function Header() {
           </li>
           <li className="has-submenu">
             <Link to="/services" onClick={() => setIsOpen(false)}>Services</Link>
-            <ul className="submenu">
-              <li><Link to="/coins">Coins</Link></li>
-            </ul>
           </li>
           <li><Link to="/roadmap" onClick={() => setIsOpen(false)}>Roadmap</Link></li>
           <li><Link to="/about" onClick={() => setIsOpen(false)}>About</Link></li>

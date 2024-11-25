@@ -1,8 +1,10 @@
 import React from 'react';
 import '../styles/About.css';
+import BoxReveal from './BoxReveal';
 
 function About() {
   return (
+    <BoxReveal>
     <section className="about-roadmap">
       <h1 className="roadmap-heading">Our Journey with TOPAY FOUNDATION</h1>
       <div className="roadmap-container">
@@ -46,7 +48,7 @@ function About() {
           </div>
         </div>
       </div>
-    </section>
+    </section></BoxReveal>
   );
 }
 

@@ -1,10 +1,8 @@
-// src/App.jsx
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Loader from './Loader';
 import './styles/App.css';
 import ProofcoinPage from './pages/Proofcoin';
 import { TonConnectUIProvider } from '@tonconnect/ui-react';
@@ -18,25 +16,11 @@ const Contact = React.lazy(() => import('./pages/Contact'));
 const Roadmap = React.lazy(() => import('./pages/Roadmap'));
 const PrivacyPolicy = React.lazy(() => import('./Components/PrivacyPolicy'));
 const TermsOfService = React.lazy(() => import('./Components/TermsOfService'));
-const Coins = React.lazy(() => import('./pages/Coins')); 
+const Coins = React.lazy(() => import('./pages/Coins'));
 
 function App() {
-  const [loading, setLoading] = useState(true);
-  const location = useLocation();
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [location.pathname]);
-
   return (
     <div className="page-container">
-      <Loader show={loading} />
       <Header />
       <div className="content">
         <Suspense fallback={<div>Loading...</div>}>

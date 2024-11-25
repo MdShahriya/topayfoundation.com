@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Roadmap.css'
+import BoxReveal from './BoxReveal';
 
 function Roadmap() {
   const roadmapItems = [
@@ -12,6 +13,7 @@ function Roadmap() {
   ];
 
   return (
+    <BoxReveal>
     <section className="roadmap">
       <h2 id='R'>Our Roadmap</h2>
       <div className="roadmap-container">
@@ -26,7 +28,7 @@ function Roadmap() {
           </div>
         ))}
       </div>
-    </section>
+    </section></BoxReveal>
   );
 }
 

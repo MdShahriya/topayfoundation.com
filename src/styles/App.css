@@ -35,7 +35,7 @@ html, body {
 
 @media (min-width: 75em) { /* 1200px to em */
   .content {
-    padding-left: 2.5em; /* 40px to em */
-    padding-right: 2.5em; /* 40px to em */
+    padding-left: 1em; /* 40px to em */
+    padding-right: 1em; /* 40px to em */
   }
 }
