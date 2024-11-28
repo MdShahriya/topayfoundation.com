@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 
-const BoxReveal = ({ children, animationDuration = "1s", triggerOffset = 100 }) => {
+const BoxReveal = ({ children, animationDuration = "0.5s", triggerOffset = 100 }) => {
   const revealRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 

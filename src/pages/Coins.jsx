@@ -6,11 +6,11 @@ function Coins() {
     {
       id: 1,
       name: 'Proofcoin',
-      symbol: 'PROOF',
+      symbol: '$proof',
       launchDate: 'Coming Soon',
-      url: '#', // Add URL for Proofcoin
+      url: '/proofcoin', // Add URL for Proofcoin
     },
-    { id: 2, name: '🔒', symbol: 'SOON', launchDate: 'Coming Soon', description: 'SOON', details: 'SOON', contractAddress: 'SOON', url: '#' },
+    { id: 2, name: 'TOPAY', symbol: '$topay', launchDate: 'Coming Soon', description: 'SOON', details: 'SOON', contractAddress: 'SOON', url: '#' },
     { id: 3, name: '🔒', symbol: 'SOON', launchDate: 'Coming Soon', description: 'SOON', details: 'SOON', contractAddress: 'SOON', url: '#' },
   ];
 

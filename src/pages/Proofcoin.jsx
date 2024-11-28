@@ -11,16 +11,17 @@ function Proofcoin() {
         <div className="hero-content">
           <img src={memeImage} className="meme-mascot" />
           <h1>Welcome to Proofcoin 🚀</h1>
+          <p>Are You Joking?</p>
           <p>The Memecoin That’s Actually Useful (and Hilarious)! 😂</p>
           <p>Proofcoin rewards your inner gentleness while powering the ultimate memecoin ecosystem.</p>
           <div className="hero-buttons">
             <a href="/Whitepapers/Proofcoin-wp.pdf" target="_blank" rel="noopener noreferrer">
               <button className="btn whitepaper-btn">Read the Whitepaper 📄</button>
             </a>
-            <a href="" target="_blank" rel="noopener noreferrer">
+           {/*  <a href="" target="_blank" rel="noopener noreferrer">
               <button className="btn buy-btn">Buy Proofcoin 💸</button>
-            </a>
-            <a href="https://t.me/proofcoin_bot" target="_blank" rel="noopener noreferrer">
+            </a>*/}
+            <a href="" target="_blank" rel="noopener noreferrer">
               <button className="btn earn-btn">Earn $Proofcoin 💎</button>
             </a>
           </div>
@@ -43,11 +44,12 @@ function Proofcoin() {
         <ul className="roadmap-list">
           <li>
             <h3>Phase 1 - 🌱</h3>
-            <p>Launch Proofcoin bot for Community Airdrop.</p>
+            <p>Launch Community Airdrop Event</p>
+            
           </li>
           <li>
             <h3>Phase 2 - 🚀</h3>
-            <p>1st-4th round presale.</p>
+            <p>4 round presale.</p>
           </li>
           <li>
             <h3>Phase 3 - 📸</h3>
@@ -55,7 +57,7 @@ function Proofcoin() {
           </li>
           <li>
             <h3>Phase 4 - 🌕</h3>
-            <p>Exchange listing and Airdrop distribution.</p>
+            <p>Airdrop distribution and Exchange listing</p>
           </li>
         </ul>
       </section>

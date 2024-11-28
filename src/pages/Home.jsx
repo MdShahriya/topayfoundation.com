@@ -4,9 +4,9 @@ import BoxReveal from './BoxReveal'; // Adjust the path based on your project st
 
 function Home() {
   const eventImages = [
-    { src: '/images/coming.png', link: '' },
-    { src: '/images/coming.png', link: '' },
-    { src: '/images/coming.png', link: '' },
+    { src: '/images/coming.png', link: '#' },
+    { src: '/images/coming.png', link: '#' },
+    { src: '/images/coming.png', link: '#' },
   ];
 
   const features = [
@@ -56,9 +56,9 @@ function Home() {
             <p className="hero-subtitle">Empowering the Future of Finance with Web3 Innovations</p>
           </div>
           <div className="hero-cta">
-            <a href="/Proofcoin">
+            <a href="#">
               <button className="btn explore-button">
-                <strong>Get $Proofcoin</strong>
+                <strong>Topay Testnet</strong>
               </button>
             </a>
           </div>
