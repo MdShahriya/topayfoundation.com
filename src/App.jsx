@@ -35,6 +35,7 @@ function App() {
             <Route path="/coins" element={<Coins />} />
             <Route path="/Proofcoin" element={<ProofcoinPage />} />
             <Route path="/Socialmedia" element={<Socialmedia />} />
+            <Route path="/sitemap" element={<Navigate to="/sitemap.xml" />} />
           </Routes>
         </Suspense>
       </div>
