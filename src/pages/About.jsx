@@ -31,9 +31,9 @@ function About() {
         <div className="roadmap-step left">
           <div className="step-circle">3</div>
           <div className="step-content">
-            <h2>Innovative Telegram Mini App</h2>
+            <h2>Innovative App</h2>
             <p>
-              Our Telegram mini app will launch as an exciting feature where users can earn <strong>$TOPAY</strong> through various events and tasks. This initiative enhances user engagement and offers a seamless way to integrate cryptocurrency into everyday activities.
+              Our app will launch as an exciting feature where users can earn <strong>$TOPAY</strong> through various events and tasks. This initiative enhances user engagement and offers a seamless way to integrate cryptocurrency into everyday activities.
             </p>
           </div>
         </div>

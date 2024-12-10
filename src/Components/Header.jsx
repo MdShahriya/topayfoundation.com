@@ -54,13 +54,13 @@ function Header() {
       <nav ref={menuRef} className={`nav ${isOpen ? 'open' : ''}`}>
         <ul>
           <li>
-            <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
+            <Link to="/" onClick={() => setIsOpen(false)}><strong>Home</strong></Link>
           </li>
           <li className="has-submenu">
-            <Link to="/services" onClick={() => setIsOpen(false)}>Services</Link>
+            <Link to="/services" onClick={() => setIsOpen(false)}><strong>Services</strong></Link>
           </li>
-          <li><Link to="/roadmap" onClick={() => setIsOpen(false)}>Roadmap</Link></li>
-          <li><Link to="/about" onClick={() => setIsOpen(false)}>About</Link></li>
+          <li><Link to="/roadmap" onClick={() => setIsOpen(false)}><strong>Roadmap</strong></Link></li>
+          <li><Link to="/about" onClick={() => setIsOpen(false)}><strong>About</strong></Link></li>
         </ul>
       </nav>
 

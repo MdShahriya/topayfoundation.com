@@ -36,8 +36,7 @@ function Footer() {
 
       {/* Footer Bottom */}
       <div className="footer-bottom">
-        <p className="footer-logo">Operated by <strong>TOPAY SOCIETY</strong></p>
-        <div className="footer-icons">
+      <p className="footer-logo">Operated by <a  href="https://society.topayfoundation.com"  target="_blank"  rel="noopener noreferrer" className="footer-link"><strong> TOPAY SOCIETY</strong></a></p>     <div className="footer-icons">
           <a href="https://www.linkedin.com/company/105530643/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </a>
