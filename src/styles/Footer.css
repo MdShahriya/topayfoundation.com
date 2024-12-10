@@ -1,32 +1,48 @@
+/* General Styling */
+html,
+body {
+  height: 100%;
+  background: rgb(255, 255, 255);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Footer Styling */
 .footer {
-  background: linear-gradient(145deg, #f1f1f1, #e0e0e0);
-  color: #000000;
-  padding: 2.5em 1.25em;
-  box-shadow: 0px 0px 0.0625em rgba(0, 0, 0, 0.3);
-  border-top: 0.0625em solid #dddddd;
   width: 100%;
+  background: linear-gradient(145deg, #f1f1f1, #e0e0e0);
+  border-top: 1px solid #ddd;
+  color: #000;
 }
 
 .footer-content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Center-align footer content */
-  max-width: 75em; /* Restrict width for better alignment */
+  justify-content: center;
+  gap: 1.5em;
+  max-width: 75em; /* Matches the main container width */
   margin: auto;
-  gap: -1em; /* Adjusted gap between sections */
+  padding: 2em 1.25em; /* Top/bottom and left/right padding */
 }
 
 .footer-section {
-  flex: 1 1 15em; /* Flex-grow and base size for consistency */
-  margin: 0.9em;
-  min-width: 12em; /* Ensure minimum width for sections */
-  text-align: center; /* Center-align text and links within the section */
+  flex: 1 1 15em;
+  margin: 1em;
+  min-width: 12em;
+  text-align: center;
 }
 
 .footer-section h4 {
   font-weight: bold;
   margin-bottom: 0.5em;
-  font-size: 1.15em;
+  font-size: 1.2em;
   color: #333;
 }
 
@@ -35,80 +51,58 @@
   color: #666;
   text-decoration: none;
   font-size: 1.1em;
-  margin: 0.5em 0; 
-}
-
-.footer-section ul {
-  list-style-type: disc; /* Adds a list style */
-  padding-left: 2em; /* Indentation to allow the list items to show properly */
-  text-align: center; /* Ensure items inside the list are left-aligned */
-}
-
-.footer-section li {
-  color: #666;
-  font-size: 1.1em;
   margin: 0.5em 0;
 }
 
-.footer-section li a {
-  text-decoration: none;
-  color: inherit; /* Keeps the color from the list item */
-}
-
-.footer-section li a:hover {
+.footer-section a:hover {
   color: #000;
 }
 
-/* Footer bottom styling */
+/* Footer Bottom Styling */
 .footer-bottom {
   display: flex;
+  justify-content: space-between; /* Distribute elements evenly */
   align-items: center;
-  justify-content: space-between;
-  border-top: 0.0625em solid #ddd;
-  padding-top: 1.25em;
-  margin-top: 1.25em;
-  color: #333;
-  font-size: 1em;
+  width: 100%;
+  max-width: 75em; /* Matches your layout container width */
+  margin: auto; /* Centers the footer bottom in the container */
+  padding: 1em 1.25em; /* Consistent with layout padding */
+  border-top: 1px solid #ddd; /* Divider for clean separation */
 }
 
-.footer-bottom p {
-  margin: 0;
+.footer-logo {
+  font-size: 1em;
+  color: #333;
+  font-weight: 500;
+  text-align: left; /* Ensure the text aligns naturally on the left side */
 }
 
 .footer-icons {
   display: flex;
-  gap: 0.625em;
+  gap: 0.75em; /* Spacing between icons */
 }
 
-.footer-icons svg {
+.footer-icons a {
   color: #666;
   font-size: 1.5em;
-  cursor: pointer;
+  transition: color 0.3s ease; /* Smooth hover transition */
 }
 
-.footer-icons svg:hover {
+.footer-icons a:hover {
   color: #000;
 }
 
-/* Responsive adjustments */
-@media (max-width: 48em) { /* 768px or smaller screens */
+/* Responsive Design */
+@media (max-width: 768px) {
   .footer-content {
-    flex-direction: column;
-    align-items: center; /* Center-align footer content on smaller screens */
-  }
-
-  .footer-section {
-    text-align: left;
-    margin: -3em; /* Reduced gap between sections */
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
   }
 
   .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-icons {
-    justify-content: center;
-    margin-top: 0.625em;
+    flex-direction: column; /* Stack text and icons vertically */
+    align-items: center;
+    gap: 1em; /* Add spacing between elements */
+    text-align: center; /* Center-align text for smaller screens */
   }
 }

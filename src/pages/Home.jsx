@@ -1,6 +1,7 @@
 import React from 'react';
 import '../styles/Home.css';
 import BoxReveal from './BoxReveal'; // Adjust the path based on your project structure
+import ShortRoadmap from '../Components/ShortRoadmap';
 
 function Home() {
   const eventImages = [
@@ -81,6 +82,11 @@ function Home() {
         </section>
       </BoxReveal>
 
+      {/* Short Roadmap Section */}
+      <BoxReveal animationDuration="1s" triggerOffset={150}>
+        <ShortRoadmap />
+      </BoxReveal>
+
       {/* About Section */}
       <BoxReveal animationDuration="1s" triggerOffset={150}>
         <section className="about">
@@ -91,6 +97,20 @@ function Home() {
           </p>
         </section>
       </BoxReveal>
+      
+      {/* Partners Section 
+      <BoxReveal animationDuration="1s" triggerOffset={150}>
+        <section className="partners">
+          <h2 className="section-title">Our Partners</h2>
+          <div className="partners-content">
+            {partners.map((partner, index) => (
+              <div key={index} className="partner-card">
+                <img src={partner.logo} alt={`${partner.name}`} />
+              </div>
+            ))}
+          </div>
+        </section>
+      </BoxReveal>*/}
 
       {/* Running Events Section */}
       <BoxReveal animationDuration="1s" triggerOffset={150}>
@@ -136,20 +156,6 @@ function Home() {
           </div>
         </section>
       </BoxReveal>*/}
-
-      {/* Partners Section */}
-      <BoxReveal animationDuration="1s" triggerOffset={150}>
-        <section className="partners">
-          <h2 className="section-title">Our Partners</h2>
-          <div className="partners-content">
-            {partners.map((partner, index) => (
-              <div key={index} className="partner-card">
-                <img src={partner.logo} alt={`${partner.name}`} />
-              </div>
-            ))}
-          </div>
-        </section>
-      </BoxReveal>
     </div>
   );
 }
