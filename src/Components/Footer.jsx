@@ -22,7 +22,9 @@ function Footer() {
           <a href="/Whitepapers/Topayfoundation-wp.pdf" target="_blank" rel="noopener noreferrer">
             WhitePaper
           </a>
-          <Link to="/">Blog (Soon)</Link>
+          <Link to="">Blog (Soon)</Link>
+          <Link to="/privacy-policy">PrivacyPolicy</Link>
+          <Link to="/terms-of-service">Terms and Conditions</Link>
         </div>
 
         {/* Community Section */}
