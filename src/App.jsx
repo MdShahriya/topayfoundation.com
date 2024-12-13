@@ -1,11 +1,10 @@
 import React, { Suspense } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './styles/App.css';
 import ProofcoinPage from './pages/Proofcoin';
-import { TonConnectUIProvider } from '@tonconnect/ui-react';
 import Socialmedia from './pages/Socialmedia';
 
 // Import pages using dynamic imports
