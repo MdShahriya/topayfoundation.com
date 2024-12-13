@@ -19,7 +19,7 @@
   justify-content: center;
   align-items: center;
   min-height: 70vh;
-  background: linear-gradient(135deg, #1d71f0, #0a58ca);
+  background: linear-gradient(135deg, hsl(207, 100%, 53%), #0853c4cb);
   color: white;
   border-radius: 10px;
   padding: 20px;
