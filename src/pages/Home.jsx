@@ -58,9 +58,9 @@ function Home() {
           </div>
           <div className="hero-cta">
             <a href="#">
-              <button className="btn explore-button">
+              {/*<button className="btn explore-button">
                 <strong>Topay Testnet</strong>
-              </button>
+              </button>*/}
             </a>
           </div>
         </section>

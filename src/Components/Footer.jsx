@@ -10,19 +10,19 @@ function Footer() {
         {/* Get Started Section */}
         <div className="footer-section">
           <h4>Get Started</h4>
-          <Link to="">Get a Wallet (Soon)</Link>
-          <Link to="">Get TOPAY (Soon)</Link>
+          {/*<Link to="">Get a Wallet</Link>*/}
+          {/*<Link to="">Get TOPAY</Link>*/}
           <Link to="/roadmap">Roadmap</Link>
         </div>
 
         {/* Resources Section */}
         <div className="footer-section">
           <h4>Resources</h4>
-          <Link to="">Documentation (Soon)</Link>
+          {/*<Link to="">Documentation</Link>*/}
           <a href="/Whitepapers/Topayfoundation-wp.pdf" target="_blank" rel="noopener noreferrer">
             WhitePaper
           </a>
-          <Link to="">Blog (Soon)</Link>
+          {/*<Link to="">Blog</Link>*/}
           <Link to="/privacy-policy">PrivacyPolicy</Link>
           <Link to="/terms-of-service">Terms and Conditions</Link>
         </div>
@@ -30,7 +30,7 @@ function Footer() {
         {/* Community Section */}
         <div className="footer-section">
           <h4>Community</h4>
-          <Link to="">Careers (Soon)</Link>
+          {/*<Link to="">Careers (Soon)</Link>*/}
           <Link to="/contact">Contact Us</Link>
           <Link to="/socialmedia">Social Media</Link>
         </div>
