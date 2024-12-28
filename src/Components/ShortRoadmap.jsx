@@ -16,7 +16,7 @@ function ShortRoadmap() {
         {roadmapMilestones.map((milestone, index) => (
           <div className="milestone" key={index}>
             <div className={`milestone-icon ${milestone.isCompleted ? "completed" : ""}`}>
-              {milestone.isCompleted ? "✔" : ""}
+              {milestone.isCompleted ? "✔" : "⨉"}
             </div>
             <div className="milestone-content">
               <h3>{milestone.phase}</h3>

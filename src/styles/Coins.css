@@ -1,6 +1,7 @@
 /* Basic styling for the coins page */
 .coins-page {
   padding: 20px;
+  background: rgb(255, 255, 255);
   margin: 0 auto; /* Center the content */
   max-width: 1200px; /* Set a max width for larger screens */
   text-align: center; /* Center align text */
@@ -39,7 +40,7 @@
 
 /* Button styling */
 .details {
-  background-color: #007bff;
+  background-color: #1d71f0;
   color: white;
   border: none;
   padding: 12px 24px;

@@ -1,7 +1,7 @@
 /* Basic styling for the Services section */
 .services {
-  padding: 50px 80px; /* Further increased left and right padding */
-  background-color: #f8f9fa;
+  padding: 50px 20px; /* Reduced left and right padding for mobile screens */
+  background: rgb(255, 255, 255);
   text-align: center;
 }
 
@@ -10,31 +10,31 @@
 }
 
 .services-header h1 {
-  font-size: 2.5rem;
+  font-size: 2.2rem; /* Slightly smaller font size for mobile */
   font-weight: 700;
   margin-bottom: 15px;
   color: #333;
 }
 
 .services-header p {
-  font-size: 1.1rem;
+  font-size: 1rem; /* Slightly reduced font size */
   color: #666;
 }
 
 /* Styling for the "Coming Soon" section */
 .services-coming-soon {
-  margin-bottom: 40px;
+  margin-bottom: 30px; /* Slightly reduced margin for compact spacing */
 }
 
 .services-coming-soon h3 {
-  font-size: 1.8rem;
+  font-size: 1.6rem; /* Adjusted for smaller screens */
   font-weight: 600;
-  color: #007bff;
+  color: #222;
   margin-bottom: 10px;
 }
 
 .services-coming-soon p {
-  font-size: 1rem;
+  font-size: 0.95rem; /* Slightly reduced size for better fit */
   color: #666;
 }
 
@@ -42,7 +42,7 @@
 .services-placeholder {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 10px; /* Reduced gap for smaller screens */
   flex-wrap: wrap;
 }
 
@@ -50,8 +50,9 @@
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 10px;
-  padding: 20px;
-  width: 300px;
+  padding: 15px; /* Adjust padding for mobile */
+  width: 90%; /* Take most of the screen width */
+  max-width: 350px; /* Restrict maximum width */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -61,32 +62,42 @@
 }
 
 .service:hover {
-  transform: translateY(-0px);
+  transform: translateY(-3px); /* Slight hover effect */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
 
 .service h4 {
-  font-size: 1.5rem;
+  font-size: 1.4rem; /* Adjusted for mobile */
   font-weight: 600;
-  color: #1c95e0;
+  color: #222222;
   margin-bottom: 10px;
 }
 
 .service p {
-  font-size: 1rem;
+  font-size: 0.9rem; /* Slightly smaller font size for better fit */
   color: #666;
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
   .services-placeholder {
-    flex-direction: column;
-    align-items: center;
+    padding: 0; /* Remove padding for better alignment */
+    flex-direction: column; /* Stack the cards vertically */
+    align-items: center; /* Center align the cards */
   }
   
   .service {
-    width: 100%;
-    max-width: 400px;
+    width: 100%; /* Use the full width of the container */
+    max-width: 400px; /* Limit the maximum width for consistency */
+    margin-bottom: 20px; /* Add spacing between stacked cards */
+  }
+
+  .service h4 {
+    font-size: 1.3rem; /* Adjusted size for smaller screens */
+  }
+
+  .service p {
+    font-size: 0.85rem; /* Reduce font size for better spacing */
   }
 }

@@ -6,6 +6,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import './styles/App.css';
 import ProofcoinPage from './pages/Proofcoin';
 import Socialmedia from './pages/Socialmedia';
+import BackToTopButton from './Components/BackToTopButton';
 
 // Import pages using dynamic imports
 const Home = React.lazy(() => import('./pages/Home'));
@@ -36,6 +37,7 @@ function App() {
             <Route path="/Socialmedia" element={<Socialmedia />} />
           </Routes>
         </Suspense>
+        <BackToTopButton />
       </div>
       <Footer />
     </div>

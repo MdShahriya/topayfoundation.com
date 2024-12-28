@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../styles/Header.css';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false); 
   const menuRef = useRef(null);
+  const location = useLocation(); // Get the current location
 
   const toggleMenu = () => {
     setIsOpen((prevState) => !prevState);
@@ -37,6 +38,13 @@ function Header() {
     };
   }, []);
 
+  const navLinks = [
+    { path: '/', label: 'Home' },
+    { path: '/services', label: 'Services' },
+    { path: '/roadmap', label: 'Roadmap' },
+    { path: '/about', label: 'About' },
+  ];
+
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="logo">
@@ -53,14 +61,16 @@ function Header() {
 
       <nav ref={menuRef} className={`nav ${isOpen ? 'open' : ''}`}>
         <ul>
-          <li>
-            <Link to="/" onClick={() => setIsOpen(false)}><strong>Home</strong></Link>
-          </li>
-          <li className="has-submenu">
-            <Link to="/services" onClick={() => setIsOpen(false)}><strong>Services</strong></Link>
-          </li>
-          <li><Link to="/roadmap" onClick={() => setIsOpen(false)}><strong>Roadmap</strong></Link></li>
-          <li><Link to="/about" onClick={() => setIsOpen(false)}><strong>About</strong></Link></li>
+          {navLinks.map(
+            (link) =>
+              link.path !== location.pathname && ( // Hide the current page's menu item
+                <li key={link.path}>
+                  <Link to={link.path} onClick={() => setIsOpen(false)}>
+                    <strong>{link.label}</strong>
+                  </Link>
+                </li>
+              )
+          )}
         </ul>
       </nav>
 

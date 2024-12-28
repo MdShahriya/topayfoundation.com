@@ -2,7 +2,7 @@
 html,
 body {
   height: 100%;
-  background: rgb(255, 255, 255);
+  background:  rgb(255, 255, 255);
   font-family: 'Roboto', sans-serif;
   margin: 0;
   box-sizing: border-box;
@@ -84,7 +84,7 @@ body {
 }
 
 .footer-link:hover {
-  color: #3f3f3f; /* Darker blue on hover */
+  color: #1d71f0; /* Darker blue on hover */
 }
 
 .footer-icons {
@@ -99,7 +99,7 @@ body {
 }
 
 .footer-icons a:hover {
-  color: #000;
+  color: #1d71f0;
 }
 
 /* Responsive Design */
@@ -107,12 +107,42 @@ body {
   .footer-content {
     flex-direction: column; /* Stack content vertically */
     align-items: center;
+    gap: 0; /* Remove gaps between sections */
+    padding: 1.5em 1em; /* Adjust padding */
+  }
+
+  .footer-section {
+    flex: 1 1 100%; /* Full width for sections */
+    min-width: auto; /* Adjust width for flexibility */
+    margin: 0; /* Remove gaps */
+  }
+
+  .footer-section h4 {
+    font-size: 1.1em; /* Slightly smaller text for titles */
+  }
+
+  .footer-section a {
+    font-size: 1em; /* Reduce link size for smaller screens */
+    padding: 0.5em 0; /* Add padding for touch-friendly tap areas */
+    margin: 0; /* Remove gaps */
   }
 
   .footer-bottom {
     flex-direction: column; /* Stack text and icons vertically */
     align-items: center;
-    gap: 1em; /* Add spacing between elements */
+    gap: 0; /* Remove gaps */
     text-align: center; /* Center-align text for smaller screens */
+    padding: 1em 0.75em; /* Reduce padding */
+  }
+
+  .footer-logo {
+    font-size: 1.1em; /* Smaller logo size */
+    text-align: center; /* Center-align logo */
+  }
+
+  .footer-icons {
+    justify-content: center; /* Center-align icons */
+    font-size: 1em; /* Adjust icon size for smaller screens */
+    gap: 25px; /* Remove gaps between icons */
   }
 }

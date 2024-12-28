@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/Home.css';
 import BoxReveal from './BoxReveal'; // Adjust the path based on your project structure
 import ShortRoadmap from '../Components/ShortRoadmap';
+import AnimatedBackground from '../Components/NonInteractiveBlockWeb';
 
 function Home() {
   const eventImages = [
@@ -52,6 +53,7 @@ function Home() {
       {/* Hero Section */}
       <BoxReveal animationDuration="0.8s">
         <section className="hero">
+          <AnimatedBackground />
           <div className="hero-content">
             <h1 className="hero-title">Welcome to TOPAY Foundation</h1>
             <p className="hero-subtitle">Empowering the Future of Finance with Web3 Innovations</p>
