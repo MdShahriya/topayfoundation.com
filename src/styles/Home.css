@@ -265,7 +265,7 @@ canvas {
 
   /* Hide animation on mobile */
   .marquee-content {
-    display: none; /* Completely hide the animation */
+    animation: scroll 8s linear infinite; /* Adjust speed for mobile */
   }
 
   .event-card,
