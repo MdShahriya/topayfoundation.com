@@ -20,7 +20,7 @@
   align-items: center;
   min-height: 80vh;
   background: transparent; /* Fully transparent background */
-  color: white;
+  color: rgb(255, 255, 255);
   border-radius: 10px;
   padding: 20px;
   margin: 0;
@@ -70,70 +70,63 @@ canvas {
   width: 16rem;
   height: 4rem;
   border-radius: 50px;
-  background-color: #f8f9fa;
+  background-color: rgb(255, 255, 255);
   color: #1d71f0;
   font-size: 1.5rem;
   font-weight: 500;
-  border: 2px solid #ffffff;
+  border: 2px solid rgb(255, 255, 255);
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #ffffff;
+  background-color:rgb(255, 255, 255);
   color: #0a58ca;
   transform: scale(1.05);
 }
 
-/* Running Events Section */
 .running-event {
-  padding: 40px 20px;
-  background: #f8f9fa;
+  padding: 60px 50px; /* Increased top and bottom padding for more spacing */
+  text-align: center;
+  position: relative; /* Ensures proper positioning for absolute children */
+  margin: 70px 0; /* Increased margin to separate it further from other sections */
+  background-color: rgba(255, 255, 255); /* Softer background color for better distinction */
+  border-radius: 15px; /* Slightly larger rounded corners for a modern look */
+}
+
+.event-carousel {
+  overflow: hidden; /* Ensures only one card is visible at a time */
+  width: 100%; /* Matches the parent container's width */
+  height: 350px; /* Adjust as needed for card height */
+  display: flex;
+  justify-content: center; /* Horizontally centers the card wrapper */
+  align-items: center; /* Vertically centers the card wrapper */
+  position: relative;
+  background-color: #ffffff; /* Added a white background for the carousel */
+  border-radius: 10px; /* Rounded corners for the carousel */
+}
+
+.event-card-wrapper {
+  display: flex; /* Flex layout for horizontal alignment of cards */
+  justify-content: flex-start; /* Ensure smooth horizontal alignment of cards */
+  align-items: center; /* Vertically aligns cards in the center */
+  transition: transform 0.8s ease-in-out; /* Smooth transition for carousel */
+  width: 100%; /* Ensure wrapper spans full width of the container */
+}
+
+.event-card-container {
+  width: 100%; /* Each card takes the full width of the container */
+  flex-shrink: 0; /* Prevents the card from shrinking */
+  display: flex; /* Ensure proper alignment for child content */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
 }
 
 .section-title {
-  font-size: 2.8rem;
-  margin-bottom: 40px;
-  text-align: center;
-  color: #222;
-}
-
-.marquee {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-}
-
-.marquee-content {
-  display: flex;
-  gap: 20px; /* No gap to ensure continuous flow */
-  animation: scroll 15s linear infinite; /* Adjust speed with duration */
-}
-
-.event-card {
-  min-width: 350px;
-  height: 250px;
-  background: #e9ecef;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.event-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-95.5%); /* Adjust based on the number of items */
-  }
+  font-size: 2.5em; /* Increased font size for better visibility */
+  margin-bottom: 30px; /* Added more spacing below the title */
+  color: #222; /* Darker color for better readability */
+  font-weight: bold; /* Added bold styling for emphasis */
 }
 
 /* Features, Testimonials, and Partners Section */
@@ -208,7 +201,7 @@ canvas {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 90vh;
+    min-height: 70vh;
   }
   
   canvas {
@@ -234,14 +227,14 @@ canvas {
   }
   
   .hero-title {
-    font-size: 3.9em;
+    font-size: 3em;
     color: #343a40;
     font-weight: 700;
     margin: 0;
   }
   
   .hero-subtitle {
-    font-size: 1.5em;
+    font-size: 2em;
     color: #495057;
     margin: 5px 0;
   }
@@ -263,14 +256,108 @@ canvas {
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
 
-  /* Hide animation on mobile */
-  .marquee-content {
-    animation: scroll 8s linear infinite; /* Adjust speed for mobile */
-  }
-
-  .event-card,
   .feature-card {
     min-width: 380px;
     height: 200px;
+  }
+}
+
+/* General Responsive Styles for Small Displays */
+@media (max-width: 480px) {
+  /* Adjust home container padding */
+  .home-container {
+    padding: 10px; /* Add some padding for smaller screens */
+  }
+
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh; /* Adjust hero height for small screens */
+    padding: 10px;
+  }
+
+  .hero-title {
+    font-size: 2rem; /* Reduce font size for hero title */
+    color: #343a40;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1em; /* Reduce font size for hero subtitle */
+    color: #495057;
+    margin: 5px 0;
+  }
+
+  /* Button adjustments */
+  .btn {
+    width: 12rem; /* Reduce button width */
+    height: 3.5rem; /* Reduce button height */
+    font-size: 1.2rem; /* Reduce button font size */
+  }
+
+  /* Section Titles */
+  .section-title {
+    font-size: 2rem; /* Reduce section title size */
+    margin-bottom: 20px;
+  }
+
+  /* Running Events */
+  .running-event {
+    padding: 40px 20px; /* Adjust padding */
+    margin: 50px 0; /* Adjust margin */
+    border-radius: 10px; /* Slightly reduce border radius */
+  }
+
+  .event-carousel {
+    height: 300px; /* Adjust carousel height */
+  }
+
+  .event-card-container {
+    width: 100%; /* Ensure each card takes full width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Features Section */
+  .features,
+  .about,
+  .testimonials,
+  .partners {
+    padding: 15px 5px; /* Compact padding for tight screens */
+  }
+
+  .features-content,
+  .testimonials-content,
+  .partners-content {
+    gap: 10px; /* Tighter spacing for small screens */
+  }
+
+  .feature-card,
+  .testimonial-card,
+  .partner-card {
+    padding: 10px; /* Minimal padding for smaller cards */
+    font-size: 0.9rem; /* Adjust text size */
+    border-radius: 5px; /* Slightly smaller rounded corners */
+  }
+
+  .feature-card i {
+    font-size: 1.5rem; /* Further reduce icon size */
+    margin-bottom: 8px; /* Tighten spacing */
+  }
+
+  .testimonial-image {
+    width: 50px; /* Smaller circular image */
+    height: 50px; /* Match width */
+  }
+
+  .partner-card img {
+    max-width: 60px; /* Smaller logo size */
   }
 }

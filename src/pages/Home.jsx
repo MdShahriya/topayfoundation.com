@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react"; // Import useState and useEffect
 import "../styles/Home.css";
 import BoxReveal from "./BoxReveal";
 import ShortRoadmap from "../Components/ShortRoadmap";
@@ -7,11 +7,42 @@ import FeatureCard from "../Components/FeatureCard";
 import EventCard from "../Components/EventCard";
 
 function Home() {
-  const eventImages = [
-    { src: "/images/coming.png", link: "#" },
-    { src: "/images/coming.png", link: "#" },
-    { src: "/images/coming.png", link: "#" },
+  const serviceEvents = [
+    {
+      src: "/images/coming.png",
+      link: "",
+      eventType: "Airdrop",
+      title: "First Token Airdrop Campaign",
+      date: "stay tuned",
+      description: "starts soon",
+    },
+    {
+      src: "/images/coming.png",
+      link: "",
+      eventType: "Project Launch",
+      title: " Blockchain Testing (Testnet)",
+      date: "stay tuned",
+      description: "starts soon",
+    },
+    {
+      src: "/images/coming.png",
+      link: "",
+      eventType: "Sale",
+      title: "Token Sale: Limited Time Offer",
+      date: "stay tuned",
+      description: "starts soon",
+    },
   ];
+
+  const [currentEventIndex, setCurrentEventIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentEventIndex((prevIndex) => (prevIndex + 1) % serviceEvents.length);
+    }, 5000); // Change event every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup interval on component unmount
+  }, [serviceEvents.length]);
 
   const features = [
     {
@@ -71,18 +102,28 @@ function Home() {
       {/* Running Events Section */}
       <BoxReveal animationDuration="1s" triggerOffset={150}>
         <section className="running-event">
-          <h2 className="section-title">Running Events</h2>
-          <div className="marquee">
-            <div className="marquee-content">
-              {eventImages.map((image, index) => (
-                <EventCard key={index} src={image.src} link={image.link} />
-              ))}
-              {eventImages.map((image, index) => (
-                <EventCard
-                  key={`duplicate-${index}`}
-                  src={image.src}
-                  link={image.link}
-                />
+          <h2 className="section-title">Service Events</h2>
+          <div className="event-carousel">
+            <div
+              className="event-card-wrapper"
+              style={{
+                transform: `translateX(-${currentEventIndex * 100}%)`,
+                transition: "transform 0.8s ease-in-out",
+                width: `${serviceEvents.length * 100}%`, // Adjust the wrapper width
+                display: "flex",
+              }}
+            >
+              {serviceEvents.map((event, index) => (
+                <div key={index} className="event-card-container" style={{ width: "100%" }}>
+                  <EventCard
+                    src={event.src}
+                    link={event.link}
+                    eventType={event.eventType}
+                    title={event.title}
+                    date={event.date}
+                    description={event.description}
+                  />
+                </div>
               ))}
             </div>
           </div>

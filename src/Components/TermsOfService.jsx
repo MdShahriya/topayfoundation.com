@@ -15,33 +15,102 @@ const termsOfServiceStyles = {
   paragraph: {
     fontSize: '1em',
     lineHeight: '1.6',
-  }
+  },
 };
 
 function TermsOfService() {
   return (
     <div style={termsOfServiceStyles.container}>
-      <h1 style={termsOfServiceStyles.heading}>Terms of Service</h1>
+      <h1 style={termsOfServiceStyles.heading}>Terms and Conditions</h1>
       <p style={termsOfServiceStyles.paragraph}>
-        Welcome to TOP FOUNDATION. These Terms of Service ("Terms") govern your use of our website. By accessing or using our website, you agree to be bound by these Terms.
+        Welcome to TOPAY FOUNDATION. These Terms and Conditions ("Terms") govern your access to and use of our website and services. By accessing or using our website, you agree to comply with and be bound by these Terms. If you do not agree with these Terms, please do not use our website.
       </p>
       <p style={termsOfServiceStyles.paragraph}>
-        <strong>1. Use of Our Services:</strong> You agree to use our website only for lawful purposes and in a manner that does not infringe on the rights of others.
+        <strong>1. Acceptance of Terms:</strong> By using our website, you confirm that you are at least 18 years old or have the consent of a legal guardian to use our services. You agree to use the website in accordance with all applicable laws and regulations.
       </p>
       <p style={termsOfServiceStyles.paragraph}>
-        <strong>2. Intellectual Property:</strong> All content on our website, including text, graphics, and logos, is the property of TOP FOUNDATION and is protected by intellectual property laws.
+        <strong>2. Intellectual Property Rights:</strong> All content on this website, including but not limited to text, graphics, logos, and software, is the property of TOPAY FOUNDATION and protected under applicable copyright and trademark laws. Unauthorized use of any content is strictly prohibited.
       </p>
       <p style={termsOfServiceStyles.paragraph}>
-        <strong>3. User Responsibilities:</strong> You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account.
+        <strong>3. User Accounts:</strong> If you create an account on our website, you are responsible for maintaining the security of your account credentials. You agree to notify us immediately of any unauthorized access or security breach related to your account.
       </p>
       <p style={termsOfServiceStyles.paragraph}>
-        <strong>4. Limitation of Liability:</strong> TOP FOUNDATION will not be liable for any indirect, incidental, or consequential damages arising out of your use of our website.
+        <strong>4. Prohibited Activities:</strong> You agree not to engage in any activity that:
+        <ul>
+          <li>Violates any applicable law or regulation.</li>
+          <li>Infringes on the rights of others, including intellectual property rights.</li>
+          <li>Introduces harmful code, such as viruses or malware.</li>
+          <li>Attempts to gain unauthorized access to our systems or services.</li>
+          <li>Engages in or promotes activities related to terrorism, money laundering, or other illicit activities.</li>
+        </ul>
       </p>
       <p style={termsOfServiceStyles.paragraph}>
-        <strong>5. Changes to Terms:</strong> We may update these Terms from time to time. We will notify you of any changes by posting the new Terms on our website.
+        <strong>5. Compliance with Blockchain Regulations:</strong> As a blockchain company, we are committed to adhering to the following regulations and standards:
+        <ul>
+          <li><strong>GDPR (General Data Protection Regulation):</strong> Ensuring the protection of user data and privacy for users in the European Union.</li>
+          <li><strong>AML (Anti-Money Laundering) Laws:</strong> Implementing measures to prevent and detect money laundering activities.</li>
+          <li><strong>KYC (Know Your Customer):</strong> Verifying the identity of our users to comply with financial regulations and prevent fraudulent activities.</li>
+          <li><strong>SEC Compliance:</strong> Adhering to securities laws for token offerings and blockchain-based financial products in applicable jurisdictions.</li>
+          <li><strong>Data Localization Laws:</strong> Storing and processing data in compliance with local data residency requirements.</li>
+          <li><strong>FATF Guidelines:</strong> Adhering to the Financial Action Task Force standards for global anti-money laundering and combating the financing of terrorism.</li>
+          <li><strong>ePrivacy Directive:</strong> Ensuring transparency and consent in electronic communications and cookies use.</li>
+          <li><strong>ISO/IEC 27001:</strong> Implementing international standards for information security management.</li>
+        </ul>
       </p>
       <p style={termsOfServiceStyles.paragraph}>
-        <strong>6. Contact Us:</strong> If you have any questions about these Terms, please contact us at contact@topayfoundation.com.
+        <strong>6. Responsibilities Regarding Data and Assets:</strong> As part of our commitment to security and compliance:
+        <ul>
+          <li>We ensure the secure storage of user data in compliance with applicable laws and industry standards.</li>
+          <li>Users are responsible for safeguarding their private keys and wallet credentials. TOPAY FOUNDATION cannot recover lost keys or funds.</li>
+          <li>We maintain comprehensive asset management policies to prevent unauthorized access, loss, or misuse of funds.</li>
+          <li>All transactions on our platform are final and irreversible to ensure the integrity of the blockchain.</li>
+          <li>Any detected activities related to terrorism or similar illicit conduct will be reported to the appropriate law enforcement agencies in compliance with international regulations.</li>
+        </ul>
+      </p>
+      <p style={termsOfServiceStyles.paragraph}>
+        <strong>7. Asset and Financial Compliance Laws:</strong> TOPAY FOUNDATION adheres to international financial and asset management regulations, including:
+        <ul>
+          <li><strong>Custodial Asset Standards:</strong> Ensuring compliance with global custodial asset regulations for safeguarding digital assets.</li>
+          <li><strong>Basel III:</strong> Aligning with international banking standards to ensure financial stability and transparency in asset management.</li>
+          <li><strong>MiCA (Markets in Crypto-Assets):</strong> Following EU regulations for the operation of crypto-asset services.</li>
+          <li><strong>Consumer Protection Laws:</strong> Protecting users from fraudulent or misleading financial activities.</li>
+        </ul>
+      </p>
+      <p style={termsOfServiceStyles.paragraph}>
+        <strong>8. Limitation of Liability:</strong> TOPAY FOUNDATION is not liable for any direct, indirect, incidental, or consequential damages arising from your use of our website or inability to access our services. Use of our website is at your own risk.
+      </p>
+      <p style={termsOfServiceStyles.paragraph}>
+        <strong>9. Privacy Policy:</strong> Your use of our website is also governed by our Privacy Policy, which explains how we collect, use, and protect your personal information. Please review the Privacy Policy carefully.
+      </p>
+      <p style={termsOfServiceStyles.paragraph}>
+        <strong>10. Modifications to Terms:</strong> TOPAY FOUNDATION reserves the right to update these Terms at any time without prior notice. Changes will be effective immediately upon posting on this page. It is your responsibility to review these Terms regularly.
+      </p>
+      <p style={termsOfServiceStyles.paragraph}>
+        <strong>11. Governing Law:</strong> These Terms are governed by and construed in accordance with the laws of Global Company. Any disputes arising from these Terms will be resolved exclusively in the courts of Global Company.
+      </p>
+      <p style={termsOfServiceStyles.paragraph}>
+        <strong>12. Termination:</strong> We reserve the right to terminate or suspend access to our website or services at our sole discretion, without notice, for conduct that we believe violates these Terms or is harmful to others. Additionally, we may implement a community-driven voting system for significant decisions, including service termination. The results of such votes will be transparently documented and shared with all stakeholders.
+      </p>
+      <p style={termsOfServiceStyles.paragraph}>
+        <strong>13. Blockchain-Specific Risks:</strong> Users acknowledge and accept the inherent risks associated with blockchain technology, including but not limited to:
+        <ul>
+          <li>Volatility in cryptocurrency values.</li>
+          <li>Regulatory changes that may impact services.</li>
+          <li>Security risks, including potential breaches or hacks.</li>
+          <li>Irreversible nature of blockchain transactions.</li>
+        </ul>
+      </p>
+      <p style={termsOfServiceStyles.paragraph}>
+        <strong>14. International Compliance:</strong> We comply with applicable international laws and regulations, including:
+        <ul>
+          <li><strong>UN Model Law on Electronic Commerce:</strong> Ensuring legal validity of digital transactions.</li>
+          <li><strong>OECD Guidelines:</strong> Following international principles for privacy and data protection.</li>
+          <li><strong>WIPO Copyright Treaty:</strong> Protecting intellectual property rights in digital environments.</li>
+          <li><strong>UNCITRAL Model Law:</strong> Adhering to standards for international trade laws in digital contracts and transactions.</li>
+        </ul>
+      </p>
+      <p style={termsOfServiceStyles.paragraph}>
+        <strong>15. Contact Us:</strong> For questions or concerns regarding these Terms, please contact us at <a href="mailto:contact@topayfoundation.com">contact@topayfoundation.com</a>
       </p>
     </div>
   );

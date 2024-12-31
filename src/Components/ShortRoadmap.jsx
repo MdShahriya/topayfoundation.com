@@ -4,7 +4,7 @@ import "../styles/ShortRoadmap.css";
 function ShortRoadmap() {
   const roadmapMilestones = [
     { phase: "Q4 2024", title: "Launch Website", isCompleted: true },
-    { phase: "Q1 2025", title: "Develop TOPAY Wallet", isCompleted: false },
+    { phase: "Q1 2025", title: "Develop TOPAYCHAIN & Wallet", isCompleted: false },
     { phase: "Q2 2025", title: "Expand Real Estate Partnerships", isCompleted: false },
     { phase: "Q3 2025", title: "Launch Mobile App", isCompleted: false },
   ];

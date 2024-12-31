@@ -27,45 +27,69 @@ function PrivacyPolicy() {
     <div style={privacyPolicyStyles.container}>
       <h1 style={privacyPolicyStyles.heading}>Privacy Policy</h1>
       <p style={privacyPolicyStyles.paragraph}>
-        At TOP FOUNDATION, we embrace a fully decentralized approach to data privacy. This Privacy Policy outlines how we handle information within our decentralized ecosystem. As a Web3 entity, we do not control or store personal data centrally. Instead, we focus on transparency and user empowerment. Please review this policy to understand how we operate within the decentralized framework.
+        Welcome to TOPAY FOUNDATION. This Privacy Policy outlines our commitment to transparency and user empowerment within our decentralized ecosystem. As a Web3 entity, we operate under principles of decentralization, ensuring users retain full ownership and control of their data. This policy provides an overview of how we handle information within our platform.
       </p>
       <p style={privacyPolicyStyles.paragraph}>
-        <span style={privacyPolicyStyles.strong}>1. Information Collection:</span> In our decentralized ecosystem, data collection practices are inherently different from traditional models. We do not collect or store personal data centrally. Instead:
+        <span style={privacyPolicyStyles.strong}>1. Information Collection:</span> In our decentralized framework, data collection operates differently compared to traditional systems. Specifically:
         <ul>
-          <li><strong>Decentralized Data:</strong> User interactions are managed on decentralized networks, and data, such as wallet addresses and transaction details, is recorded on the blockchain or distributed ledger technology.</li>
-          <li><strong>Metadata:</strong> We may gather non-personal metadata, such as network performance and transaction statistics, to improve the user experience.</li>
+          <li><strong>Decentralized Data:</strong> User interactions, including wallet addresses and transaction details, are recorded directly on blockchain or distributed ledger technology.</li>
+          <li><strong>Metadata:</strong> We may collect non-personal metadata, such as transaction statistics and network performance, to optimize our services.</li>
+          <li><strong>Third-Party Interactions:</strong> Any data shared with third-party decentralized applications (dApps) is governed by the privacy policies of those entities.</li>
         </ul>
       </p>
       <p style={privacyPolicyStyles.paragraph}>
-        <span style={privacyPolicyStyles.strong}>2. Use of Information:</span> Any data collected through decentralized means is used for:
+        <span style={privacyPolicyStyles.strong}>2. Use of Information:</span> Data collected through decentralized methods is utilized to:
         <ul>
-          <li>Enhancing and optimizing the performance of our decentralized applications (dApps).</li>
-          <li>Facilitating secure and transparent transactions and interactions.</li>
-          <li>Providing users with relevant updates and improvements directly through decentralized channels.</li>
+          <li>Enhance and improve our decentralized applications (dApps).</li>
+          <li>Facilitate secure, efficient, and transparent transactions and user interactions.</li>
+          <li>Deliver updates and service improvements through decentralized channels.</li>
+          <li>Support compliance with applicable regulations, including anti-money laundering (AML) and know your customer (KYC) requirements.</li>
         </ul>
       </p>
       <p style={privacyPolicyStyles.paragraph}>
-        <span style={privacyPolicyStyles.strong}>3. Disclosure of Information:</span> In a fully decentralized model, we do not have the capability to disclose personal data centrally. Information on decentralized networks is public and immutable:
+        <span style={privacyPolicyStyles.strong}>3. Disclosure of Information:</span> Due to our decentralized structure:
         <ul>
-          <li><strong>Public Records:</strong> Data recorded on the blockchain or distributed ledger is accessible by all participants within the network.</li>
-          <li><strong>No Centralized Disclosure:</strong> We do not have the capacity to disclose information beyond the decentralized network’s protocols.</li>
+          <li><strong>Public Records:</strong> Data recorded on blockchain or distributed ledgers is publicly accessible within the network.</li>
+          <li><strong>No Centralized Disclosure:</strong> We do not have access to disclose personal data outside of what is inherent to decentralized protocols.</li>
+          <li><strong>Regulatory Compliance:</strong> In cases of legal or regulatory requests, we comply by facilitating access to relevant public blockchain data.</li>
         </ul>
       </p>
       <p style={privacyPolicyStyles.paragraph}>
-        <span style={privacyPolicyStyles.strong}>4. Security:</span> We leverage decentralized technologies to enhance security:
+        <span style={privacyPolicyStyles.strong}>4. Security Measures:</span> Security is intrinsic to our decentralized technology:
         <ul>
-          <li><strong>Blockchain Security:</strong> Transactions and data are secured through cryptographic algorithms and consensus mechanisms inherent to blockchain technology.</li>
-          <li><strong>User Control:</strong> Users have control over their own data and can manage their privacy settings through their decentralized wallets.</li>
+          <li><strong>Blockchain Security:</strong> Transactions are secured using cryptographic algorithms and consensus mechanisms.</li>
+          <li><strong>User Responsibility:</strong> Users maintain full control of their private keys and wallet credentials. The security of these assets rests with the user.</li>
+          <li><strong>Smart Contract Audits:</strong> We implement rigorous audits of smart contracts to ensure secure and reliable operation.</li>
         </ul>
       </p>
       <p style={privacyPolicyStyles.paragraph}>
-        <span style={privacyPolicyStyles.strong}>5. Decentralization and Data Ownership:</span> As a Web3 entity, we do not hold or control personal data centrally. You retain full ownership of your data. Interactions and transactions occur directly on decentralized networks, giving you control and transparency over your information.
+        <span style={privacyPolicyStyles.strong}>5. Data Ownership and Decentralization:</span> As part of our Web3 commitment:
+        <ul>
+          <li>Users retain full ownership of their data and assets.</li>
+          <li>All interactions occur directly on decentralized networks, ensuring transparency and control.</li>
+          <li>We prioritize user sovereignty, enabling full control over data sharing and interactions.</li>
+        </ul>
       </p>
       <p style={privacyPolicyStyles.paragraph}>
-        <span style={privacyPolicyStyles.strong}>6. Changes to This Policy:</span> We may update this Privacy Policy to reflect changes in our decentralized operations. Updates will be communicated through decentralized channels, and we encourage you to review this policy periodically to stay informed about our practices.
+        <span style={privacyPolicyStyles.strong}>6. Policy Updates:</span> We may revise this Privacy Policy as our decentralized ecosystem evolves. Any updates will be communicated transparently through our decentralized channels. We encourage regular review of this policy to stay informed about our practices.
       </p>
       <p style={privacyPolicyStyles.paragraph}>
-        <span style={privacyPolicyStyles.strong}>7. Contact Us:</span> For any inquiries or concerns about this Privacy Policy, please reach out to us via decentralized communication channels or email at <a href="mailto:contact@topayfoundation.com">contact@topayfoundation.com</a>.
+        <span style={privacyPolicyStyles.strong}>7. User Rights and Transparency:</span> As a user-centric platform:
+        <ul>
+          <li>Users have the right to access their data stored on the blockchain.</li>
+          <li>Transparency is maintained through open access to transaction histories and interactions on decentralized networks.</li>
+          <li>Users can choose to engage with or disconnect from specific dApps at their discretion.</li>
+        </ul>
+      </p>
+      <p style={privacyPolicyStyles.paragraph}>
+        <span style={privacyPolicyStyles.strong}>8. Third-Party Applications:</span> When interacting with third-party decentralized applications through our platform:
+        <ul>
+          <li>Users are encouraged to review the privacy policies of these third-party applications.</li>
+          <li>We are not responsible for the data handling practices of external dApps.</li>
+        </ul>
+      </p>
+      <p style={privacyPolicyStyles.paragraph}>
+        <span style={privacyPolicyStyles.strong}>9. Contact Information:</span> For questions or concerns about this Privacy Policy, you may reach out via decentralized communication channels or email at <a href="mailto:contact@topayfoundation.com">contact@topayfoundation.com</a>.
       </p>
     </div>
   );

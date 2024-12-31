@@ -7,6 +7,8 @@ import './styles/App.css';
 import ProofcoinPage from './pages/Proofcoin';
 import Socialmedia from './pages/Socialmedia';
 import BackToTopButton from './Components/BackToTopButton';
+import ScrollToTop from './Components/ScrollToTop';
+import Loading from './Components/Loading';
 
 // Import pages using dynamic imports
 const Home = React.lazy(() => import('./pages/Home'));
@@ -23,7 +25,8 @@ function App() {
     <div className="page-container">
       <Header />
       <div className="content">
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loading />}>
+        <ScrollToTop />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
