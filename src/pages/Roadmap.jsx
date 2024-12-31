@@ -13,8 +13,8 @@ function Roadmap() {
       phase: "Phase 1 – Foundation and Development",
       date: "Q4 2024 - Q1 2025",
       tasks: [
-        { description: "Research and development of Topex’s proprietary blockchain. (launch Testnet Season)", isTicked: false },
-        { description: "Initial development of the Topex Wallet and Topex Pay systems.", isTicked: false },
+        { description: "Research and development of TOPAY’s proprietary blockchain. (launch Testnet Season)", isTicked: false },
+        { description: "Initial development of the TOPAY Wallet and TOPAY Pay systems.", isTicked: false },
         { description: "Establishment of partnerships within the real estate sector.", isTicked: false },
       ],
     },
@@ -22,9 +22,9 @@ function Roadmap() {
       phase: "Phase 2 – Platform Launch and Real Estate Integration",
       date: "Q2 2025 - Q3 2025",
       tasks: [
-        { description: "Research and development of Topex’s proprietary blockchain. (End Testnet Season & Launch Blockchain)", isTicked: false },
-        { description: "Launch Topex Wallet with basic functionality.", isTicked: false },
-        { description: "Rollout Topex Pay system with pilot integration in real estate.", isTicked: false },
+        { description: "Research and development of TOPAY’s proprietary blockchain. (End Testnet Season & Launch Blockchain)", isTicked: false },
+        { description: "Launch TOPAY Wallet with basic functionality.", isTicked: false },
+        { description: "Rollout TOPAY Pay system with pilot integration in real estate.", isTicked: false },
         { description: "Community-building initiatives and education campaigns on Web 3.0.", isTicked: false },
       ],
     },
@@ -32,8 +32,8 @@ function Roadmap() {
       phase: "Phase 3 – Token Launch and Full Platform Expansion",
       date: "Q4 2025 - Q1 2026",
       tasks: [
-        { description: "Launch Topex Utility Token.", isTicked: false },
-        { description: "Expand Topex Pay to additional sectors.", isTicked: false },
+        { description: "Launch TOPAY Utility Token.", isTicked: false },
+        { description: "Expand TOPAY Pay to additional sectors.", isTicked: false },
         { description: "Introduce staking and governance features.", isTicked: false },
       ],
     },
@@ -43,7 +43,7 @@ function Roadmap() {
       tasks: [
         { description: "Host Web 3.0 workshops and tutorials.", isTicked: false },
         { description: "Expand educational resources for non-technical users.", isTicked: false },
-        { description: "Develop next-generation features for Topex Wallet and blockchain.", isTicked: false },
+        { description: "Develop next-generation features for TOPAY Wallet and blockchain.", isTicked: false },
       ],
     },
   ];

@@ -42,16 +42,16 @@ function Footer() {
           <a href="https://www.linkedin.com/company/105530643/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </a>
-          <a href="https://t.me/TOPEXfoundation" target="_blank" rel="noopener noreferrer">
+          <a href="https://t.me/TOPAYfoundation" target="_blank" rel="noopener noreferrer">
             <FaTelegram />
           </a>
-          <a href="https://github.com/TOPEX-FOUNDATION" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/TOPAY-FOUNDATION" target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </a>
-          <a href="https://x.com/TOPEXFoundation" target="_blank" rel="noopener noreferrer">
+          <a href="https://x.com/TOPAYFoundation" target="_blank" rel="noopener noreferrer">
             <FaTwitter />
           </a>
-          <a href="https://medium.com/@TOPEXfoundation" target="_blank" rel="noopener noreferrer">
+          <a href="https://medium.com/@TOPAYfoundation" target="_blank" rel="noopener noreferrer">
             <FaMedium />
           </a>
         </div>
