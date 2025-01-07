@@ -9,26 +9,19 @@ import EventCard from "../Components/EventCard";
 function Home() {
   const serviceEvents = [
     {
-      src: "/images/coming.png",
+      src: "/images/walletevent.png",
       link: "",
-      eventType: "Airdrop",
-      title: "First Token Airdrop Campaign",
+      eventType: "App Launch",
+      title: "Topay wallet: start your web3 journey in traditional way",
       date: "stay tuned",
       description: "starts soon",
     },
+    
     {
-      src: "/images/coming.png",
+      src: "/images/swapevent.png",
       link: "",
-      eventType: "Project Launch",
-      title: " Blockchain Testing (Testnet)",
-      date: "stay tuned",
-      description: "starts soon",
-    },
-    {
-      src: "/images/coming.png",
-      link: "",
-      eventType: "Sale",
-      title: "Token Sale: Limited Time Offer",
+      eventType: "App Launch",
+      title: "Topay swap: start your web3 journey in traditional way",
       date: "stay tuned",
       description: "starts soon",
     },

@@ -51,7 +51,7 @@ function Footer() {
           <a href="https://x.com/TOPAYFoundation" target="_blank" rel="noopener noreferrer">
             <FaTwitter />
           </a>
-          <a href="https://medium.com/@TOPAYfoundation" target="_blank" rel="noopener noreferrer">
+          <a href="https://medium.com/@topayfoundation" target="_blank" rel="noopener noreferrer">
             <FaMedium />
           </a>
         </div>

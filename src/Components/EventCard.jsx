@@ -38,14 +38,14 @@ const styles = {
     margin: "5px", // Add subtle space around the card
     backgroundSize: "cover",
     backgroundPosition: "center",
-    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)", // Subtle shadow for depth
+    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.5)", // Subtle shadow for depth
     color: "#fff",
   },
   blurredSection: {
     width: "50%", // Occupies the left half of the card
     height: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.5)", // Semi-transparent black background
-    backdropFilter: "blur(10px)", // Blur effect for the left half
+    backgroundColor: "rgba(0, 0, 0, 0.1)", // Semi-transparent black background
+    backdropFilter: "blur(2px)", // Blur effect for the left half
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
@@ -60,24 +60,36 @@ const styles = {
   eventType: {
     fontSize: "0.9em",
     fontWeight: "bold",
-    color: "#f39c12",
+    color: "#1d71f0",
+    padding: "5px",
     marginBottom: "10px",
     textTransform: "uppercase",
+    borderRadius: "5px",
+    backgroundColor: "rgba(255, 255, 255, 1)",
   },
   title: {
     fontSize: "1.6em",
     marginBottom: "15px",
-    color: "#fff",
+    color: "#000",
+    borderRadius: "10px",
+    padding: "5px",
+    backgroundColor: "rgba(255, 255, 255, 1)",
   },
   date: {
     fontSize: "1.2em",
     marginBottom: "10px",
-    color: "#ddd",
+    color: "#333",
+    borderRadius: "10px",
+    padding: "5px",
+    backgroundColor: "rgba(255, 255, 255, 1)",
   },
   description: {
     fontSize: "1.1em",
     marginBottom: "20px",
-    color: "#ccc",
+    color: "#333",
+    borderRadius: "10px",
+    padding: "5px",
+    backgroundColor: "rgba(255, 255, 255, 1)",
   },
   button: {
     display: "inline-block",
