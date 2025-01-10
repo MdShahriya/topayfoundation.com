@@ -1,33 +1,33 @@
-/* Roadmap section styling */
+/* Roadmap Section Styling */
 .about-roadmap {
-  padding: 50px 15px; /* Reduced padding for smaller screens */
+  padding: 50px 15px;
   background: rgb(255, 255, 255);
   position: relative;
-  margin: 0 auto; /* Center the section */
-  max-width: 1200px; /* Maintain alignment */
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
-/* Roadmap heading styling */
+/* Roadmap Heading Styling */
 .roadmap-heading {
-  font-size: 2.3rem; /* Adjusted for better fit */
+  font-size: 2.3rem;
   font-weight: bold;
   color: #333;
   text-align: center;
-  margin-bottom: 35px; /* Slightly reduced spacing */
+  margin-bottom: 35px;
 }
 
-/* Roadmap container styling */
+/* Roadmap Container Styling */
 .roadmap-container {
   position: relative;
   width: 100%;
 }
 
-/* Roadmap step styling */
+/* Roadmap Step Styling */
 .roadmap-step {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px; /* Reduced spacing for compact layout */
+  margin-bottom: 40px;
   width: 100%;
   position: relative;
 }
@@ -44,11 +44,11 @@
 
 .step-circle {
   width: 45px;
-  height: 45px; /* Adjusted size for smaller screens */
+  height: 45px;
   border-radius: 50%;
   background-color: #1d71f0;
   color: white;
-  font-size: 1.4rem; /* Adjusted font size */
+  font-size: 1.4rem;
   font-weight: bold;
   display: flex;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -62,78 +62,78 @@
 
 .step-content {
   background-color: #fff;
-  padding: 15px 20px; /* Adjusted padding for mobile responsiveness */
+  padding: 15px 20px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   flex: 1;
-  max-width: 40%; /* Slightly reduced width */
+  max-width: 40%;
   text-align: left;
 }
 
 .step-content h2 {
-  font-size: 1.6rem; /* Adjusted for better fit */
+  font-size: 1.6rem;
   margin-bottom: 8px;
   color: #333;
 }
 
 .step-content p {
-  font-size: 1rem; /* Slightly reduced size */
+  font-size: 1rem;
   line-height: 1.5;
   color: #555;
 }
 
-/* Responsive styling for tablet */
+/* Responsive Styling for Tablet */
 @media (max-width: 768px) {
   .roadmap-step {
-    flex-direction: column; /* Stack steps vertically */
+    flex-direction: column;
     align-items: center;
   }
 
   .step-content {
-    max-width: 90%; /* Take up most of the screen width */
-    text-align: center; /* Center-align text */
+    max-width: 90%;
+    text-align: center;
   }
 
   .step-circle {
-    position: relative; /* Move circle to the top of the step */
+    position: relative;
     left: 0;
     transform: none;
     margin-bottom: 20px;
   }
 
   .roadmap-container::before {
-    content: ''; /* Timeline vertical line for mobile */
+    content: '';
     position: absolute;
     left: 50%;
     width: 2px;
     height: 100%;
     background-color: #1d71f0;
-    z-index: -1; /* Place behind content */
+    z-index: -1;
   }
 }
 
-/* Responsive styling for small screens */
+/* Responsive Styling for Small Screens */
 @media (max-width: 480px) {
   .step-content h2 {
-    font-size: 1.4rem; /* Further reduce for small screens */
+    font-size: 1.4rem;
   }
 
   .step-content p {
-    font-size: 0.9rem; /* Adjust text size for readability */
+    font-size: 0.9rem;
   }
 
   .roadmap-heading {
-    font-size: 1.8rem; /* Adjust for smaller devices */
+    font-size: 1.8rem;
   }
 
   .step-circle {
     width: 35px;
-    height: 35px; /* Further reduce size */
-    font-size: 1rem; /* Adjust font size */
+    height: 35px;
+    font-size: 1rem;
   }
 
   .roadmap-container::before {
-    width: 1px; /* Thinner timeline line */
+    width: 1px;
     height: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -142,11 +142,11 @@
   }
 
   .roadmap-step {
-    margin-bottom: 30px; /* Slightly reduced spacing between steps */
+    margin-bottom: 30px;
   }
 
   .step-content {
-    padding: 10px 15px; /* Compact padding for smaller screens */
-    max-width: 95%; /* Maximize content width */
+    padding: 10px 15px;
+    max-width: 95%;
   }
 }

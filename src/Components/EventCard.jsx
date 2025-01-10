@@ -31,7 +31,7 @@ const styles = {
     display: "flex",
     height: "300px",
     width: "calc(100% - 10px)", // Leave 5px margin on each side
-    maxWidth: "800px",
+    maxWidth: "900px",
     borderRadius: "10px",
     overflow: "hidden",
     position: "relative",

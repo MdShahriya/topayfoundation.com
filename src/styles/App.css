@@ -4,6 +4,7 @@ html, body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   box-sizing: border-box;
+  font-size: 16px; /* Base font size for better scalability */
 }
 
 *,
@@ -21,21 +22,30 @@ html, body {
 
 .content {
   width: 100%;
-  max-width: 75em; /* 1200px to em */
-  padding: 1.25em; /* 20px to em */
+  max-width: 75em; /* 1200px */
+  padding: 1.25em; /* 20px */
   flex: 1;
 }
 
-@media (min-width: 48em) { /* 768px to em */
+@media (max-width: 48em) { /* Below 768px */
+  html {
+    font-size: 14px; /* Slightly smaller base font size */
+  }
   .content {
-    padding-left: 1.25em; /* 20px to em */
-    padding-right: 1.25em; /* 20px to em */
+    padding: 1em; /* Reduce padding for smaller screens */
   }
 }
 
-@media (min-width: 75em) { /* 1200px to em */
+@media (min-width: 48em) and (max-width: 75em) { /* Between 768px and 1200px */
   .content {
-    padding-left: 1em; /* 40px to em */
-    padding-right: 1em; /* 40px to em */
+    padding-left: 1.25em; /* 20px */
+    padding-right: 1.25em; /* 20px */
+  }
+}
+
+@media (min-width: 75em) { /* Above 1200px */
+  .content {
+    padding-left: 2.5em; /* 40px */
+    padding-right: 2.5em; /* 40px */
   }
 }

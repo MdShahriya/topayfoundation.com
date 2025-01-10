@@ -1,0 +1,117 @@
+/* Base container styling */
+.invest-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+  }
+  
+  .invest-header h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .invest-header p {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #777;
+  }
+  
+  /* Section for details */
+  .invest-section {
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+  }
+  
+  .invest-details {
+    margin-bottom: 30px;
+  }
+  
+  .invest-details h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #4CAF50;
+    padding-bottom: 10px;
+  }
+  
+  .invest-details ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .invest-details li {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #555;
+  }
+  
+  .invest-details i {
+    margin-right: 10px;
+    color: #4CAF50;
+  }
+  
+  /* Button container */
+  .invest-button-container {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .invest-button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  }
+  
+  .invest-button:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+  }
+  
+  .invest-button:active {
+    transform: translateY(2px);
+  }
+  
+  /* Mobile Responsiveness */
+  @media (max-width: 600px) {
+    .invest-header h1 {
+      font-size: 24px;
+    }
+  
+    .invest-header p {
+      font-size: 14px;
+    }
+  
+    .invest-details h2 {
+      font-size: 20px;
+    }
+  
+    .invest-details ul {
+      padding-left: 15px;
+    }
+  
+    .invest-details li {
+      font-size: 12px;
+    }
+  
+    .invest-button {
+      padding: 10px 20px;
+      font-size: 14px;
+      width: 100%;
+    }
+  }
+  

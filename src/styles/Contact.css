@@ -1,7 +1,7 @@
 /* Contact section styling */
 .contact-section {
-  padding: 50px 15px; /* Reduced padding for smaller screens */
-  background:  rgb(255, 255, 255);
+  padding: 50px 15px;
+  background: rgb(255, 255, 255);
   text-align: center;
 }
 
@@ -11,7 +11,7 @@
 }
 
 .contact-heading {
-  font-size: 2.3rem; /* Adjusted size for smaller screens */
+  font-size: 2.3rem;
   font-weight: 700;
   margin-bottom: 20px;
   color: #333;
@@ -19,8 +19,8 @@
 }
 
 .contact-paragraph {
-  font-size: 1.1rem; /* Slightly smaller for mobile */
-  margin-bottom: 30px; /* Reduced margin for compact layout */
+  font-size: 1.1rem;
+  margin-bottom: 30px;
   color: #555;
   line-height: 1.5;
   font-family: 'Arial', sans-serif;
@@ -30,17 +30,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px; /* Reduced gap for tighter spacing */
+  gap: 10px;
 }
 
 .social-button {
-  padding: 10px 20px; /* Adjusted padding for smaller screens */
-  font-size: 1rem; /* Slightly smaller font size */
+  padding: 10px 20px;
+  font-size: 1rem;
   color: #fff;
   border-radius: 8px;
   text-decoration: none;
   transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-  min-width: 110px; /* Adjusted width */
+  min-width: 110px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -85,7 +85,7 @@
 }
 
 .email-label {
-  font-size: 1.1rem; /* Adjusted size */
+  font-size: 1.1rem;
   margin-bottom: 5px;
 }
 
@@ -106,42 +106,42 @@
   }
 
   .contact-paragraph {
-    font-size: 1rem; /* Adjusted font size */
-    margin-bottom: 20px; /* Reduced margin for better fit */
+    font-size: 1rem;
+    margin-bottom: 20px;
   }
 
   .social-button {
-    padding: 8px 15px; /* Compact padding for smaller screens */
-    font-size: 0.9rem; /* Slightly smaller text */
-    min-width: 100px; /* Adjusted width */
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    min-width: 100px;
   }
 }
 
 /* Responsive styling for very small screens */
 @media (max-width: 480px) {
   .contact-heading {
-    font-size: 1.8rem; /* Further reduced size for smaller devices */
+    font-size: 1.8rem;
   }
 
   .contact-paragraph {
-    font-size: 0.95rem; /* Compact font size for readability */
+    font-size: 0.95rem;
   }
 
   .social-button {
-    padding: 8px 12px; /* Further compacted for small screens */
+    padding: 8px 12px;
     font-size: 0.85rem;
-    min-width: 90px; /* Reduced width */
+    min-width: 90px;
   }
 
   .social-media {
-    gap: 8px; /* Tighter spacing between buttons */
+    gap: 8px;
   }
 
   .email-label {
-    font-size: 1rem; /* Reduced for better fit */
+    font-size: 1rem;
   }
 
   .email-link {
-    font-size: 0.9rem; /* Adjusted font size */
+    font-size: 0.9rem;
   }
 }

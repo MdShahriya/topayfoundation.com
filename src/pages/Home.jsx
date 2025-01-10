@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"; // Import useState and useEffect
+import React, { useState, useEffect, startTransition } from "react"; // Added startTransition
 import "../styles/Home.css";
 import BoxReveal from "./BoxReveal";
 import ShortRoadmap from "../Components/ShortRoadmap";
@@ -9,6 +9,14 @@ import EventCard from "../Components/EventCard";
 function Home() {
   const serviceEvents = [
     {
+      src: "/images/appevent.png",
+      link: "",
+      eventType: "App Launch",
+      title: "Topay Mobile App: start your web3 journey in traditional way",
+      date: "stay tuned",
+      description: "starts soon",
+    },
+    {
       src: "/images/walletevent.png",
       link: "",
       eventType: "App Launch",
@@ -16,7 +24,6 @@ function Home() {
       date: "stay tuned",
       description: "starts soon",
     },
-    
     {
       src: "/images/swapevent.png",
       link: "",
@@ -31,7 +38,9 @@ function Home() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentEventIndex((prevIndex) => (prevIndex + 1) % serviceEvents.length);
+      startTransition(() => { // Ensure smooth transition using startTransition
+        setCurrentEventIndex((prevIndex) => (prevIndex + 1) % serviceEvents.length);
+      });
     }, 5000); // Change event every 5 seconds
 
     return () => clearInterval(interval); // Cleanup interval on component unmount
@@ -95,7 +104,7 @@ function Home() {
       {/* Running Events Section */}
       <BoxReveal animationDuration="1s" triggerOffset={150}>
         <section className="running-event">
-          <h2 className="section-title">Service Events</h2>
+          <h2 className="section-title">Upcoming Events</h2>
           <div className="event-carousel">
             <div
               className="event-card-wrapper"

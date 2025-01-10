@@ -9,6 +9,8 @@ import Socialmedia from './pages/Socialmedia';
 import BackToTopButton from './Components/BackToTopButton';
 import ScrollToTop from './Components/ScrollToTop';
 import Loading from './Components/Loading';
+import License from './pages/License';
+import Invest from './pages/Invest';
 
 // Import pages using dynamic imports
 const Home = React.lazy(() => import('./pages/Home'));
@@ -36,8 +38,10 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/coins" element={<Coins />} />
-            <Route path="/Proofcoin" element={<ProofcoinPage />} />
-            <Route path="/Socialmedia" element={<Socialmedia />} />
+            <Route path="/proofcoin" element={<ProofcoinPage />} />
+            <Route path="/socialmedia" element={<Socialmedia />} />
+            <Route path="/licenses" element={<License />} />
+            <Route path="/invest" element={<Invest />} />
           </Routes>
         </Suspense>
         <BackToTopButton />

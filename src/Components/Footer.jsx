@@ -13,6 +13,7 @@ function Footer() {
           {/*<Link to="">Get a Wallet</Link>*/}
           {/*<Link to="">Get TOPAY</Link>*/}
           <Link to="/roadmap">Roadmap</Link>
+          <Link to="/invest">Invest us</Link>
         </div>
 
         {/* Resources Section */}
@@ -23,6 +24,7 @@ function Footer() {
             WhitePaper
           </a>
           {/*<Link to="">Blog</Link>*/}
+          <Link to="/licenses">Licenses & Registrations</Link>
           <Link to="/privacy-policy">PrivacyPolicy</Link>
           <Link to="/terms-of-service">Terms and Conditions</Link>
         </div>

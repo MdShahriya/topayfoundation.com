@@ -2,7 +2,7 @@
 html,
 body {
   height: 100%;
-  background:  rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
   font-family: 'Roboto', sans-serif;
   margin: 0;
   box-sizing: border-box;
@@ -27,9 +27,9 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5em;
-  max-width: 75em; /* Matches the main container width */
+  max-width: 75em;
   margin: auto;
-  padding: 2em 1.25em; /* Top/bottom and left/right padding */
+  padding: 2em 1.25em;
 }
 
 .footer-section {
@@ -61,41 +61,41 @@ body {
 /* Footer Bottom Styling */
 .footer-bottom {
   display: flex;
-  justify-content: space-between; /* Distribute elements evenly */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 75em; /* Matches your layout container width */
-  margin: auto; /* Centers the footer bottom in the container */
-  padding: 1em 1.25em; /* Consistent with layout padding */
-  border-top: 1px solid #ddd; /* Divider for clean separation */
+  max-width: 75em;
+  margin: auto;
+  padding: 1em 1.25em;
+  border-top: 1px solid #ddd;
 }
 
 .footer-logo {
   font-size: 1em;
   color: #333;
   font-weight: 500;
-  text-align: left; /* Ensure the text aligns naturally on the left side */
+  text-align: left;
 }
 
 .footer-link {
-  color: #333; /* Blue color for the link */
-  text-decoration: none; /* Remove underline */
+  color: #333;
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-link:hover {
-  color: #1d71f0; /* Darker blue on hover */
+  color: #1d71f0;
 }
 
 .footer-icons {
   display: flex;
-  gap: 0.75em; /* Spacing between icons */
+  gap: 0.75em;
 }
 
 .footer-icons a {
   color: #666;
   font-size: 1.5em;
-  transition: color 0.3s ease; /* Smooth hover transition */
+  transition: color 0.3s ease;
 }
 
 .footer-icons a:hover {
@@ -105,44 +105,44 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
   .footer-content {
-    flex-direction: column; /* Stack content vertically */
+    flex-direction: column;
     align-items: center;
-    gap: 0; /* Remove gaps between sections */
-    padding: 1.5em 1em; /* Adjust padding */
+    gap: 0;
+    padding: 1.5em 1em;
   }
 
   .footer-section {
-    flex: 1 1 100%; /* Full width for sections */
-    min-width: auto; /* Adjust width for flexibility */
-    margin: 0; /* Remove gaps */
+    flex: 1 1 100%;
+    min-width: auto;
+    margin: 0;
   }
 
   .footer-section h4 {
-    font-size: 1.1em; /* Slightly smaller text for titles */
+    font-size: 1.1em;
   }
 
   .footer-section a {
-    font-size: 1em; /* Reduce link size for smaller screens */
-    padding: 0.5em 0; /* Add padding for touch-friendly tap areas */
-    margin: 0; /* Remove gaps */
+    font-size: 1em;
+    padding: 0.5em 0;
+    margin: 0;
   }
 
   .footer-bottom {
-    flex-direction: column; /* Stack text and icons vertically */
+    flex-direction: column;
     align-items: center;
-    gap: 0; /* Remove gaps */
-    text-align: center; /* Center-align text for smaller screens */
-    padding: 1em 0.75em; /* Reduce padding */
+    gap: 0;
+    text-align: center;
+    padding: 1em 0.75em;
   }
 
   .footer-logo {
-    font-size: 1.1em; /* Smaller logo size */
-    text-align: center; /* Center-align logo */
+    font-size: 1.1em;
+    text-align: center;
   }
 
   .footer-icons {
-    justify-content: center; /* Center-align icons */
-    font-size: 1em; /* Adjust icon size for smaller screens */
-    gap: 25px; /* Remove gaps between icons */
+    justify-content: center;
+    font-size: 1em;
+    gap: 25px;
   }
 }

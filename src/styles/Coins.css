@@ -2,14 +2,14 @@
 .coins-page {
   padding: 20px;
   background: rgb(255, 255, 255);
-  margin: 0 auto; /* Center the content */
-  max-width: 1200px; /* Set a max width for larger screens */
-  text-align: center; /* Center align text */
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center;
 }
 
 /* Center the title */
 .coins-page h1 {
-  margin-bottom: 20px; /* Space below the title */
+  margin-bottom: 20px;
 }
 
 /* Coin list with added padding */
@@ -17,7 +17,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  justify-content: center; /* Center align items */
+  justify-content: center;
 }
 
 /* Style for each coin item */
@@ -34,7 +34,7 @@
 }
 
 .coin-item:hover {
-  background-color: #f1f1f1; /* Slightly darker background on hover */
+  background-color: #f1f1f1;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -47,7 +47,7 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  margin-top: 10px; /* Margin to ensure space above the button */
+  margin-top: 10px;
 }
 
 .details:hover {
@@ -55,27 +55,26 @@
 }
 
 .details.disabled {
-  background-color: #7b7b7b; /* Light gray background */
-  color: #fffdfd; /* Dark gray text */
-  cursor: not-allowed; /* Not-allowed cursor */
-  opacity: 0.6; /* Make it slightly transparent */
-  border: none; /* Remove border */
+  background-color: #7b7b7b;
+  color: #fffdfd;
+  cursor: not-allowed;
+  opacity: 0.6;
+  border: none;
 }
 
 .details.disabled:hover {
-  background-color: #7b7b7b; /* Same color on hover */
+  background-color: #7b7b7b;
 }
-
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .coin-item {
-    width: 90%; /* Adjust width on smaller screens */
+    width: 90%;
   }
 }
 
 @media (max-width: 480px) {
   .coin-item {
-    width: 95%; /* Further adjust width on very small screens */
+    width: 95%;
   }
 }
