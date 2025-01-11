@@ -6,9 +6,16 @@ const Invest = () => {
     <div className="invest-container">
       <header className="invest-header">
         <h1>Investment Information</h1>
-        <p>Read the risks and benefits before making an investment.</p>
       </header>
       <section className="invest-section">
+        
+      <div className="invest-details">
+          <h2>Why Investors Choose Us</h2>
+          <ul>
+            <li> We offer trustworthy leadership with a proven track record of successful investments, transparent and ethical business practices, and personalized support for each investor.</li>
+          </ul>
+        </div>
+
         <div className="invest-details">
           <h2>Benefits of Investing with Us</h2>
           <ul>
@@ -39,10 +46,17 @@ const Invest = () => {
           </ul>
         </div>
 
-        <div className="invest-button-container">
+        <div className="invest-details">
+        <h2>How to Invest</h2>
+          <ul>
+            <li><i className="fas fa-pencil-alt"></i> Fill out the investment form to express interest.</li>
+            <li><i className="fas fa-handshake"></i> Our team will contact you through your given information.</li>
+          <div className="invest-button-container">
           <a href="https://forms.gle/sgn4SiMUk2KYLqUMA" target="_blank" rel="noopener noreferrer">
-            <button className="invest-button">Invest Now</button>
+            <button className="invest-button">Invest Form</button>
           </a>
+          </div>
+        </ul>
         </div>
       </section>
     </div>
