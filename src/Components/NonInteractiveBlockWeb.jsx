@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import '../styles/OptimizedBlockWeb.css'; // External CSS file
 
 const OptimizedBlockWeb = () => {
   const canvasRef = useRef(null);
@@ -128,7 +129,7 @@ const OptimizedBlockWeb = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} style={{ position: "fixed", top: 0, left: 0, zIndex: -1 }} />;
+  return <canvas ref={canvasRef} className="canvas-background" />;
 };
 
 export default OptimizedBlockWeb;

@@ -1,0 +1,72 @@
+/* External CSS for event card */
+.event-card {
+    display: flex;
+    height: 300px;
+    width: calc(100% - 10px); /* Leave 5px margin on each side */
+    max-width: 900px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin: 5px; /* Add subtle space around the card */
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    color: #fff;
+  }
+  
+  .blurred-section {
+    width: 50%; /* Occupies the left half of the card */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black background */
+    backdrop-filter: blur(2px); /* Blur effect for the left half */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .clear-section {
+    width: 50%; /* Occupies the right half of the card */
+    height: 100%;
+  }
+  
+  .event-type {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #1d71f0;
+    padding: 5px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  
+  .title {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #000;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  
+  .date {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  
+  .description {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #333;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 1);
+  }
+  

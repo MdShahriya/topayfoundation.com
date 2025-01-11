@@ -4,36 +4,26 @@ import '../styles/Header.css';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false); 
+  const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef(null);
-  const location = useLocation(); // Get the current location
+  const location = useLocation();
 
-  const toggleMenu = () => {
-    setIsOpen((prevState) => !prevState);
-  };
+  const toggleMenu = () => setIsOpen(prev => !prev);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = event => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setIsOpen(false);
       }
     };
 
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+
     document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [menuRef]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
     window.addEventListener('scroll', handleScroll);
 
     return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
@@ -63,7 +53,7 @@ function Header() {
         <ul>
           {navLinks.map(
             (link) =>
-              link.path !== location.pathname && ( // Hide the current page's menu item
+              link.path !== location.pathname && (
                 <li key={link.path}>
                   <Link to={link.path} onClick={() => setIsOpen(false)}>
                     <strong>{link.label}</strong>

@@ -38,13 +38,11 @@ function Home() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      startTransition(() => { // Ensure smooth transition using startTransition
-        setCurrentEventIndex((prevIndex) => (prevIndex + 1) % serviceEvents.length);
-      });
+      setCurrentEventIndex((prevIndex) => (prevIndex + 1) % serviceEvents.length);
     }, 5000); // Change event every 5 seconds
-
+  
     return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, [serviceEvents.length]);
+  }, [serviceEvents]);  
 
   const features = [
     {

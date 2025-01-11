@@ -2,48 +2,59 @@ import React from "react";
 import "../styles/Roadmap.css";
 import BoxReveal from "./BoxReveal";
 
+// Format text with bold without using dangerouslySetInnerHTML
 function formatTextWithBold(text) {
   const regex = /\((.*?)\)/g; // Matches text inside parentheses
-  return text.replace(regex, (match, p1) => `(<strong>${p1}</strong>)`);
+  const parts = [];
+  let lastIndex = 0;
+
+  text.replace(regex, (match, p1, offset) => {
+    parts.push(text.substring(lastIndex, offset));
+    parts.push(<strong key={offset}>{p1}</strong>);
+    lastIndex = offset + match.length;
+    return match;
+  });
+
+  parts.push(text.substring(lastIndex)); // Add remaining text
+  return parts;
 }
 
 function Roadmap() {
   const roadmapPhases = [
     {
-      phase: "Phase 1 – Foundation and Development",
-      date: "Q4 2024 - Q1 2025",
+      phase: "Phase 1 – Foundation Building & Research",
+      date: "Q1 2025 - Q3 2025",
       tasks: [
-        { description: "Research and development of TOPAY’s proprietary blockchain. (launch Testnet Season)", isTicked: false },
-        { description: "Initial development of the TOPAY Wallet and TOPAY Pay systems.", isTicked: false },
-        { description: "Establishment of partnerships within the real estate sector.", isTicked: false },
+        { description: "Finalize mission, vision, and goals for Topay.", isTicked: false },
+        { description: "Publish a streamlined whitepaper to attract potential investors.", isTicked: false },
+        { description: "Start developing the blockchain core (focus on a minimal viable product).", isTicked: false },
       ],
     },
     {
-      phase: "Phase 2 – Platform Launch and Real Estate Integration",
-      date: "Q2 2025 - Q3 2025",
+      phase: "Phase 2 – Testnet Development (Fundraising Parallelly)",
+      date: "Q4 2025 - Q3 2026",
       tasks: [
-        { description: "Research and development of TOPAY’s proprietary blockchain. (End Testnet Season & Launch Blockchain)", isTicked: false },
-        { description: "Launch TOPAY Wallet with basic functionality.", isTicked: false },
-        { description: "Rollout TOPAY Pay system with pilot integration in real estate.", isTicked: false },
-        { description: "Community-building initiatives and education campaigns on Web 3.0.", isTicked: false },
+        { description: "Launch an early testnet to demonstrate proof of concept to stakeholders.", isTicked: false },
+        { description: "Begin small-scale testing with developers and early adopters.", isTicked: false },
+        { description: "Focus on community building and securing grants or additional funding.", isTicked: false },
       ],
     },
     {
-      phase: "Phase 3 – Token Launch and Full Platform Expansion",
-      date: "Q4 2025 - Q1 2026",
+      phase: "Phase 3 – Incremental Platform Rollout",
+      date: "Q4 2026 - Q4 2027",
       tasks: [
-        { description: "Launch TOPAY Utility Token.", isTicked: false },
-        { description: "Expand TOPAY Pay to additional sectors.", isTicked: false },
-        { description: "Introduce staking and governance features.", isTicked: false },
+        { description: "Launch Topay Wallet with basic functionality.", isTicked: false },
+        { description: "Roll out Topay Pay system in select pilot sectors (e.g., real estate).", isTicked: false },
+        { description: "Implement staking and governance features.", isTicked: false },
       ],
     },
     {
-      phase: "Phase 4 – Education and Community Building",
-      date: "Q2 2026 and beyond",
+      phase: "Phase 4 – Full Ecosystem Expansion",
+      date: "2028 and beyond",
       tasks: [
-        { description: "Host Web 3.0 workshops and tutorials.", isTicked: false },
-        { description: "Expand educational resources for non-technical users.", isTicked: false },
-        { description: "Develop next-generation features for TOPAY Wallet and blockchain.", isTicked: false },
+        { description: "Scale partnerships with global organizations and industries.", isTicked: false },
+        { description: "Expand DeFi tools and integrate cross-chain interoperability.", isTicked: false },
+        { description: "Transition to a fully decentralized governance model.", isTicked: false },
       ],
     },
   ];
@@ -61,11 +72,7 @@ function Roadmap() {
                 <ul>
                   {phase.tasks.map((task, idx) => (
                     <li key={idx} className={task.isTicked ? "ticked" : ""}>
-                      <span
-                        dangerouslySetInnerHTML={{
-                          __html: formatTextWithBold(task.description),
-                        }}
-                      />
+                      {formatTextWithBold(task.description)}
                     </li>
                   ))}
                 </ul>

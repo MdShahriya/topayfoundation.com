@@ -3,6 +3,7 @@
   font-family: 'Roboto Mono', monospace;
   background:  rgb(255, 255, 255);
   color: #222;
+  margin: 80px auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
