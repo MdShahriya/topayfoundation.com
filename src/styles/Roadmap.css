@@ -3,6 +3,7 @@
     padding: 50px 15px; /* Reduced padding for smaller screens */
     background:  rgb(255, 255, 255);
     color: #333;
+    margin: 80px auto;
     text-align: center;
     border-radius: 20px;
     position: relative;

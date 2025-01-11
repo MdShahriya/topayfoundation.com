@@ -1,5 +1,6 @@
 /* Basic styling for the Services section */
 .services {
+  margin: 80px auto;
   padding: 50px 20px; /* Reduced left and right padding for mobile screens */
   background: rgb(255, 255, 255);
   text-align: center;
