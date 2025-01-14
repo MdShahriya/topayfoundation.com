@@ -75,7 +75,7 @@ function Home() {
             </p>
           </div>
         </section>
-      </BoxReveal>
+
 
       {/* Features Section */}
         <section className="features">
@@ -123,6 +123,7 @@ function Home() {
             </div>
           </div>
         </section>
+        </BoxReveal>
     </div>
   );
 }
