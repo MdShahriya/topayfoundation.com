@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/Roadmap.css";
-import BoxReveal from "./BoxReveal";
 
 // Format text with bold without using dangerouslySetInnerHTML
 function formatTextWithBold(text) {
@@ -60,7 +59,7 @@ function Roadmap() {
   ];
 
   return (
-    <BoxReveal>
+    
       <section className="roadmap">
         <h2>Our Roadmap</h2>
         <div className="timeline">
@@ -81,7 +80,7 @@ function Roadmap() {
           ))}
         </div>
       </section>
-    </BoxReveal>
+    
   );
 }
 

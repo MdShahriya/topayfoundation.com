@@ -1,10 +1,9 @@
 import React from 'react';
 import '../styles/Services.css';
-import BoxReveal from './BoxReveal';
 
 function Services() {
   return (
-    <BoxReveal>
+    
     <section className="services">
       <div className="services-header">
         <h1>Our Services</h1>
@@ -40,7 +39,7 @@ function Services() {
           <p>Coins & Tokens that backed by <strong>TOPAY FOUNDATION</strong></p></a>
         </div>
       </div>
-    </section></BoxReveal>
+    </section>
   );
 }
 

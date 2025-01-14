@@ -78,7 +78,6 @@ function Home() {
       </BoxReveal>
 
       {/* Features Section */}
-      <BoxReveal animationDuration="1s" triggerOffset={150}>
         <section className="features">
           <h2 className="section-title">Why Choose Us?</h2>
           <div className="features-content">
@@ -92,15 +91,11 @@ function Home() {
             ))}
           </div>
         </section>
-      </BoxReveal>
 
       {/* Short Roadmap Section */}
-      <BoxReveal animationDuration="1s" triggerOffset={150}>
         <ShortRoadmap />
-      </BoxReveal>
 
       {/* Running Events Section */}
-      <BoxReveal animationDuration="1s" triggerOffset={150}>
         <section className="running-event">
           <h2 className="section-title">Upcoming Events</h2>
           <div className="event-carousel">
@@ -128,7 +123,6 @@ function Home() {
             </div>
           </div>
         </section>
-      </BoxReveal>
     </div>
   );
 }
