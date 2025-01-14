@@ -1,7 +1,7 @@
 /* Roadmap Section Styling */
 .roadmap {
-    padding: 50px 15px; /* Reduced padding for smaller screens */
-    background:  rgb(255, 255, 255);
+    padding: 50px 15px;
+    background: #fff;
     color: #333;
     margin: 80px auto;
     text-align: center;
@@ -10,7 +10,7 @@
 }
 
 .roadmap h2 {
-    font-size: 2.5rem; /* Reduced font size for smaller screens */
+    font-size: 2.5rem;
     margin-bottom: 40px;
     color: #222;
     font-weight: bold;
@@ -21,15 +21,13 @@
 /* Timeline Container */
 .timeline {
     margin: 30px auto;
-    max-width: 900px; /* Adjusted max-width for better fit */
+    max-width: 900px;
     padding: 15px 0;
 }
 
 .timeline-item {
-    position: relative;
     display: flex;
     margin-bottom: 30px;
-    align-items: flex-start;
 }
 
 .timeline-item:last-child {
@@ -40,107 +38,104 @@
 .timeline-content {
     background: #fff;
     border-radius: 10px;
-    padding: 15px 20px; /* Adjusted padding for better fit on small screens */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Slightly lighter shadow for a cleaner look */
-    width: calc(100% - 50px); /* Adjusted width */
+    padding: 15px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: calc(100% - 50px);
 }
 
 .timeline-content h3 {
-    font-size: 1.4rem; /* Slightly reduced for smaller screens */
+    font-size: 1.4rem;
     margin-bottom: 8px;
     color: #222;
     font-weight: bold;
 }
 
 .timeline-content .date {
-    font-size: 0.85rem; /* Reduced font size */
+    font-size: 0.85rem;
     color: #777;
     margin-bottom: 8px;
     display: block;
 }
 
 .timeline-content ul {
-    list-style-type: none;
-    padding-left: 0;
+    list-style: none;
+    padding: 0;
     margin: 0;
 }
 
-/* Task List Styling */
 .timeline-content ul li {
-    font-size: 0.95rem; /* Adjusted font size */
+    font-size: 0.95rem;
     color: #555;
     line-height: 1.5;
     margin-bottom: 6px;
+    padding-left: 22px;
     position: relative;
-    padding-left: 22px; /* Reduced padding */
 }
 
 .timeline-content ul li::before {
     content: '';
     position: absolute;
     left: 0;
+    top: 6px;
     width: 8px;
     height: 8px;
-    background: #1d71f0; /* Default dot color */
+    background: #1d71f0;
     border-radius: 50%;
-    top: 6px;
 }
 
 /* Ticked Tasks */
 .timeline-content ul li.ticked {
     font-weight: bold;
-    color: #1e3c72; /* Color for completed tasks */
-    padding-left: 25px;
+    color: #1e3c72;
 }
 
 .timeline-content ul li.ticked::before {
-    content: '✔'; /* The tick mark */
-    position: absolute;
+    content: '✔';
     left: 0;
-    font-size: 1rem; /* Adjusted font size */
-    color: #10c02d; /* Tick mark color */
-    top: 0; /* Align tick with text */
-    background: none; /* Remove default dot */
+    top: 0;
+    font-size: 1rem;
+    color: #10c02d;
+    background: none;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .timeline {
-        max-width: 100%; /* Full width for smaller screens */
+        max-width: 100%;
     }
 
     .timeline-content {
-        width: 100%; /* Take full width of container */
-        padding: 15px; /* Reduced padding for better fit */
+        width: 100%;
+        padding: 15px;
     }
 
     .timeline-item {
-        margin-bottom: 20px; /* Reduced spacing between items */
+        margin-bottom: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .roadmap h2 {
-        font-size: 2rem; /* Further reduced font size */
-        margin-bottom: 30px; /* Adjusted spacing */
+        font-size: 2rem;
+        margin-bottom: 30px;
     }
 
     .timeline-content h3 {
-        font-size: 1.3rem; /* Adjusted heading size */
+        font-size: 1.3rem;
         margin-bottom: 6px;
     }
 
     .timeline-content ul li {
-        font-size: 0.85rem; /* Further reduced for better fit */
-        padding-left: 20px; /* Adjusted padding */
+        font-size: 0.85rem;
+        padding-left: 20px;
     }
 
     .timeline-content ul li::before {
-        width: 7px; /* Smaller dot size */
+        width: 7px;
         height: 7px;
     }
 
     .timeline-content ul li.ticked::before {
-        font-size: 0.9rem; /* Adjust tick size */
+        font-size: 0.9rem;
     }
 }

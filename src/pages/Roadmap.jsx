@@ -21,43 +21,57 @@ function formatTextWithBold(text) {
 function Roadmap() {
   const roadmapPhases = [
     {
-      phase: "Phase 1 – Foundation Building & Research",
-      date: "Q1 2025 - Q3 2025",
+      phase: "Phase 1 – Community Building & Awareness",
+      date: "Q1 2025 - Q2 2025",
       tasks: [
-        { description: "Finalize mission, vision, and goals for Topay.", isTicked: false },
-        { description: "Publish a streamlined whitepaper to attract potential investors.", isTicked: false },
-        { description: "Start developing the blockchain core (focus on a minimal viable product).", isTicked: false },
+        { description: "Grow the Topay community by launching social media campaigns and engaging with audiences.", isTicked: false },
+        { description: "Host educational webinars and AMAs to build trust and awareness.", isTicked: false },
+        { description: "Introduce incentives for early community members, including referral programs.", isTicked: false },
       ],
     },
     {
-      phase: "Phase 2 – Testnet Development (Fundraising Parallelly)",
-      date: "Q4 2025 - Q3 2026",
+      phase: "Phase 2 – Token Listing, Airdrop & Initial Partnerships",
+      date: "Q3 2025 - Q4 2025",
       tasks: [
-        { description: "Launch an early testnet to demonstrate proof of concept to stakeholders.", isTicked: false },
-        { description: "Begin small-scale testing with developers and early adopters.", isTicked: false },
-        { description: "Focus on community building and securing grants or additional funding.", isTicked: false },
+        { description: "List the Main Token on major decentralized and centralized exchanges.", isTicked: false },
+        { description: "Launch a strategic airdrop campaign to reward community participation and attract more users.", isTicked: false },
+        { description: "Initiate discussions and collaborations with leading global companies for initial partnerships.", isTicked: false },
+        { description: "Build alliances to support long-term ecosystem growth and adoption.", isTicked: false },
       ],
     },
     {
-      phase: "Phase 3 – Incremental Platform Rollout",
-      date: "Q4 2026 - Q4 2027",
+      phase: "Phase 3 – Research, Development, and Strategic Partnerships",
+      date: "Q1 2026 - Q4 2026",
       tasks: [
-        { description: "Launch Topay Wallet with basic functionality.", isTicked: false },
-        { description: "Roll out Topay Pay system in select pilot sectors (e.g., real estate).", isTicked: false },
-        { description: "Implement staking and governance features.", isTicked: false },
+        { description: "Research next-generation blockchain technology with light nodes for everyday usability.", isTicked: false },
+        { description: "Explore solutions for creating a quantum-resistant, highly secure blockchain.", isTicked: false },
+        { description: "Develop proof-of-concept solutions for lightweight data technology integration.", isTicked: false },
+        { description: "Establish strategic partnerships with key industry players to accelerate blockchain innovation.", isTicked: false },
+        { description: "Brainstorm additional blockchain-based products for diverse real-world applications.", isTicked: false },
       ],
     },
     {
-      phase: "Phase 4 – Full Ecosystem Expansion",
-      date: "2028 and beyond",
+      phase: "Phase 4 – Testnet Development & Stakeholder Engagement",
+      date: "Q1 2027 - Q4 2027",
       tasks: [
-        { description: "Scale partnerships with global organizations and industries.", isTicked: false },
-        { description: "Expand DeFi tools and integrate cross-chain interoperability.", isTicked: false },
-        { description: "Transition to a fully decentralized governance model.", isTicked: false },
+        { description: "Launch a testnet to demonstrate technological advancements and scalability.", isTicked: false },
+        { description: "Engage with developers and early adopters for small-scale testing.", isTicked: false },
+        { description: "Host investor summits to secure additional funding and partnerships.", isTicked: false },
+        { description: "Deepen strategic alliances with leading companies to integrate Topay solutions.", isTicked: false },
+      ],
+    },
+    {
+      phase: "Phase 5 – Platform Rollout & Ecosystem Development",
+      date: "Q1 2028 and Beyond",
+      tasks: [
+        { description: "Release the Topay Wallet with advanced blockchain functionalities.", isTicked: false },
+        { description: "Launch real-world pilots of Topay's ecosystem in collaboration with corporate partners.", isTicked: false },
+        { description: "Introduce DeFi tools with cross-chain interoperability and staking options.", isTicked: false },
+        { description: "Expand global partnerships and transition to fully decentralized governance.", isTicked: false },
       ],
     },
   ];
-
+  
   return (
     
       <section className="roadmap">
