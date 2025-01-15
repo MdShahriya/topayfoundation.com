@@ -1,5 +1,5 @@
-/* Basic styling for the coins page */
-.coins-page {
+/* Basic styling for the  page */
+.projects-page {
   padding: 20px;
   background: rgb(255, 255, 255);
   margin: 80px auto;
@@ -8,24 +8,24 @@
 }
 
 /* Center the title */
-.coins-page h1 {
+.projects-page h1 {
   margin-bottom: 20px;
 }
 
-/* Coin list with added padding */
-.coins-list {
+/* project list with added padding */
+.projects-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
 
-/* Style for each coin item */
-.coin-item {
+/* Style for each project item */
+.project-item {
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 10px;
-  width: 300px;
+  width: 350px;  /* Increased width */
   background-color: #ffffff;
   transition: all 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -33,9 +33,9 @@
   text-align: center;
 }
 
-.coin-item:hover {
-  background-color: #f1f1f1;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.project-item:hover {
+  background-color: #f1f1f183;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* Button styling */
@@ -68,13 +68,13 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .coin-item {
+  .project-item {
     width: 90%;
   }
 }
 
 @media (max-width: 480px) {
-  .coin-item {
+  .project-item {
     width: 95%;
   }
 }

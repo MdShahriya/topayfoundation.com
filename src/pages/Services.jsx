@@ -35,8 +35,8 @@ function Services() {
           <p>Custom applications designed for seamless integration and usability.</p>
         </div>
         <div className="service">
-          <a href="/Coins"><h4>Coins</h4>
-          <p>Coins & Tokens that backed by <strong>TOPAY FOUNDATION</strong></p></a>
+          <a href="/Projects"><h4>Projects</h4>
+          <p>Projects backed by TOPAY FOUNDATION</p></a>
         </div>
       </div>
     </section>

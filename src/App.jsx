@@ -5,7 +5,6 @@ import Footer from './Components/Footer';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './styles/App.css';
 import ProofcoinPage from './pages/Proofcoin';
-import Socialmedia from './pages/Socialmedia';
 import BackToTopButton from './Components/BackToTopButton';
 import ScrollToTop from './Components/ScrollToTop';
 import Loading from './Components/Loading';
@@ -16,11 +15,10 @@ import Invest from './pages/Invest';
 const Home = React.lazy(() => import('./pages/Home'));
 const About = React.lazy(() => import('./pages/About'));
 const Services = React.lazy(() => import('./pages/Services'));
-const Contact = React.lazy(() => import('./pages/Contact'));
 const Roadmap = React.lazy(() => import('./pages/Roadmap'));
 const PrivacyPolicy = React.lazy(() => import('./Components/PrivacyPolicy'));
 const TermsOfService = React.lazy(() => import('./Components/TermsOfService'));
-const Coins = React.lazy(() => import('./pages/Coins'));
+const Projects = React.lazy(() => import('./pages/Projects'));
 
 function App() {
   return (
@@ -33,13 +31,11 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<Contact />} />
             <Route path="/roadmap" element={<Roadmap />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="/coins" element={<Coins />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="/proofcoin" element={<ProofcoinPage />} />
-            <Route path="/socialmedia" element={<Socialmedia />} />
             <Route path="/licenses" element={<License />} />
             <Route path="/invest" element={<Invest />} />
           </Routes>

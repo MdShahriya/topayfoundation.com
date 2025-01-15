@@ -9,28 +9,12 @@ import EventCard from "../Components/EventCard";
 function Home() {
   const serviceEvents = [
     {
-      src: "/images/appevent.png",
-      link: "",
-      eventType: "App Launch",
-      title: "Topay Mobile App: start your web3 journey in traditional way",
-      date: "stay tuned",
-      description: "starts soon",
-    },
-    {
-      src: "/images/walletevent.png",
-      link: "",
-      eventType: "App Launch",
-      title: "Topay wallet: start your web3 journey in traditional way",
-      date: "stay tuned",
-      description: "starts soon",
-    },
-    {
-      src: "/images/swapevent.png",
-      link: "",
-      eventType: "App Launch",
-      title: "Topay swap: start your web3 journey in traditional way",
-      date: "stay tuned",
-      description: "starts soon",
+      src: "/images/vevent.png",
+      link: "https://www.linkedin.com/events/fromvolunteertovisionary-buildi7285378117110530048/",
+      eventType: "Online event",
+      title: "Start Journey with us",
+      date: "01-02-2025",
+      description: "Start as a dedicated volunteer and grow into a valued permanent team member.",
     },
   ];
 
@@ -98,7 +82,7 @@ function Home() {
 
       {/* Running Events Section */}
         <section className="running-event">
-          <h2 className="section-title">Upcoming Events</h2>
+          <h2 className="section-title">Events & Activities</h2>
           <div className="event-carousel">
             <div
               className="event-card-wrapper"

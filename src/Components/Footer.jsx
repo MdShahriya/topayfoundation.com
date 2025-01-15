@@ -33,8 +33,8 @@ function Footer() {
         <div className="footer-section">
           <h4>Community</h4>
           {/*<Link to="">Careers (Soon)</Link>*/}
-          <Link to="/contact">Contact Us</Link>
-          <Link to="/socialmedia">Social Media</Link>
+          <Link to="https://linktr.ee/topay_foundation">Linktree</Link>
+          <Link to="https://patreon.com/topayfoundation?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink">Patreon</Link>
         </div>
       </div>
 
