@@ -23,12 +23,17 @@ function Footer() {
           <a href="https://drive.google.com/file/d/1zxZcFMNSjET9dr5EsQ1p-QRJ24_pQ5Zf/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
             WhitePaper
           </a>
+          <a href="https://drive.google.com/file/d/1NBHyVTQpJSaI_D1vXnYKXa7mz8m88cdn/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+            Tokenomics
+          </a>
           {/*<Link to="">Blog</Link>*/}
+        </div>
+        <div className="footer-section">
+          <h4>Security Resources</h4>
           <Link to="/licenses">Licenses & Registrations</Link>
           <Link to="/privacy-policy">PrivacyPolicy</Link>
           <Link to="/terms-of-service">Terms and Conditions</Link>
         </div>
-
         {/* Community Section */}
         <div className="footer-section">
           <h4>Community</h4>

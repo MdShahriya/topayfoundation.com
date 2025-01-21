@@ -16,6 +16,13 @@ function Home() {
       date: "01-02-2025",
       description: "Start as a dedicated volunteer and grow into a valued permanent team member.",
     },
+    {
+      src: "/images/sevent.gif",
+      eventType: "Online event",
+      title: "Token Pre-sell: TOPAY Coin",
+      date: "Soon",
+      description: "TopayCoin is a utility token for seamless digital transactions. Join the presale for early access and exclusive perks.",
+    },
   ];
 
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
