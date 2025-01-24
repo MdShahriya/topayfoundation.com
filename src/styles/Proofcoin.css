@@ -10,7 +10,7 @@
 /* Hero Section */
 .hero {
   background: linear-gradient(to right, #ff7eb3, #ff758c);
-  color: #fff;
+  color: rgb(255, 255, 255);
   padding: 40px 20px;
   border-radius: 15px;
 }
@@ -50,12 +50,12 @@
 
 .buy-btn {
   background-color: #00cc99;
-  color: #fff;
+  color: rgb(255, 255, 255);
 }
 
 .earn-btn {
   background-color: #ff5733;
-  color: #fff;
+  color: rgb(255, 255, 255);
 }
 
 .btn:hover {
@@ -98,7 +98,7 @@
 
 .roadmap-list li {
   margin-bottom: 20px;
-  background: #fff;
+  background: rgb(255, 255, 255);
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -107,7 +107,7 @@
 /* Community Section */
 .community {
   padding: 40px 20px;
-  background: linear-gradient(to bottom, #d9a7c7, #fffcdc);
+  background: linear-gradient(to bottom, #d9a7c7, rgb(255, 255, 255)cdc);
   color: #222;
 }
 
@@ -118,7 +118,7 @@
   font-size: 1.2rem;
   border-radius: 30px;
   background: #222;
-  color: #fff;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   transition: transform 0.3s ease;
 }

@@ -41,6 +41,10 @@ function Footer() {
           <Link to="https://linktr.ee/topay_foundation">Linktree</Link>
           <Link to="https://patreon.com/topayfoundation?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink">Patreon</Link>
         </div>
+        <div className="footer-section">
+          <h4>Developer Resources</h4>
+          <Link to="/brand">Brand</Link>
+        </div>
       </div>
 
       {/* Footer Bottom */}

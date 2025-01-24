@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Iceland';
     background-color: #f9f9f9;
     color: #333;
     margin: 0;
@@ -11,7 +11,7 @@ body {
     max-width: 900px;
     margin: 40px auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: rgb(255, 255, 255);
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     overflow: hidden;

@@ -46,7 +46,7 @@
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  background-color: #1d71f0;
+  background-color: #0D7CE9;
   color: white;
   font-size: 1.4rem;
   font-weight: bold;
@@ -61,7 +61,7 @@
 }
 
 .step-content {
-  background-color: #fff;
+  background-color: rgb(255, 255, 255);
   padding: 15px 20px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -107,7 +107,7 @@
     left: 50%;
     width: 2px;
     height: 100%;
-    background-color: #1d71f0;
+    background-color: #0D7CE9;
     z-index: -1;
   }
 }
@@ -137,7 +137,7 @@
     height: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #1d71f0;
+    background-color: #0D7CE9;
     z-index: -1;
   }
 

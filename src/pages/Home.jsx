@@ -9,15 +9,15 @@ import EventCard from "../Components/EventCard";
 function Home() {
   const serviceEvents = [
     {
-      src: "/images/vevent.png",
+      src: "/events/vevent.png",
       link: "https://www.linkedin.com/events/fromvolunteertovisionary-buildi7285378117110530048/",
       eventType: "Online event",
       title: "Start Journey with us",
       date: "01-02-2025",
-      description: "Start as a dedicated volunteer and grow into a valued permanent team member.",
+      description: "Start as a dedicated volunteer and grow into a valued permanent team member. We are planning for future!",
     },
     {
-      src: "/images/sevent.gif",
+      src: "/events/sevent.gif",
       eventType: "Online event",
       title: "Token Pre-sell: TOPAY Coin",
       date: "Soon",
@@ -62,7 +62,7 @@ function Home() {
           <div className="hero-content">
             <h1 className="hero-title">Welcome to TOPAY Foundation</h1>
             <p className="hero-subtitle">
-              Empowering the Future of Finance with Web3 Innovations
+              Empowering the Future with Web3 Innovations
             </p>
           </div>
         </section>

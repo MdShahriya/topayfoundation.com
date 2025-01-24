@@ -1,9 +1,11 @@
 /* General Styling */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 html,
 body {
   height: 100%;
   background: rgb(255, 255, 255);
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto';
   margin: 0;
   box-sizing: border-box;
 }
@@ -84,7 +86,7 @@ body {
 }
 
 .footer-link:hover {
-  color: #1d71f0;
+  color: #0D7CE9;
 }
 
 .footer-icons {
@@ -99,7 +101,7 @@ body {
 }
 
 .footer-icons a:hover {
-  color: #1d71f0;
+  color: #0D7CE9;
 }
 
 /* Responsive Design */

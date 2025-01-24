@@ -11,7 +11,7 @@
     background-size: cover;
     background-position: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-    color: #fff;
+    color: rgb(255, 255, 255);
   }
   
   .blurred-section {
@@ -41,7 +41,7 @@
   .event-type {
     font-size: 0.9em;
     font-weight: bold;
-    color: #1d71f0;
+    color: #0D7CE9;
     padding: 5px;
     margin-bottom: 10px;
     text-transform: uppercase;

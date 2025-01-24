@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   padding: 15px 25px;
-  background: #ffffff;
+  background: rgb(255, 255, 255);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   border-radius: 10px;
@@ -14,7 +14,7 @@
   right: 0;
   z-index: 1000;
   transition: background 0.3s ease, box-shadow 0.3s ease;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Iceland';
   color: #333333;
   flex-wrap: wrap;
 }
@@ -27,7 +27,7 @@
 /* Ensure content starts below the header */
 body {
   padding-top: 80px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Iceland';
 }
 
 /* Logo container */
@@ -72,7 +72,7 @@ body {
 }
 
 .nav ul li a:hover {
-  color: #1d71f0;
+  color: #0D7CE9;
 }
 
 /* Submenu styles */
@@ -81,7 +81,7 @@ body {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #ffffff;
+  background-color: rgb(255, 255, 255);
   padding: 10px 0;
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -106,7 +106,7 @@ body {
 }
 
 .nav ul li .submenu li a:hover {
-  color: #1d71f0;
+  color: #0D7CE9;
 }
 
 /* Responsive styles for mobile */

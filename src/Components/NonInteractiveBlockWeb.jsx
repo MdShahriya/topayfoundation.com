@@ -20,7 +20,7 @@ const OptimizedBlockWeb = () => {
         this.size = size;
         this.speedX = Math.random() * 2 - 1;
         this.speedY = Math.random() * 2 - 1;
-        this.color = "#1d71f0";
+        this.color = "#0D7CE9";
       }
 
       draw() {

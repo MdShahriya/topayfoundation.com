@@ -1,6 +1,5 @@
 /* General Styles */
 .home-container {
-  font-family: 'Roboto Mono', monospace;
   background:  rgb(255, 255, 255);
   color: #222;
   margin: 64px auto;
@@ -52,14 +51,14 @@ canvas {
 }
 
 .hero-title {
-  font-size: 4em;
+  font-size: 5em;
   font-weight: 1000;
   margin: 0 0 20px;
   line-height: 1.2;
 }
 
 .hero-subtitle {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   margin: 10px 0 20px;
 }
 
@@ -72,7 +71,7 @@ canvas {
   height: 4rem;
   border-radius: 50px;
   background-color: rgb(255, 255, 255);
-  color: #1d71f0;
+  color: #0D7CE9;
   font-size: 1.5rem;
   font-weight: 500;
   border: 2px solid rgb(255, 255, 255);
@@ -82,7 +81,7 @@ canvas {
 
 .btn:hover {
   background-color:rgb(255, 255, 255);
-  color: #0a58ca;
+  color: #15CFF1;
   transform: scale(1.05);
 }
 
@@ -103,7 +102,7 @@ canvas {
   justify-content: center; /* Horizontally centers the card wrapper */
   align-items: center; /* Vertically centers the card wrapper */
   position: relative;
-  background-color: #ffffff; /* Added a white background for the carousel */
+  background-color: rgb(255, 255, 255); /* Added a white background for the carousel */
   border-radius: 10px; /* Rounded corners for the carousel */
 }
 
@@ -151,7 +150,7 @@ canvas {
 .feature-card,
 .testimonial-card,
 .partner-card {
-  background: #ffffff;
+  background: rgb(255, 255, 255);
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -167,7 +166,7 @@ canvas {
 
 .feature-card i {
   font-size: 2.5rem;
-  color: #1d71f0;
+  color: #0D7CE9;
   margin-bottom: 10px;
 }
 
@@ -248,8 +247,8 @@ canvas {
     width: 14rem;
     height: 4rem;
     border-radius: 50px;
-    background-color: #1d71f0;
-    color: #ffffff;
+    background-color: #0D7CE9;
+    color: rgb(255, 255, 255);
     font-size: 1.5em;
     font-weight: 500;
     border: none;

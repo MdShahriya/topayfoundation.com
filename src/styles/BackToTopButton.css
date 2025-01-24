@@ -2,8 +2,8 @@
   position: fixed;
   bottom: 150px;
   right: 45px;
-  background-color: #0066cc;
-  color: #ffffff;
+  background-color: #0D7CE9;
+  color: rgb(255, 255, 255);
   border: none;
   border-radius: 50%;
   padding: 10px 20px;
@@ -15,7 +15,7 @@
 }
 
 .back-to-top:hover {
-  background-color: #005bb5;
+  background-color: #0D7CE9;
   transform: scale(1.1);
 }
 

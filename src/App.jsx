@@ -10,6 +10,7 @@ import ScrollToTop from './Components/ScrollToTop';
 import Loading from './Components/Loading';
 import License from './pages/License';
 import Invest from './pages/Invest';
+import Brand from './pages/BrandingPage';
 
 // Import pages using dynamic imports
 const Home = React.lazy(() => import('./pages/Home'));
@@ -38,6 +39,7 @@ function App() {
             <Route path="/proofcoin" element={<ProofcoinPage />} />
             <Route path="/licenses" element={<License />} />
             <Route path="/invest" element={<Invest />} />
+            <Route path="/brand" element={<Brand />} />
           </Routes>
         </Suspense>
         <BackToTopButton />
