@@ -11,8 +11,6 @@ const BrandingPage = () => {
     { hex: '#15192b' },
   ];
 
-  const mainColor = { hex: '#0D7CE9', description: 'Our main color symbolizes trust, innovation, and stability.' };
-
   const copyColorsToClipboard = () => {
     const colorCodes = colors.map(color => color.hex).join(', ');
     navigator.clipboard.writeText(colorCodes);
@@ -31,17 +29,6 @@ const BrandingPage = () => {
         <p>
           At Topay Foundation, our mission is to create a safer, more transparent, and future-proof digital economy. We strive to empower communities by delivering cutting-edge solutions to address modern challenges.
         </p>
-      </section>
-
-      <section className="branding-main-color">
-        <h2>Main Color</h2>
-        <div className="main-color-display">
-          <div
-            className="main-color-swatch"
-            style={{ backgroundColor: mainColor.hex }}
-          ></div>
-          <p>{mainColor.description}</p>
-        </div>
       </section>
 
       <section className="branding-visual-identity">
@@ -79,7 +66,7 @@ const BrandingPage = () => {
           <div className="branding-element">
             <h3>Typography</h3>
             <p>
-              We prioritize modern and clean typography to ensure professionalism and readability. Our primary digital font is "Iceland".
+              We prioritize modern and clean typography to ensure professionalism and readability. Our primary digital font is "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif".
             </p>
           </div>
         </div>
