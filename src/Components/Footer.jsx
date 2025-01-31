@@ -26,7 +26,9 @@ function Footer() {
           <a href="https://drive.google.com/file/d/1NBHyVTQpJSaI_D1vXnYKXa7mz8m88cdn/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
             Tokenomics
           </a>
-          {/*<Link to="">Blog</Link>*/}
+          <a href="https://docs.topayfoundation.com/blog" target="_blank" rel="noopener noreferrer">
+            Blog
+          </a>
         </div>
         <div className="footer-section">
           <h4>Security Resources</h4>
