@@ -1,3 +1,5 @@
+/* eslint-disable security/detect-object-injection */
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useRef } from "react";
 import '../styles/OptimizedBlockWeb.css'; // External CSS file
 

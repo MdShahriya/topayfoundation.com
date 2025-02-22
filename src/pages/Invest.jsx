@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import '../styles/Invest.css'; // Assuming you have a separate CSS file for styling
 

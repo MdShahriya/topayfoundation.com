@@ -1,6 +1,5 @@
-import React from 'react';
+import 'react';
 import '../styles/About.css';
-import BoxReveal from './BoxReveal';
 
 function About() {
   return (

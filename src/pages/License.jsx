@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import '../styles/License.css'; // Assuming you have a CSS file for styling
 

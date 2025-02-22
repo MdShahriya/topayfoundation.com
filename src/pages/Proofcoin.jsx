@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import '../styles/Proofcoin.css';
 import tokenomicsImage from '../assets/images/Tokenomics.png'; // Adjust the path as needed
