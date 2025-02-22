@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 // src/Components/ErrorBoundary.jsx
 import React, { Component } from 'react';
 

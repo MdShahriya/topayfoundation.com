@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, startTransition } from "react"; // Added startTransition
 import "../styles/Home.css";
 import BoxReveal from "./BoxReveal";

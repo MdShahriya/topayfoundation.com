@@ -1,6 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react/prop-types */
-import  { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const BoxReveal = ({ children, animationDuration = "0.5s", triggerOffset = 100 }) => {
   const revealRef = useRef(null);

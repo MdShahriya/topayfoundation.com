@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import '../styles/BrandingPage.css'; // Ensure the CSS file exists for styling
 
