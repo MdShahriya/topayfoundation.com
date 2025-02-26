@@ -1,62 +1,97 @@
-import React from 'react';
-import '../styles/Invest.css'; // Assuming you have a separate CSS file for styling
+import React from "react";
+import "../styles/Invest.css"; 
+import { FaCheckCircle, FaExclamationCircle, FaExclamationTriangle, FaPencilAlt, FaHandshake } from "react-icons/fa"; 
 
 const Invest = () => {
+  const benefits = [
+    "Access to diversified investment options.",
+    "Transparency and security in transactions.",
+    "Potential for high returns on investment.",
+    "Continuous support and guidance from our team.",
+  ];
+
+  const warnings = [
+    "Investments are subject to market risks.",
+    "Ensure you understand the risks involved before committing.",
+    "Only invest money you can afford to lose.",
+    "Consult with a financial advisor before investing.",
+  ];
+
+  const risks = [
+    "Investments may lose value over time.",
+    "Market volatility can impact returns.",
+    "There is no guarantee of profit.",
+    "Investment requires long-term commitment.",
+  ];
+
+  const howToInvest = [
+    { icon: <FaPencilAlt />, text: "Fill out the investment form to express interest." },
+    { icon: <FaHandshake />, text: "Our team will contact you through your given information." },
+  ];
+
   return (
     <div className="invest-container">
       <header className="invest-header">
         <h1>Investment Information</h1>
       </header>
+      
       <section className="invest-section">
-        
-      <div className="invest-details">
+        <div className="invest-details">
           <h2>Why Investors Choose Us</h2>
-          <ul>
-            <li> We offer trustworthy leadership with a proven track record of successful investments, transparent and ethical business practices, and personalized support for each investor.</li>
-          </ul>
+          <p>
+            We offer trustworthy leadership with a proven track record of successful investments,
+            transparent and ethical business practices, and personalized support for each investor.
+          </p>
         </div>
 
         <div className="invest-details">
           <h2>Benefits of Investing with Us</h2>
           <ul>
-            <li><i className="fas fa-check-circle"></i> Access to diversified investment options.</li>
-            <li><i className="fas fa-check-circle"></i> Transparency and security in transactions.</li>
-            <li><i className="fas fa-check-circle"></i> Potential for high returns on investment.</li>
-            <li><i className="fas fa-check-circle"></i> Continuous support and guidance from our team.</li>
+            {benefits.map((benefit, index) => (
+              <li key={index}>
+                <FaCheckCircle aria-hidden="true" /> {benefit}
+              </li>
+            ))}
           </ul>
         </div>
 
         <div className="invest-details">
           <h2>Warnings</h2>
           <ul>
-            <li><i className="fas fa-warning"></i> Investments are subject to market risks.</li>
-            <li><i className="fas fa-warning"></i> Ensure you understand the risks involved before committing.</li>
-            <li><i className="fas fa-warning"></i> Only invest money you can afford to lose.</li>
-            <li><i className="fas fa-warning"></i> Consult with a financial advisor before investing.</li>
+            {warnings.map((warning, index) => (
+              <li key={index}>
+                <FaExclamationTriangle aria-hidden="true" /> {warning}
+              </li>
+            ))}
           </ul>
         </div>
 
         <div className="invest-details">
           <h2>Risks of Investment</h2>
           <ul>
-            <li><i className="fas fa-exclamation-circle"></i> Investments may lose value over time.</li>
-            <li><i className="fas fa-exclamation-circle"></i> Market volatility can impact returns.</li>
-            <li><i className="fas fa-exclamation-circle"></i> There is no guarantee of profit.</li>
-            <li><i className="fas fa-exclamation-circle"></i> Investment requires long-term commitment.</li>
+            {risks.map((risk, index) => (
+              <li key={index}>
+                <FaExclamationCircle aria-hidden="true" /> {risk}
+              </li>
+            ))}
           </ul>
         </div>
 
         <div className="invest-details">
-        <h2>How to Invest</h2>
+          <h2>How to Invest</h2>
           <ul>
-            <li><i className="fas fa-pencil-alt"></i> Fill out the investment form to express interest.</li>
-            <li><i className="fas fa-handshake"></i> Our team will contact you through your given information.</li>
+            {howToInvest.map((step, index) => (
+              <li key={index}>
+                {step.icon} {step.text}
+              </li>
+            ))}
+          </ul>
+          
           <div className="invest-button-container">
-          <a href="https://forms.gle/sgn4SiMUk2KYLqUMA" target="_blank" rel="noopener noreferrer">
-            <button className="invest-button">Invest Form</button>
-          </a>
+            <a href="https://forms.gle/sgn4SiMUk2KYLqUMA" target="_blank" rel="noopener noreferrer">
+              <button type="button" className="invest-button">Invest Form</button>
+            </a>
           </div>
-        </ul>
         </div>
       </section>
     </div>

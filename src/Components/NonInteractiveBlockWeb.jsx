@@ -1,7 +1,9 @@
-import React, { useEffect, useRef } from "react";
-import '../styles/OptimizedBlockWeb.css'; // External CSS file
+/* eslint-disable security/detect-object-injection */
+import React from "react";
+import { useEffect, useRef } from "react";
+import "../styles/OptimizedBlockWeb.css"; // External CSS file
 
-const OptimizedBlockWeb = () => {
+const NonInteractiveBlockWeb = () => {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -9,7 +11,7 @@ const OptimizedBlockWeb = () => {
     const ctx = canvas.getContext("2d");
 
     let blocksArray = [];
-    const baseDensity = 0.00005; // Density factor: Adjust to control the number of blocks
+    const baseDensity = 0.00005; // Adjust for the number of blocks
     let animationFrameId;
 
     // Block class
@@ -20,7 +22,7 @@ const OptimizedBlockWeb = () => {
         this.size = size;
         this.speedX = Math.random() * 2 - 1;
         this.speedY = Math.random() * 2 - 1;
-        this.color = "#0D7CE9";
+        this.color = "#15CFF1";
       }
 
       draw() {
@@ -55,7 +57,7 @@ const OptimizedBlockWeb = () => {
       return Math.floor(area * baseDensity); // More area = more blocks
     };
 
-    // Initialize blocks
+    // Initialize blocks safely
     const initBlocks = () => {
       blocksArray = [];
       const numBlocks = calculateBlockCount();
@@ -67,21 +69,26 @@ const OptimizedBlockWeb = () => {
       }
     };
 
-    // Connect blocks with lines
+    // Connect blocks with safe access
     const connectBlocks = () => {
       for (let i = 0; i < blocksArray.length; i++) {
-        for (let j = i; j < blocksArray.length; j++) {
-          const dx = blocksArray[i].x - blocksArray[j].x;
-          const dy = blocksArray[i].y - blocksArray[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
+        for (let j = i + 1; j < blocksArray.length; j++) { // Avoid redundant calculations
+          const blockA = blocksArray[i];
+          const blockB = blocksArray[j];
 
-          if (distance < 150) {
-            ctx.strokeStyle = `rgba(0, 255, 204, ${1 - distance / 150})`;
-            ctx.lineWidth = 0.5;
-            ctx.beginPath();
-            ctx.moveTo(blocksArray[i].x + blocksArray[i].size / 2, blocksArray[i].y + blocksArray[i].size / 2);
-            ctx.lineTo(blocksArray[j].x + blocksArray[j].size / 2, blocksArray[j].y + blocksArray[j].size / 2);
-            ctx.stroke();
+          if (blockA && blockB) { // Ensure safe access
+            const dx = blockA.x - blockB.x;
+            const dy = blockA.y - blockB.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 150) {
+              ctx.strokeStyle = `rgba(0, 255, 204, ${1 - distance / 150})`;
+              ctx.lineWidth = 0.5;
+              ctx.beginPath();
+              ctx.moveTo(blockA.x + blockA.size / 2, blockA.y + blockA.size / 2);
+              ctx.lineTo(blockB.x + blockB.size / 2, blockB.y + blockB.size / 2);
+              ctx.stroke();
+            }
           }
         }
       }
@@ -91,13 +98,13 @@ const OptimizedBlockWeb = () => {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for (const block of blocksArray) {
-        block.update();
+        if (block) block.update(); // Ensure block exists before updating
       }
       connectBlocks();
       animationFrameId = requestAnimationFrame(animate);
     };
 
-    // Debounce function
+    // Debounce function for resize
     const debounce = (func, delay) => {
       let timeout;
       return (...args) => {
@@ -106,11 +113,13 @@ const OptimizedBlockWeb = () => {
       };
     };
 
-    // Resize canvas and reinitialize blocks
+    // Resize handler with safe access
     const handleResize = debounce(() => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-      initBlocks();
+      if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        initBlocks();
+      }
     }, 200);
 
     // Initial setup
@@ -132,4 +141,4 @@ const OptimizedBlockWeb = () => {
   return <canvas ref={canvasRef} className="canvas-background" />;
 };
 
-export default OptimizedBlockWeb;
+export default NonInteractiveBlockWeb;

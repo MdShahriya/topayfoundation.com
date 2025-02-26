@@ -1,5 +1,6 @@
-// src/Components/ErrorBoundary.jsx
-import React, { Component } from 'react';
+import React from "react";
+import { Component } from "react";
+import PropTypes from "prop-types"; // ✅ Import PropTypes
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class ErrorBoundary extends Component {
     this.state = { hasError: false, error: null, errorInfo: null };
   }
 
-  static getDerivedStateFromError(error) {
+  static getDerivedStateFromError() {
     return { hasError: true };
   }
 
@@ -28,5 +29,10 @@ class ErrorBoundary extends Component {
     return this.props.children;
   }
 }
+
+// ✅ Add PropTypes Validation
+ErrorBoundary.propTypes = {
+  children: PropTypes.node.isRequired, // Ensures `children` is a React node
+};
 
 export default ErrorBoundary;

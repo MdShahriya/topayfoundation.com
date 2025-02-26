@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import '../styles/PrivacyPolicy.css'; // External CSS file
 
 function PrivacyPolicy() {

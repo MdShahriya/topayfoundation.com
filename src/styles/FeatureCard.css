@@ -1,0 +1,56 @@
+/* FeatureCard.css */
+
+/* Features Section */
+.features {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .features-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .feature-card {
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feature-card i {
+    font-size: 2.5rem;
+    color: #0D7CE9;
+    margin-bottom: 10px;
+  }
+  
+  /* Responsive Styles for Features Section */
+  @media (max-width: 768px) {
+    .feature-card {
+      min-width: 380px;
+      height: 200px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .feature-card {
+      padding: 10px;
+      font-size: 0.9rem;
+      border-radius: 5px;
+    }
+  
+    .feature-card i {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+  }
+  

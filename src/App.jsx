@@ -4,7 +4,6 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './styles/App.css';
-import ProofcoinPage from './pages/Proofcoin';
 import BackToTopButton from './Components/BackToTopButton';
 import ScrollToTop from './Components/ScrollToTop';
 import Loading from './Components/Loading';
@@ -36,7 +35,6 @@ function App() {
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="/projects" element={<Projects />} />
-            <Route path="/proofcoin" element={<ProofcoinPage />} />
             <Route path="/licenses" element={<License />} />
             <Route path="/invest" element={<Invest />} />
             <Route path="/brand" element={<Brand />} />

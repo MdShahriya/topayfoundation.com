@@ -4,9 +4,11 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import App from './App';
 import './styles/App.css';
+import { NotificationProvider } from './context/NotificationProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <NotificationProvider>
   <Router
     future={{
       v7_startTransition: true,
@@ -14,4 +16,5 @@ root.render(
   >
     <App />
   </Router>
+  </NotificationProvider>
 );

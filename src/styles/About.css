@@ -1,19 +1,23 @@
 /* Roadmap Section Styling */
 .about-roadmap {
-  padding: 50px 15px;
-  background: rgb(255, 255, 255);
+  padding: 60px 20px;
+  background: rgba(225, 225, 225, 1); /* Same background as Services page */
   position: relative;
   margin: 80px auto;
   max-width: 1200px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Roadmap Heading Styling */
 .roadmap-heading {
-  font-size: 2.3rem;
-  font-weight: bold;
-  color: #333;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0D7CE9;
   text-align: center;
-  margin-bottom: 35px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }
 
 /* Roadmap Container Styling */
@@ -27,11 +31,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
   width: 100%;
   position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-in-out forwards;
 }
 
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Left and Right Step Alignment */
 .left .step-content {
   margin-right: auto;
   text-align: left;
@@ -42,47 +57,78 @@
   text-align: left;
 }
 
+/* Step Circle Styling */
 .step-circle {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  background-color: #0D7CE9;
-  color: white;
-  font-size: 1.4rem;
+  background: #0D7CE9;
+  color: #ffffffd8;
+  font-size: 1.5rem;
   font-weight: bold;
   display: flex;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   justify-content: center;
   align-items: center;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+.step-circle:hover {
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Step Content Box */
 .step-content {
-  background-color: rgb(255, 255, 255);
-  padding: 15px 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: white;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
   flex: 1;
-  max-width: 40%;
+  max-width: 45%;
   text-align: left;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+.step-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Step Content Text Styling */
 .step-content h2 {
-  font-size: 1.6rem;
-  margin-bottom: 8px;
-  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #222;
+  transition: color 0.3s ease;
+}
+
+.step-content:hover h2 {
+  color: #0D7CE9;
 }
 
 .step-content p {
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
   color: #555;
 }
 
-/* Responsive Styling for Tablet */
+/* Vertical Line Between Steps */
+.roadmap-container::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: #0D7CE9;
+  z-index: -1;
+}
+
+/* Responsive Design for Tablet */
 @media (max-width: 768px) {
   .roadmap-step {
     flex-direction: column;
@@ -90,7 +136,7 @@
   }
 
   .step-content {
-    max-width: 90%;
+    max-width: 85%;
     text-align: center;
   }
 
@@ -98,55 +144,41 @@
     position: relative;
     left: 0;
     transform: none;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   .roadmap-container::before {
-    content: '';
-    position: absolute;
     left: 50%;
-    width: 2px;
-    height: 100%;
-    background-color: #0D7CE9;
-    z-index: -1;
+    transform: translateX(-50%);
   }
 }
 
 /* Responsive Styling for Small Screens */
 @media (max-width: 480px) {
+  .roadmap-heading {
+    font-size: 2rem;
+  }
+
   .step-content h2 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .step-content p {
     font-size: 0.9rem;
   }
 
-  .roadmap-heading {
-    font-size: 1.8rem;
-  }
-
   .step-circle {
-    width: 35px;
-    height: 35px;
-    font-size: 1rem;
-  }
-
-  .roadmap-container::before {
-    width: 1px;
-    height: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #0D7CE9;
-    z-index: -1;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
   }
 
   .roadmap-step {
-    margin-bottom: 30px;
+    margin-bottom: 35px;
   }
 
   .step-content {
-    padding: 10px 15px;
+    padding: 15px 20px;
     max-width: 95%;
   }
 }

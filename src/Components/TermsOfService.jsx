@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const termsOfServiceStyles = {
   container: {
@@ -23,7 +23,7 @@ function TermsOfService() {
     <div style={termsOfServiceStyles.container}>
       <h1 style={termsOfServiceStyles.heading}>Terms and Conditions</h1>
       <p style={termsOfServiceStyles.paragraph}>
-        Welcome to TOPAY FOUNDATION. These Terms and Conditions ("Terms") govern your access to and use of our website and services. By accessing or using our website, you agree to comply with and be bound by these Terms. If you do not agree with these Terms, please do not use our website.
+        Welcome to TOPAY FOUNDATION. These Terms and Conditions (&quot;Terms&quot;) govern your access to and use of our website and services. By accessing or using our website, you agree to comply with and be bound by these Terms. If you do not agree with these Terms, please do not use our website.
       </p>
       <p style={termsOfServiceStyles.paragraph}>
         <strong>1. Acceptance of Terms:</strong> By using our website, you confirm that you are at least 18 years old or have the consent of a legal guardian to use our services. You agree to use the website in accordance with all applicable laws and regulations.

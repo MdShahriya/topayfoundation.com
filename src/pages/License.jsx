@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import '../styles/License.css'; // Assuming you have a CSS file for styling
 
 const licenses = [

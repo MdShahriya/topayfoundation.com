@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import '../styles/Loading.css'; // External CSS file
 
 const Loading = () => {

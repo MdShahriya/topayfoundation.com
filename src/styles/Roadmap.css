@@ -1,33 +1,45 @@
 /* Roadmap Section Styling */
 .roadmap {
-    padding: 50px 15px;
-    background: rgb(255, 255, 255);
+    padding: 60px 20px;
+    background: rgba(225, 225, 225, 1); /* Soft light gray background */
     color: #333;
     margin: 80px auto;
     text-align: center;
     border-radius: 20px;
-    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.roadmap:hover {
+    transform: translateY(-5px);
 }
 
 .roadmap h2 {
-    font-size: 2.5rem;
-    margin-bottom: 40px;
-    color: #222;
+    font-size: 2.8rem;
+    margin-bottom: 45px;
+    color: #0D7CE9;
     font-weight: bold;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 }
 
 /* Timeline Container */
 .timeline {
-    margin: 30px auto;
-    max-width: 900px;
-    padding: 15px 0;
+    margin: 40px auto;
+    max-width: 950px;
+    padding: 20px 0;
 }
 
 .timeline-item {
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.timeline-item:hover {
+    transform: scale(1.02);
 }
 
 .timeline-item:last-child {
@@ -36,25 +48,56 @@
 
 /* Timeline Content */
 .timeline-content {
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    padding: 15px 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px 25px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     width: calc(100% - 50px);
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
+}
+
+.timeline-content:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+}
+
+/* Elegant glowing hover effect */
+.timeline-content::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.1), transparent);
+    transition: opacity 0.4s ease;
+    opacity: 0;
+}
+
+.timeline-content:hover::before {
+    opacity: 1;
 }
 
 .timeline-content h3 {
-    font-size: 1.4rem;
-    margin-bottom: 8px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
     color: #222;
     font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.timeline-content:hover h3 {
+    color: #0D7CE9;
 }
 
 .timeline-content .date {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: #777;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     display: block;
+    font-style: italic;
 }
 
 .timeline-content ul {
@@ -64,11 +107,11 @@
 }
 
 .timeline-content ul li {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #555;
-    line-height: 1.5;
-    margin-bottom: 6px;
-    padding-left: 22px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    padding-left: 24px;
     position: relative;
 }
 
@@ -76,10 +119,10 @@
     content: '';
     position: absolute;
     left: 0;
-    top: 6px;
-    width: 8px;
-    height: 8px;
-    background: #0D7CE9;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    background: #15CFF1;
     border-radius: 50%;
 }
 
@@ -96,6 +139,7 @@
     font-size: 1rem;
     color: #10c02d;
     background: none;
+    font-weight: bold;
 }
 
 /* Responsive Design */
@@ -106,36 +150,36 @@
 
     .timeline-content {
         width: 100%;
-        padding: 15px;
+        padding: 18px;
     }
 
     .timeline-item {
-        margin-bottom: 20px;
+        margin-bottom: 25px;
     }
 }
 
 @media (max-width: 480px) {
     .roadmap h2 {
-        font-size: 2rem;
-        margin-bottom: 30px;
+        font-size: 2.2rem;
+        margin-bottom: 35px;
     }
 
     .timeline-content h3 {
-        font-size: 1.3rem;
-        margin-bottom: 6px;
+        font-size: 1.4rem;
+        margin-bottom: 8px;
     }
 
     .timeline-content ul li {
-        font-size: 0.85rem;
-        padding-left: 20px;
+        font-size: 0.9rem;
+        padding-left: 22px;
     }
 
     .timeline-content ul li::before {
-        width: 7px;
-        height: 7px;
+        width: 8px;
+        height: 8px;
     }
 
     .timeline-content ul li.ticked::before {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 }
