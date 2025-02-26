@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import "../styles/faq.css"; // Import CSS file
+import "../styles/FAQ.css"; // Import CSS file
 
 const faqs = [
   {
