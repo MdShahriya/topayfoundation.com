@@ -20,10 +20,10 @@ function Footer() {
         <div className="footer-section">
           <h4>Resources</h4>
           {/*<Link to="">Documentation</Link>*/}
-          <a href="https://docs.topayfoundation.com/docs/whitepaper" target="_blank" rel="noopener noreferrer">
+          <a href="https://docs.topayfoundation.com/docs/resources/whitepaper" target="_blank" rel="noopener noreferrer">
             WhitePaper
           </a>
-          <a href="https://docs.topayfoundation.com/docs/tokenomics" target="_blank" rel="noopener noreferrer">
+          <a href="https://docs.topayfoundation.com/docs/resources/tokenomics" target="_blank" rel="noopener noreferrer">
             Tokenomics
           </a>
           <a href="https://docs.topayfoundation.com/blog" target="_blank" rel="noopener noreferrer">
