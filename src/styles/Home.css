@@ -100,9 +100,6 @@ canvas {
   }
 
   canvas {
-    height: 0%;
-    width: 0%;
-    background: rgba(255, 255, 255, 1); /* Remove the canvas on smaller screens */
     visibility: hidden; /* Hide canvas to improve performance */
   }
 
@@ -170,9 +167,6 @@ canvas {
   }
 
   canvas {
-    height: 0%;
-    width: 0%;
-    background: rgba(255, 255, 255 ,1); /* Remove the canvas on mobile */
     visibility: hidden; /* Hide canvas for better performance */
   }
 
