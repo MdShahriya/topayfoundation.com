@@ -1,6 +1,6 @@
 /* General Styles */
 .home-container {
-  background:  rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
   color: #222;
   margin: 64px auto;
   min-height: 100vh;
@@ -86,43 +86,6 @@ canvas {
   transform: scale(1.05);
 }
 
-.running-event {
-  padding: 60px 50px; /* Increased top and bottom padding for more spacing */
-  text-align: center;
-  position: relative; /* Ensures proper positioning for absolute children */
-  margin: 70px 0; /* Increased margin to separate it further from other sections */
-  background-color: rgba(255, 255, 255); /* Softer background color for better distinction */
-  border-radius: 15px; /* Slightly larger rounded corners for a modern look */
-}
-
-.event-carousel {
-  overflow: hidden; /* Ensures only one card is visible at a time */
-  width: 100%; /* Matches the parent container's width */
-  height: 350px; /* Adjust as needed for card height */
-  display: flex;
-  justify-content: center; /* Horizontally centers the card wrapper */
-  align-items: center; /* Vertically centers the card wrapper */
-  position: relative;
-  background-color: rgb(255, 255, 255); /* Added a white background for the carousel */
-  border-radius: 10px; /* Rounded corners for the carousel */
-}
-
-.event-card-wrapper {
-  display: flex; /* Flex layout for horizontal alignment of cards */
-  justify-content: flex-start; /* Ensure smooth horizontal alignment of cards */
-  align-items: center; /* Vertically aligns cards in the center */
-  transition: transform 0.8s ease-in-out; /* Smooth transition for carousel */
-  width: 100%; /* Ensure wrapper spans full width of the container */
-}
-
-.event-card-container {
-  width: 100%; /* Each card takes the full width of the container */
-  flex-shrink: 0; /* Prevents the card from shrinking */
-  display: flex; /* Ensure proper alignment for child content */
-  justify-content: center; /* Center the content horizontally */
-  align-items: center; /* Center the content vertically */
-}
-
 .section-title {
   font-size: 2.5em; /* Increased font size for better visibility */
   margin-bottom: 30px; /* Added more spacing below the title */
@@ -130,52 +93,8 @@ canvas {
   font-weight: bold; /* Added bold styling for emphasis */
 }
 
-/*   Testimonials, and Partners Section */
-.about,
-.testimonials,
-.partners {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.testimonials-content,
-.partners-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.testimonial-card,
-.partner-card {
-  background: rgb(255, 255, 255);
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.testimonial-card:hover{
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-.testimonial-image {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-
-.partner-card img {
-  max-width: 100px;
-  filter: grayscale(100%) contrast(159%);
-}
-
 /* Responsive Styles */
 @media (max-width: 768px) {
-
   .home-container {
     padding: 0px;
   }
@@ -192,14 +111,8 @@ canvas {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 70vh;
-  }
-  
-  canvas {
-    width: 0%;
-    height: 0%;
-    display: none;
-    background: none; 
+    min-height: 80vh; /* Keep same as desktop */
+    background: linear-gradient(135deg, #252833, #15192b); /* Keep gradient background */
   }
 
   .hero::before {
@@ -209,7 +122,7 @@ canvas {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgb(255, 255, 255);
+    background: transparent; /* Same transparent pseudo-element */
     z-index: 1;
   }
   
@@ -218,31 +131,27 @@ canvas {
   }
   
   .hero-title {
-    font-size: 3em;
-    color: #333;
-    font-weight: 700;
-    margin: 0;
+    font-size: 3.5em; /* Keep the title font size similar */
+    color: rgba(255, 255, 255, 0.9); /* Keep the text color consistent */
+    font-weight: 1000;
+    margin: 0 0 20px;
   }
   
   .hero-subtitle {
-    font-size: 2em;
-    color: #555;
-    margin: 5px 0;
-  }
-
-  .section-title {
-    font-size: 2.2rem;
+    font-size: 1.5rem; /* Keep subtitle font size consistent */
+    color: rgba(255, 255, 255, 0.9); /* Keep text color the same */
+    margin: 10px 0 20px;
   }
 
   .btn {
     width: 14rem;
     height: 4rem;
     border-radius: 50px;
-    background-color: #0D7CE9;
-    color: rgb(255, 255, 255);
-    font-size: 1.5em;
+    background-color: rgb(255, 255, 255);
+    color: #0D7CE9;
+    font-size: 1.5rem;
     font-weight: 500;
-    border: none;
+    border: 2px solid rgb(255, 255, 255);
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
@@ -250,7 +159,6 @@ canvas {
 
 /* General Responsive Styles for Small Displays */
 @media (max-width: 480px) {
-  /* Adjust home container padding */
   .home-container {
     padding: 10px; /* Add some padding for smaller screens */
   }
@@ -262,79 +170,33 @@ canvas {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 60vh; /* Adjust hero height for small screens */
+    min-height: 80vh; /* Keep hero height same as desktop */
+    background: linear-gradient(135deg, #252833, #15192b); /* Keep gradient background */
     padding: 10px;
   }
 
   .hero-title {
-    font-size: 2rem; /* Reduce font size for hero title */
-    color: #343a40;
-    font-weight: 700;
+    font-size: 2.5rem; /* Slightly reduce font size for small screens */
+    color: rgba(255, 255, 255, 0.9); /* Keep text color consistent */
+    font-weight: 1000;
     margin: 0;
     line-height: 1.2;
   }
 
   .hero-subtitle {
-    font-size: 1em; /* Reduce font size for hero subtitle */
-    color: #495057;
+    font-size: 1.2rem; /* Adjust subtitle size */
+    color: rgba(255, 255, 255, 0.9);
     margin: 5px 0;
   }
 
-  /* Button adjustments */
   .btn {
     width: 12rem; /* Reduce button width */
     height: 3.5rem; /* Reduce button height */
     font-size: 1.2rem; /* Reduce button font size */
   }
 
-  /* Section Titles */
   .section-title {
     font-size: 2rem; /* Reduce section title size */
     margin-bottom: 20px;
-  }
-
-  /* Running Events */
-  .running-event {
-    padding: 40px 20px; /* Adjust padding */
-    margin: 50px 0; /* Adjust margin */
-    border-radius: 10px; /* Slightly reduce border radius */
-  }
-
-  .event-carousel {
-    height: 300px; /* Adjust carousel height */
-  }
-
-  .event-card-container {
-    width: 100%; /* Ensure each card takes full width */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .about,
-  .testimonials,
-  .partners {
-    padding: 15px 5px; /* Compact padding for tight screens */
-  }
-
-  .testimonials-content,
-  .partners-content {
-    gap: 10px; /* Tighter spacing for small screens */
-  }
- 
-  .testimonial-card,
-  .partner-card {
-    padding: 10px; /* Minimal padding for smaller cards */
-    font-size: 0.9rem; /* Adjust text size */
-    border-radius: 5px; /* Slightly smaller rounded corners */
-  }
-
-  .testimonial-image {
-    width: 50px; /* Smaller circular image */
-    height: 50px; /* Match width */
-  }
-
-  .partner-card img {
-    max-width: 60px; /* Smaller logo size */
   }
 }

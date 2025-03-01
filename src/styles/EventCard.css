@@ -1,78 +1,196 @@
-/* External CSS for event card */
+/* Event Card Base Styles */
 .event-card {
-    display: flex;
-    height: 300px;
-    width: calc(100% - 10px); /* Leave 5px margin on each side */
-    max-width: 900px;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    margin: 5px; /* Add subtle space around the card */
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-    color: rgb(255, 255, 255);
+  display: flex;
+  height: 300px; /* Maintain a rectangular height */
+  width: calc(100% - 10px); /* Leave 5px margin on each side */
+  max-width: 900px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  margin: 5px; /* Add subtle space around the card */
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+  color: rgb(255, 255, 255);
+}
+
+/* Blurred Section */
+.blurred-section {
+  width: 50%; /* Occupies the left half of the card */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black background */
+  backdrop-filter: blur(2px); /* Blur effect for the left half */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Clear Section */
+.clear-section {
+  width: 50%; /* Occupies the right half of the card */
+  height: 100%;
+}
+
+/* Event Card Link */
+.event-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Event Type */
+.event-type {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: #0D7CE9;
+  padding: 5px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Event Title */
+.title {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+  color: #000;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Event Date */
+.date {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #111;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Event Description */
+.description {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  color: #111;
+  border-radius: 10px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/* Running Event Section */
+.running-event {
+  padding: 60px 50px; /* Increased top and bottom padding for more spacing */
+  text-align: center;
+  position: relative; /* Ensures proper positioning for absolute children */
+  margin: 70px 0; /* Increased margin to separate it further from other sections */
+  background-color: rgba(255, 255, 255); /* Softer background color for better distinction */
+  border-radius: 15px; /* Slightly larger rounded corners for a modern look */
+}
+
+/* Event Carousel */
+.event-carousel {
+  overflow: hidden; /* Ensures only one card is visible at a time */
+  width: 100%; /* Matches the parent container's width */
+  height: 350px; /* Adjust as needed for card height */
+  display: flex;
+  justify-content: center; /* Horizontally centers the card wrapper */
+  align-items: center; /* Vertically centers the card wrapper */
+  position: relative;
+  background-color: rgb(255, 255, 255); /* Added a white background for the carousel */
+  border-radius: 10px; /* Rounded corners for the carousel */
+}
+
+/* Event Card Wrapper */
+.event-card-wrapper {
+  display: flex; /* Flex layout for horizontal alignment of cards */
+  justify-content: space-between; /* Space between cards */
+  align-items: center; /* Vertically aligns cards in the center */
+  transition: transform 0.8s ease-in-out; /* Smooth transition for carousel */
+  width: 100%; /* Ensure wrapper spans full width of the container */
+  gap: 20px; /* Add a simple gap between cards */
+}
+
+/* Event Card Container */
+.event-card-container {
+  width: 100%; /* Each card takes the full width of the container */
+  flex-shrink: 0; /* Prevents the card from shrinking */
+  display: flex; /* Ensure proper alignment for child content */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+}
+
+/* Media Queries for Mobile Optimization */
+@media screen and (max-width: 768px) {
+  /* Adjust event card layout to keep them horizontal */
+  .event-card {
+    flex-direction: row; /* Ensure cards stay in a row */
+    height: 250px; /* Maintain rectangular shape */
+    max-width: 100%; /* Allow the card to fill the container */
   }
-  
-  .blurred-section {
-    width: 50%; /* Occupies the left half of the card */
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black background */
-    backdrop-filter: blur(2px); /* Blur effect for the left half */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-    box-sizing: border-box;
+
+  .blurred-section, .clear-section {
+    width: 50%; /* Keep left and right sections in place */
+    height: 100%; /* Maintain full height */
+    padding: 10px; /* Reduce padding */
   }
-  
-  .clear-section {
-    width: 50%; /* Occupies the right half of the card */
-    height: 100%;
+
+  .event-carousel {
+    height: 300px; /* Maintain the height of the carousel */
   }
-  
-  .event-card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
+
+  .event-card-wrapper {
+    justify-content: space-around; /* Ensure the cards stay aligned horizontally */
+    gap: 15px; /* Reduce the gap on smaller screens */
   }
-  
+
+  /* Font Size Adjustments for Mobile Devices */
   .event-type {
-    font-size: 0.9em;
-    font-weight: bold;
-    color: #0D7CE9;
-    padding: 5px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 1);
+    font-size: 0.8em; /* Smaller font size for mobile */
   }
-  
+
   .title {
-    font-size: 1.6em;
-    margin-bottom: 15px;
-    color: #000;
-    border-radius: 10px;
-    padding: 5px;
-    background-color: rgba(255, 255, 255, 1);
+    font-size: 1.4em; /* Reduce font size for title */
   }
-  
+
   .date {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    color: #111;
-    border-radius: 10px;
-    padding: 5px;
-    background-color: rgba(255, 255, 255, 1);
+    font-size: 1em; /* Adjust date size */
   }
-  
+
   .description {
-    font-size: 1.1em;
-    margin-bottom: 20px;
-    color: #111;
-    border-radius: 10px;
-    padding: 5px;
-    background-color: rgba(255, 255, 255, 1);
+    font-size: 1em; /* Reduce description font size */
   }
-  
+
+  .running-event {
+    padding: 30px 20px; /* Reduce padding */
+    margin: 30px 0; /* Reduce margin */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Further optimization for very small screens */
+  .event-card {
+    flex-direction: row; /* Keep cards horizontal */
+    height: auto; /* Adjust the height automatically */
+    max-width: 100%; /* Ensure full width */
+  }
+
+  .blurred-section, .clear-section {
+    width: 50%; /* Keep 50% for each section */
+    padding: 5px; /* Minimal padding */
+  }
+
+  .event-type, .title, .date, .description {
+    font-size: 0.9em; /* Further reduce font size for very small screens */
+  }
+
+  .running-event {
+    padding: 20px 15px; /* Minimal padding */
+    margin: 20px 0; /* Minimal margin */
+  }
+}
