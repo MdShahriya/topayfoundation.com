@@ -99,6 +99,13 @@ canvas {
     padding: 0px;
   }
 
+  canvas {
+    height: 0%;
+    width: 0%;
+    background: rgba(255, 255, 255, 1); /* Remove the canvas on smaller screens */
+    visibility: hidden; /* Hide canvas to improve performance */
+  }
+
   .hero-content {
     padding: 0;
     max-width: 900px;
@@ -111,7 +118,7 @@ canvas {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 80vh; /* Keep same as desktop */
+    min-height: 70vh; /* Keep same as desktop */
   }
 
   .hero::before {
@@ -124,21 +131,21 @@ canvas {
     background: transparent; /* Same transparent pseudo-element */
     z-index: 1;
   }
-  
+
   .hero-content {
     z-index: 2;
   }
   
   .hero-title {
     font-size: 3.5em; /* Keep the title font size similar */
-    color: rgba(255, 255, 255, 0.9); /* Keep the text color consistent */
+    color: #222; /* Keep the text color consistent */
     font-weight: 1000;
     margin: 0 0 20px;
   }
   
   .hero-subtitle {
     font-size: 1.5rem; /* Keep subtitle font size consistent */
-    color: rgba(255, 255, 255, 0.9); /* Keep text color the same */
+    color: #333; /* Keep text color the same */
     margin: 10px 0 20px;
   }
 
@@ -152,7 +159,7 @@ canvas {
     font-weight: 500;
     border: 2px solid rgb(255, 255, 255);
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease;
   }
 }
 
@@ -162,6 +169,13 @@ canvas {
     padding: 10px; /* Add some padding for smaller screens */
   }
 
+  canvas {
+    height: 0%;
+    width: 0%;
+    background: rgba(255, 255, 255 ,1); /* Remove the canvas on mobile */
+    visibility: hidden; /* Hide canvas for better performance */
+  }
+
   /* Hero Section */
   .hero {
     text-align: center;
@@ -169,13 +183,13 @@ canvas {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 80vh; /* Keep hero height same as desktop */
+    min-height: 70vh; /* Keep hero height same as desktop */
     padding: 10px;
   }
 
   .hero-title {
     font-size: 2.5rem; /* Slightly reduce font size for small screens */
-    color: rgba(255, 255, 255, 0.9); /* Keep text color consistent */
+    color: #222; /* Keep text color consistent */
     font-weight: 1000;
     margin: 0;
     line-height: 1.2;
@@ -183,7 +197,7 @@ canvas {
 
   .hero-subtitle {
     font-size: 1.2rem; /* Adjust subtitle size */
-    color: rgba(255, 255, 255, 0.9);
+    color: #333;
     margin: 5px 0;
   }
 
