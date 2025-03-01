@@ -31,54 +31,52 @@ html, body {
   flex: 1;
 }
 
-/* Global Styles for Popup */
+/* Popup Overlay */
 .popup-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
   display: flex;
-  align-items: center;
   justify-content: center;
-  z-index: 1000; /* Make sure it's on top */
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of other elements */
 }
 
+/* Popup Box */
 .popup-box {
-  background: white;
-  padding: 30px;  /* Increased padding */
-  width: 60%;     /* Set to 60% of the screen width */
-  max-width: 600px; /* Ensure it doesn't exceed this max-width */
+  background-color: #fff;
+  padding: 20px;
   text-align: center;
   border-radius: 10px;
+  max-width: 500px;
+  width: 80%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.popup-box h2 {
-  margin-bottom: 20px; /* Increased space between title and content */
-  color: #0D7CE9; /* Gold color */
-}
-
+/* Popup Image */
 .popup-image {
-  margin: 15px 0; /* Spacing around the image */
-  max-width: 100%; /* Ensure the image scales with width */
+  width: 100%;
+  max-width: 200px; /* Optional: adjust based on your design */
   height: auto;
-  border-radius: 10px; /* Rounded corners for the image */
+  margin: 10px 0;
 }
 
+/* Popup Close Button */
 .popup-close-btn {
-  margin-top: 20px; /* Increased space between content and close button */
-  padding: 12px 25px; /* Bigger button size */
-  background: #0D7CE9; /* Gold background */
-  color: white;
+  padding: 10px 20px;
+  background-color: #0D7CE9; /* Blue button */
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 15px;
 }
 
 .popup-close-btn:hover {
-  background: #15CFF1; /* Slightly darker gold */
+  background-color: #005bb5;
 }
 
 @media (max-width: 48em) { /* Below 768px */

@@ -112,7 +112,6 @@ canvas {
     justify-content: center;
     align-items: center;
     min-height: 80vh; /* Keep same as desktop */
-    background: linear-gradient(135deg, #252833, #15192b); /* Keep gradient background */
   }
 
   .hero::before {
@@ -171,7 +170,6 @@ canvas {
     justify-content: center;
     align-items: center;
     min-height: 80vh; /* Keep hero height same as desktop */
-    background: linear-gradient(135deg, #252833, #15192b); /* Keep gradient background */
     padding: 10px;
   }
 
