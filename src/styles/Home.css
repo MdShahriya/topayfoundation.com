@@ -2,12 +2,14 @@
 .home-container {
   background: rgb(255, 255, 255);
   color: #222;
-  margin: 64px auto;
+  margin: 50px auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 0 20px;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
 }
 
 /* Hero Section */
@@ -22,7 +24,7 @@
   background: transparent; /* Fully transparent background */
   border-radius: 10px;
   padding: 20px;
-  margin: 50px;
+  margin: 10px;
 }
 
 canvas {

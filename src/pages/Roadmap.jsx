@@ -1,24 +1,14 @@
 import React from "react";
 import "../styles/Roadmap.css";
 
-// Format text with bold without using dangerouslySetInnerHTML
-function formatTextWithBold(text) {
-  const regex = /\((.*?)\)/g; // Matches text inside parentheses
-  const parts = [];
-  let lastIndex = 0;
+// Function to format text inside parentheses as bold
+const formatTextWithBold = (text) => {
+  return text.split(/\((.*?)\)/g).map((part, index) =>
+    index % 2 === 1 ? <strong key={index}>{part}</strong> : part
+  );
+};
 
-  text.replace(regex, (match, p1, offset) => {
-    parts.push(text.substring(lastIndex, offset));
-    parts.push(<strong key={offset}>{p1}</strong>);
-    lastIndex = offset + match.length;
-    return match;
-  });
-
-  parts.push(text.substring(lastIndex)); // Add remaining text
-  return parts;
-}
-
-function Roadmap() {
+const Roadmap = () => {
   const roadmapPhases = [
     {
       phase: "Phase 1 – Community Building & Awareness",
@@ -73,31 +63,33 @@ function Roadmap() {
       ],
     },
   ];
-  
+
   return (
-    
-      <section className="roadmap">
-        <h2>Our Roadmap</h2>
-        <div className="timeline">
-          {roadmapPhases.map((phase, index) => (
-            <div className="timeline-item" key={index}>
-              <div className="timeline-content">
-                <h3>{phase.phase}</h3>
-                <span className="date">{phase.date}</span>
-                <ul>
-                  {phase.tasks.map((task, idx) => (
-                    <li key={idx} className={task.isTicked ? "ticked" : ""}>
-                      {formatTextWithBold(task.description)}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+    <section className="roadmap">
+      <h2>Our Roadmap</h2>
+      <div className="timeline">
+        {roadmapPhases.map((phase, index) => (
+          <div className="timeline-item" key={index}>
+            <div className="timeline-content">
+              <h3>{phase.phase}</h3>
+              <span className="date">{phase.date}</span>
+              <ul>
+                {phase.tasks.map((task, idx) => (
+                  <li
+                    key={idx}
+                    className={task.isTicked ? "ticked" : ""}
+                    onTouchStart={(e) => e.stopPropagation()} // Prevents accidental double taps
+                  >
+                    {formatTextWithBold(task.description)}
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
-        </div>
-      </section>
-    
+          </div>
+        ))}
+      </div>
+    </section>
   );
-}
+};
 
 export default Roadmap;

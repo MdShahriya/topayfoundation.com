@@ -1,39 +1,36 @@
-import React, { useState, useEffect, useRef, lazy, Suspense } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import "../styles/Home.css";
 import BoxReveal from "./BoxReveal";
+import ShortRoadmap from "../Components/ShortRoadmap";
 import AnimatedBackground from "../Components/NonInteractiveBlockWeb";
-
-// Lazy-loaded components
-const ShortRoadmap = lazy(() => import("../Components/ShortRoadmap"));
-const FeatureCard = lazy(() => import("../Components/FeatureCard"));
-const EventCard = lazy(() => import("../Components/EventCard"));
-const FAQ = lazy(() => import("../Components/FAQ"));
+import FeatureCard from "../Components/FeatureCard";
+import EventCard from "../Components/EventCard";
+import FAQ from "../Components/FAQ";
 
 const Home = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const sectionsRef = useRef([]);
   const [visibleSections, setVisibleSections] = useState({});
 
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
+  // UseCallback to avoid unnecessary re-renders
+  const observeSections = useCallback(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setVisibleSections((prev) => ({
-              ...prev,
-              [entry.target.dataset.section]: true,
-            }));
+            requestAnimationFrame(() => {
+              setVisibleSections((prev) => ({
+                ...prev,
+                [entry.target.dataset.section]: true,
+              }));
+            });
           }
         });
       },
-      { threshold: 0.2 }
+      {
+        threshold: 0.2,
+        rootMargin: "50px", // Helps on mobile
+      }
     );
 
     sectionsRef.current.forEach((section) => {
@@ -43,10 +40,19 @@ const Home = () => {
     return () => observer.disconnect();
   }, []);
 
-  const closePopup = () => setIsPopupOpen(false);
+  useEffect(() => {
+    observeSections();
+  }, [observeSections]);
+
+  // Close popup with better touch response
+  const closePopup = (e) => {
+    e.preventDefault();
+    setIsPopupOpen(false);
+  };
 
   return (
     <div className="home-container">
+      {/* Popup Window */}
       {isPopupOpen && (
         <div className="popup-overlay">
           <div className="popup-box">
@@ -56,14 +62,18 @@ const Home = () => {
               alt="Ramadan Image"
               className="popup-image"
             />
-            <p>Welcome to TOPAY Foundation! May this Ramadan bring you peace, blessings, and prosperity.</p>
-            <button onClick={closePopup} className="popup-close-btn">
+            <p>
+              Welcome to TOPAY Foundation! May this Ramadan bring you peace,
+              blessings, and prosperity.
+            </p>
+            <button onTouchStart={closePopup} className="popup-close-btn">
               Close
             </button>
           </div>
         </div>
       )}
 
+      {/* Hero Section */}
       <BoxReveal animationDuration="0s">
         <section className="hero">
           <AnimatedBackground />
@@ -76,40 +86,22 @@ const Home = () => {
         </section>
       </BoxReveal>
 
-      {/* Lazy Loading for Mobile */}
-      <Suspense fallback={<div className="loading">Loading...</div>}>
+      {/* Lazy Loaded Sections */}
+      {[
+        { component: <FeatureCard />, section: "feature" },
+        { component: <ShortRoadmap />, section: "roadmap" },
+        { component: <EventCard />, section: "event" },
+        { component: <FAQ />, section: "faq" },
+      ].map((item, index) => (
         <div
-          ref={(el) => (sectionsRef.current[0] = el)}
-          data-section="feature"
-          className={`fade-section ${visibleSections["feature"] ? "fade-in" : ""}`}
+          key={item.section}
+          ref={(el) => (sectionsRef.current[index] = el)}
+          data-section={item.section}
+          className={`fade-section ${visibleSections[item.section] ? "fade-in" : ""}`}
         >
-          <FeatureCard />
+          {item.component}
         </div>
-
-        <div
-          ref={(el) => (sectionsRef.current[1] = el)}
-          data-section="roadmap"
-          className={`fade-section ${visibleSections["roadmap"] ? "fade-in" : ""}`}
-        >
-          {isMobile ? <ShortRoadmap /> : <ShortRoadmap />}
-        </div>
-
-        <div
-          ref={(el) => (sectionsRef.current[2] = el)}
-          data-section="event"
-          className={`fade-section ${visibleSections["event"] ? "fade-in" : ""}`}
-        >
-          <EventCard />
-        </div>
-
-        <div
-          ref={(el) => (sectionsRef.current[3] = el)}
-          data-section="faq"
-          className={`fade-section ${visibleSections["faq"] ? "fade-in" : ""}`}
-        >
-          <FAQ />
-        </div>
-      </Suspense>
+      ))}
     </div>
   );
 };
