@@ -53,10 +53,10 @@ const Home = () => {
             }));
           });
         });
-      }, 100), // Throttle updates at a max rate of once every 100ms
+      }, 150), // Adjust throttling rate to 150ms for smooth experience
       {
-        threshold: 0.3, // Increase threshold for smoother experience
-        rootMargin: "0px 0px -20% 0px", // Smooth detection with larger bottom margin
+        threshold: 0.2, // Sections appear when 20% is visible
+        rootMargin: "0px 0px -20% 0px", // Detect earlier when sections are near the viewport
       }
     );
 
@@ -114,12 +114,10 @@ const Home = () => {
       </BoxReveal>
 
       {/* Lazy Loaded Sections */}
-      {[
-        { component: <FeatureCard />, section: "feature" },
+      {[{ component: <FeatureCard />, section: "feature" },
         { component: <ShortRoadmap />, section: "roadmap" },
         { component: <EventCard />, section: "event" },
-        { component: <FAQ />, section: "faq" },
-      ].map((item, index) => (
+        { component: <FAQ />, section: "faq" }].map((item, index) => (
         <div
           key={item.section}
           ref={(el) => (sectionsRef.current[index] = el)}

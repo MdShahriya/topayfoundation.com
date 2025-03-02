@@ -8,8 +8,6 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 0 20px;
-  scroll-behavior: smooth;
-  overscroll-behavior: contain;
 }
 
 /* Hero Section */
@@ -97,7 +95,7 @@ canvas {
 
 .fade-section {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(10px);
   transition: opacity 0.3s ease-out, transform 0.3s ease-out;
   overflow-anchor: auto;
 }
