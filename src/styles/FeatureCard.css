@@ -1,56 +1,77 @@
-/* FeatureCard.css */
-
 /* Features Section */
 .features {
-    padding: 40px 20px;
-    text-align: center;
-  }
-  
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Feature Cards Layout */
+.features-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Feature Card */
+.feature-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out;
+  will-change: transform, box-shadow; /* Performance optimization */
+}
+
+/* Hover Effect - Subtle and Fast */
+.feature-card:hover {
+  transform: translate3d(0, -5px, 0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Feature Card Icon */
+.feature-card i {
+  font-size: 2.2rem;
+  color: #0D7CE9;
+  margin-bottom: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
   .features-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+      gap: 15px;
   }
-  
   .feature-card {
-    background: rgb(255, 255, 255);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 45%;
   }
-  
-  .feature-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .feature-card {
+      width: 100%;
+      padding: 15px;
   }
-  
-  .feature-card i {
-    font-size: 2.5rem;
-    color: #0D7CE9;
-    margin-bottom: 10px;
-  }
-  
-  /* Responsive Styles for Features Section */
-  @media (max-width: 768px) {
-    .feature-card {
-      min-width: 380px;
-      height: 200px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .feature-card {
-      padding: 10px;
+}
+
+@media (max-width: 480px) {
+  .feature-card {
+      padding: 12px;
       font-size: 0.9rem;
-      border-radius: 5px;
-    }
-  
-    .feature-card i {
-      font-size: 1.5rem;
-      margin-bottom: 8px;
-    }
+      border-radius: 8px;
   }
-  
+  .feature-card i {
+      font-size: 1.8rem;
+  }
+}
+
+/* Fade-in Animation for Smooth Scrolling */
+.fade-section {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.fade-section.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}

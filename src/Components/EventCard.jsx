@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "../styles/EventCard.css"; // External CSS file
 
 function EventCard() {
   const [currentEventIndex, setCurrentEventIndex] = useState(0);
+  const intervalRef = useRef(null);
 
   const serviceEvents = [
     {
@@ -24,12 +25,12 @@ function EventCard() {
   ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    intervalRef.current = setInterval(() => {
       setCurrentEventIndex((prevIndex) => (prevIndex + 1) % serviceEvents.length);
     }, 5000);
-  
-    return () => clearInterval(interval);
-  }, [serviceEvents.length]);
+
+    return () => clearInterval(intervalRef.current); // Cleanup interval on unmount
+  }, []);
 
   return (
     <section className="running-event">
@@ -47,7 +48,12 @@ function EventCard() {
           {serviceEvents.map((event, index) => (
             <div key={index} className="event-card-container" style={{ width: "100%" }}>
               <a href={event.link} target="_blank" rel="noopener noreferrer" className="event-card-link">
-                <div className="event-card" style={{ backgroundImage: `url(${event.src})` }}>
+                <div
+                  className="event-card"
+                  style={{ backgroundImage: `url(${event.src})` }}
+                  role="img"
+                  aria-label={`${event.title} - ${event.eventType}`} // Improves accessibility
+                >
                   <div className="blurred-section">
                     <span className="event-type">{event.eventType}</span>
                     <h3 className="title">{event.title}</h3>
@@ -64,6 +70,5 @@ function EventCard() {
     </section>
   );
 }
-
 
 export default EventCard;

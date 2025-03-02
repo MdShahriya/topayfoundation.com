@@ -1,62 +1,37 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback, Suspense } from "react";
 import "../styles/Home.css";
-import BoxReveal from "./BoxReveal";
-import ShortRoadmap from "../Components/ShortRoadmap";
-import AnimatedBackground from "../Components/NonInteractiveBlockWeb";
-import FeatureCard from "../Components/FeatureCard";
-import EventCard from "../Components/EventCard";
-import FAQ from "../Components/FAQ";
 
-// Utility function to throttle scroll events
-const throttle = (func, limit) => {
-  let lastFunc;
-  let lastRan;
-  return function () {
-    const context = this;
-    const args = arguments;
-    if (!lastRan) {
-      func.apply(context, args);
-      lastRan = Date.now();
-    } else {
-      clearTimeout(lastFunc);
-      lastFunc = setTimeout(function () {
-        if (Date.now() - lastRan >= limit) {
-          func.apply(context, args);
-          lastRan = Date.now();
-        }
-      }, limit - (Date.now() - lastRan));
-    }
-  };
-};
+// Lazy load components
+const BoxReveal = React.lazy(() => import("./BoxReveal"));
+const ShortRoadmap = React.lazy(() => import("../Components/ShortRoadmap"));
+const AnimatedBackground = React.lazy(() => import("../Components/NonInteractiveBlockWeb"));
+const FeatureCard = React.lazy(() => import("../Components/FeatureCard"));
+const EventCard = React.lazy(() => import("../Components/EventCard"));
+const FAQ = React.lazy(() => import("../Components/FAQ"));
 
 const Home = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
   const sectionsRef = useRef([]);
   const observerRef = useRef(null);
-  const [visibleSections, setVisibleSections] = useState({});
 
-  // Function to observe sections
   const observeSections = useCallback(() => {
-    // Disconnect previous observer if exists
     if (observerRef.current) {
       observerRef.current.disconnect();
     }
 
-    // Improved IntersectionObserver with throttle applied
     observerRef.current = new IntersectionObserver(
-      throttle((entries) => {
+      (entries) => {
         entries.forEach((entry) => {
           requestAnimationFrame(() => {
-            setVisibleSections((prev) => ({
-              ...prev,
-              [entry.target.dataset.section]: entry.isIntersecting, // Detect both scroll up & down
-            }));
+            if (entry.isIntersecting) {
+              entry.target.classList.add("fade-in"); // Add CSS class for animation
+            }
           });
         });
-      }, 150), // Adjust throttling rate to 150ms for smooth experience
+      },
       {
-        threshold: 0.2, // Sections appear when 20% is visible
-        rootMargin: "0px 0px -20% 0px", // Detect earlier when sections are near the viewport
+        threshold: 0.2, // Adjusted for smoother visibility
+        rootMargin: "0px 0px -10% 0px", // Slight delay for natural effect
       }
     );
 
@@ -64,14 +39,13 @@ const Home = () => {
       if (section) observerRef.current.observe(section);
     });
 
-    return () => observerRef.current.disconnect(); // Cleanup on unmount
+    return () => observerRef.current.disconnect();
   }, []);
 
   useEffect(() => {
     observeSections();
   }, [observeSections]);
 
-  // Close popup on click
   const closePopup = (e) => {
     e.preventDefault();
     setIsPopupOpen(false);
@@ -84,49 +58,44 @@ const Home = () => {
         <div className="popup-overlay">
           <div className="popup-box">
             <h2>Ramadan Mubarak!</h2>
-            <img
-              src="/images/ramadan.png"
-              alt="Ramadan Image"
-              className="popup-image"
-            />
-            <p>
-              Welcome to TOPAY Foundation! May this Ramadan bring you peace,
-              blessings, and prosperity.
-            </p>
-            <button onClick={closePopup} className="popup-close-btn">
-              Close
-            </button>
+            <img src="/images/ramadan.png" alt="Ramadan" className="popup-image" />
+            <p>Welcome to TOPAY Foundation! May this Ramadan bring you peace, blessings, and prosperity.</p>
+            <button onClick={closePopup} className="popup-close-btn">Close</button>
           </div>
         </div>
       )}
 
       {/* Hero Section */}
-      <BoxReveal animationDuration="0s">
-        <section className="hero">
-          <AnimatedBackground />
-          <div className="hero-content">
-            <h1 className="hero-title">Welcome to TOPAY Foundation</h1>
-            <p className="hero-subtitle">
-              The First Islamic Blockchain – Ethical, Transparent, and Riba-Free
-            </p>
-          </div>
-        </section>
-      </BoxReveal>
+      <Suspense fallback={<div>Loading...</div>}>
+        <BoxReveal animationDuration="0s">
+          <section className="hero">
+            <AnimatedBackground />
+            <div className="hero-content">
+              <h1 className="hero-title">Welcome to TOPAY Foundation</h1>
+              <p className="hero-subtitle">
+                The First Islamic Blockchain – Ethical, Transparent, and Riba-Free
+              </p>
+            </div>
+          </section>
+        </BoxReveal>
 
-      {/* Lazy Loaded Sections */}
-      {[{ component: <FeatureCard />, section: "feature" },
-        { component: <ShortRoadmap />, section: "roadmap" },
-        { component: <EventCard />, section: "event" },
-        { component: <FAQ />, section: "faq" }].map((item, index) => (
-        <div
-          key={item.section}
-          ref={(el) => (sectionsRef.current[index] = el)}
-          data-section={item.section}
-          className={`fade-section ${visibleSections[item.section] ? "fade-in" : ""}`}
-        >
-          {item.component}
-        </div>
-      ))}
+        {/* Lazy Loaded Sections */}
+        {[
+          { component: <FeatureCard />, section: "feature" },
+          { component: <ShortRoadmap />, section: "roadmap" },
+          { component: <EventCard />, section: "event" },
+          { component: <FAQ />, section: "faq" },
+        ].map((item, index) => (
+          <div
+            key={item.section}
+            ref={(el) => (sectionsRef.current[index] = el)}
+            data-section={item.section}
+            className="fade-section"
+          >
+            {item.component}
+          </div>
+        ))}
+      </Suspense>
     </div>
   );
 };
