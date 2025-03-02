@@ -30,7 +30,7 @@ const Home = () => {
         });
       },
       {
-        threshold: 0.2, // Adjusted for smoother visibility
+        threshold: 0.3, // Adjusted for smoother visibility
         rootMargin: "0px 0px -10% 0px", // Slight delay for natural effect
       }
     );
