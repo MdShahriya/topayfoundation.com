@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { NotificationContext } from "../context/NotificationContext";
+import { NotificationContext } from "../context/js/NotificationContext";
 import "../styles/BrandingPage.css";
 
 const BrandingPage = () => {

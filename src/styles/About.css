@@ -128,6 +128,17 @@
   z-index: -1;
 }
 
+.about-roadmap {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.about-roadmap.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Responsive Design for Tablet */
 @media (max-width: 768px) {
   .roadmap-step {

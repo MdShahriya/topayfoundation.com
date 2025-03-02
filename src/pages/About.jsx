@@ -1,10 +1,30 @@
-import React from "react";
-import '../styles/About.css';
-import './BoxReveal';
+import React, { useState, useEffect, useRef } from "react";
+import "../styles/About.css";
 
-function About() {
+const About = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const aboutRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Stop observing once visible
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (aboutRef.current) {
+      observer.observe(aboutRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="about-roadmap">
+    <section ref={aboutRef} className={`about-roadmap ${isVisible ? "fade-in" : ""}`}>
       <h1 className="roadmap-heading">Our Journey with TOPAY FOUNDATION</h1>
       <div className="roadmap-container">
         
@@ -13,7 +33,7 @@ function About() {
           <div className="step-content">
             <h2>Foundation & Vision</h2>
             <p>
-              <strong>TOPAY FOUNDATION</strong> was created as the first Riba-free blockchain initiative, ensuring ethical and transparent financial solutions. Our vision is to bridge Islamic finance with blockchain technology, empowering individuals and businesses to engage in Shariah-compliant financial activities.
+              <strong>TOPAY FOUNDATION</strong> was created as the first Riba-free blockchain initiative, ensuring ethical and transparent financial solutions.
             </p>
           </div>
         </div>
@@ -22,9 +42,7 @@ function About() {
           <div className="step-circle">2</div>
           <div className="step-content">
             <h2>Launch of $TOPAY</h2>
-            <p>
-              The introduction of <strong>$TOPAY</strong> marks a new era in ethical digital finance. As a native token, it powers a Riba-free ecosystem, enabling staking, rewards, and transactions without interest-based mechanisms.
-            </p>
+            <p>The introduction of <strong>$TOPAY</strong> marks a new era in ethical digital finance.</p>
           </div>
         </div>
 
@@ -32,9 +50,7 @@ function About() {
           <div className="step-circle">3</div>
           <div className="step-content">
             <h2>Riba-Free Financial App</h2>
-            <p>
-              Our upcoming Shariah-compliant app will enable users to earn $TOPAY through various engagements, including Halal investments, educational events, and ethical financial activities. This initiative promotes financial inclusion and encourages responsible blockchain adoption.
-            </p>
+            <p>Our upcoming app will enable users to earn $TOPAY through Halal investments and educational events.</p>
           </div>
         </div>
 
@@ -42,14 +58,12 @@ function About() {
           <div className="step-circle">4</div>
           <div className="step-content">
             <h2>Future Growth & Expansion</h2>
-            <p>
-              Looking ahead, TOPAY FOUNDATION is committed to expanding partnerships with Islamic banks, fintech innovators, and regulatory bodies. Our mission is to build a sustainable, decentralized ecosystem that aligns with Islamic financial principles while driving blockchain adoption.
-            </p>
+            <p>TOPAY FOUNDATION is committed to expanding partnerships with Islamic banks and fintech innovators.</p>
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default About;

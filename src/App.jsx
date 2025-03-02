@@ -1,6 +1,6 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { NotificationProvider } from './context/NotificationProvider';
+import { NotificationProvider } from './context/react/NotificationProvider';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import BackToTopButton from './Components/BackToTopButton';

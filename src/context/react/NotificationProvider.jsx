@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import { NotificationContext } from "./NotificationContext"; // Import the context
+import { NotificationContext } from "../js/NotificationContext"; // Import the context
 import PropTypes from "prop-types";
-import "../styles/Notification.css";
+import "../../styles/Notification.css";
 
 export const NotificationProvider = ({ children }) => {
   const [notification, setNotification] = useState(null);
