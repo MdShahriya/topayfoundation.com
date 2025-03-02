@@ -7,10 +7,32 @@ import FeatureCard from "../Components/FeatureCard";
 import EventCard from "../Components/EventCard";
 import FAQ from "../Components/FAQ";
 
+// Utility function to throttle scroll events
+const throttle = (func, limit) => {
+  let lastFunc;
+  let lastRan;
+  return function () {
+    const context = this;
+    const args = arguments;
+    if (!lastRan) {
+      func.apply(context, args);
+      lastRan = Date.now();
+    } else {
+      clearTimeout(lastFunc);
+      lastFunc = setTimeout(function () {
+        if (Date.now() - lastRan >= limit) {
+          func.apply(context, args);
+          lastRan = Date.now();
+        }
+      }, limit - (Date.now() - lastRan));
+    }
+  };
+};
+
 const Home = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
   const sectionsRef = useRef([]);
-  const observerRef = useRef(null); // Keep a reference to observer
+  const observerRef = useRef(null);
   const [visibleSections, setVisibleSections] = useState({});
 
   // Function to observe sections
@@ -20,20 +42,21 @@ const Home = () => {
       observerRef.current.disconnect();
     }
 
+    // Improved IntersectionObserver with throttle applied
     observerRef.current = new IntersectionObserver(
-      (entries) => {
+      throttle((entries) => {
         entries.forEach((entry) => {
           requestAnimationFrame(() => {
             setVisibleSections((prev) => ({
               ...prev,
-              [entry.target.dataset.section]: entry.isIntersecting, // Detects both scroll up & down
+              [entry.target.dataset.section]: entry.isIntersecting, // Detect both scroll up & down
             }));
           });
         });
-      },
+      }, 100), // Throttle updates at a max rate of once every 100ms
       {
-        threshold: 0.2,
-        rootMargin: "0px 0px -10% 0px", // Smooth detection for up and down scrolling
+        threshold: 0.3, // Increase threshold for smoother experience
+        rootMargin: "0px 0px -20% 0px", // Smooth detection with larger bottom margin
       }
     );
 
