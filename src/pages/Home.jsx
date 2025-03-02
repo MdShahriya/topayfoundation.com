@@ -10,6 +10,7 @@ import FAQ from "../Components/FAQ";
 const Home = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(true);
   const sectionsRef = useRef([]);
+  const observerRef = useRef(null); // Keep a reference to observer
   const [visibleSections, setVisibleSections] = useState({});
 
   // Function to observe sections
@@ -47,7 +48,7 @@ const Home = () => {
     observeSections();
   }, [observeSections]);
 
-  // Close popup with better touch response
+  // Close popup on click
   const closePopup = (e) => {
     e.preventDefault();
     setIsPopupOpen(false);
@@ -69,7 +70,7 @@ const Home = () => {
               Welcome to TOPAY Foundation! May this Ramadan bring you peace,
               blessings, and prosperity.
             </p>
-            <button onTouchStart={closePopup} className="popup-close-btn">
+            <button onClick={closePopup} className="popup-close-btn">
               Close
             </button>
           </div>
