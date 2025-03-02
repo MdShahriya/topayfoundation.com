@@ -12,32 +12,35 @@ const Home = () => {
   const sectionsRef = useRef([]);
   const [visibleSections, setVisibleSections] = useState({});
 
-  // UseCallback to avoid unnecessary re-renders
+  // Function to observe sections
   const observeSections = useCallback(() => {
-    const observer = new IntersectionObserver(
+    // Disconnect previous observer if exists
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+    }
+
+    observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            requestAnimationFrame(() => {
-              setVisibleSections((prev) => ({
-                ...prev,
-                [entry.target.dataset.section]: true,
-              }));
-            });
-          }
+          requestAnimationFrame(() => {
+            setVisibleSections((prev) => ({
+              ...prev,
+              [entry.target.dataset.section]: entry.isIntersecting, // Detects both scroll up & down
+            }));
+          });
         });
       },
       {
         threshold: 0.2,
-        rootMargin: "50px", // Helps on mobile
+        rootMargin: "0px 0px -10% 0px", // Smooth detection for up and down scrolling
       }
     );
 
     sectionsRef.current.forEach((section) => {
-      if (section) observer.observe(section);
+      if (section) observerRef.current.observe(section);
     });
 
-    return () => observer.disconnect();
+    return () => observerRef.current.disconnect(); // Cleanup on unmount
   }, []);
 
   useEffect(() => {
