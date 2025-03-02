@@ -1,16 +1,25 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, lazy, Suspense } from "react";
 import "../styles/Home.css";
 import BoxReveal from "./BoxReveal";
-import ShortRoadmap from "../Components/ShortRoadmap";
 import AnimatedBackground from "../Components/NonInteractiveBlockWeb";
-import FeatureCard from "../Components/FeatureCard";
-import EventCard from "../Components/EventCard";
-import FAQ from "../Components/FAQ";
+
+// Lazy-loaded components
+const ShortRoadmap = lazy(() => import("../Components/ShortRoadmap"));
+const FeatureCard = lazy(() => import("../Components/FeatureCard"));
+const EventCard = lazy(() => import("../Components/EventCard"));
+const FAQ = lazy(() => import("../Components/FAQ"));
 
 const Home = () => {
-  const [isPopupOpen, setIsPopupOpen] = useState(true); // Popup on page load
-  const sectionsRef = useRef([]); // Store references to sections
-  const [visibleSections, setVisibleSections] = useState({}); // Track visibility
+  const [isPopupOpen, setIsPopupOpen] = useState(true);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const sectionsRef = useRef([]);
+  const [visibleSections, setVisibleSections] = useState({});
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -34,19 +43,16 @@ const Home = () => {
     return () => observer.disconnect();
   }, []);
 
-  const closePopup = () => {
-    setIsPopupOpen(false);
-  };
+  const closePopup = () => setIsPopupOpen(false);
 
   return (
     <div className="home-container">
-      {/* Popup Window for Ramadan Greeting with optional image */}
       {isPopupOpen && (
         <div className="popup-overlay">
           <div className="popup-box">
             <h2>Ramadan Mubarak!</h2>
             <img
-              src="/images/ramadan.png" // Replace with your image URL
+              src="/images/ramadan.png"
               alt="Ramadan Image"
               className="popup-image"
             />
@@ -58,49 +64,52 @@ const Home = () => {
         </div>
       )}
 
-      {/* Hero Section */}
       <BoxReveal animationDuration="0s">
         <section className="hero">
           <AnimatedBackground />
           <div className="hero-content">
             <h1 className="hero-title">Welcome to TOPAY Foundation</h1>
-            <p className="hero-subtitle">The First Islamic Blockchain – Ethical, Transparent, and Riba-Free</p>
+            <p className="hero-subtitle">
+              The First Islamic Blockchain – Ethical, Transparent, and Riba-Free
+            </p>
           </div>
         </section>
       </BoxReveal>
 
-      {/* Lazy Loaded Sections */}
-      <div
-        ref={(el) => (sectionsRef.current[0] = el)}
-        data-section="feature"
-        className={`fade-section ${visibleSections["feature"] ? "fade-in" : ""}`}
-      >
-        <FeatureCard />
-      </div>
+      {/* Lazy Loading for Mobile */}
+      <Suspense fallback={<div className="loading">Loading...</div>}>
+        <div
+          ref={(el) => (sectionsRef.current[0] = el)}
+          data-section="feature"
+          className={`fade-section ${visibleSections["feature"] ? "fade-in" : ""}`}
+        >
+          <FeatureCard />
+        </div>
 
-      <div
-        ref={(el) => (sectionsRef.current[1] = el)}
-        data-section="roadmap"
-        className={`fade-section ${visibleSections["roadmap"] ? "fade-in" : ""}`}
-      >
-        <ShortRoadmap />
-      </div>
+        <div
+          ref={(el) => (sectionsRef.current[1] = el)}
+          data-section="roadmap"
+          className={`fade-section ${visibleSections["roadmap"] ? "fade-in" : ""}`}
+        >
+          {isMobile ? <ShortRoadmap /> : <ShortRoadmap />}
+        </div>
 
-      <div
-        ref={(el) => (sectionsRef.current[2] = el)}
-        data-section="event"
-        className={`fade-section ${visibleSections["event"] ? "fade-in" : ""}`}
-      >
-        <EventCard />
-      </div>
+        <div
+          ref={(el) => (sectionsRef.current[2] = el)}
+          data-section="event"
+          className={`fade-section ${visibleSections["event"] ? "fade-in" : ""}`}
+        >
+          <EventCard />
+        </div>
 
-      <div
-        ref={(el) => (sectionsRef.current[3] = el)}
-        data-section="faq"
-        className={`fade-section ${visibleSections["faq"] ? "fade-in" : ""}`}
-      >
-        <FAQ />
-      </div>
+        <div
+          ref={(el) => (sectionsRef.current[3] = el)}
+          data-section="faq"
+          className={`fade-section ${visibleSections["faq"] ? "fade-in" : ""}`}
+        >
+          <FAQ />
+        </div>
+      </Suspense>
     </div>
   );
 };

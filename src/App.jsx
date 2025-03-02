@@ -1,18 +1,17 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { NotificationProvider } from './context/react/NotificationProvider';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
 import BackToTopButton from './Components/BackToTopButton';
 import ScrollToTop from './Components/ScrollToTop';
 import Loading from './Components/Loading';
-import License from './pages/License';
-import Invest from './pages/Invest';
-import Brand from './pages/BrandingPage';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './styles/App.css';
 
-// Import pages using dynamic imports
+// Lazy Load Components
+const Header = React.lazy(() => import('./Components/Header'));
+const Footer = React.lazy(() => import('./Components/Footer'));
+
+// Lazy Load Pages
 const Home = React.lazy(() => import('./pages/Home'));
 const About = React.lazy(() => import('./pages/About'));
 const Services = React.lazy(() => import('./pages/Services'));
@@ -20,18 +19,25 @@ const Roadmap = React.lazy(() => import('./pages/Roadmap'));
 const PrivacyPolicy = React.lazy(() => import('./Components/PrivacyPolicy'));
 const TermsOfService = React.lazy(() => import('./Components/TermsOfService'));
 const Projects = React.lazy(() => import('./pages/Projects'));
+const License = React.lazy(() => import('./pages/License'));
+const Invest = React.lazy(() => import('./pages/Invest'));
+const Brand = React.lazy(() => import('./pages/BrandingPage'));
 
 function App() {
   return (
     <NotificationProvider>
       <Router
-    future={{
-      v7_startTransition: true,
-      v7_relativeSplatPath: true,
-    }}
-  >
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true,
+        }}
+      >
         <div className="page-container">
-          <Header />
+          {/* Lazy Loaded Header */}
+          <Suspense fallback={<Loading />}>
+            <Header />
+          </Suspense>
+
           <div className="content">
             <Suspense fallback={<Loading />}>
               <ScrollToTop />
@@ -50,7 +56,11 @@ function App() {
             </Suspense>
             <BackToTopButton />
           </div>
-          <Footer />
+
+          {/* Lazy Loaded Footer */}
+          <Suspense fallback={<Loading />}>
+            <Footer />
+          </Suspense>
         </div>
       </Router>
     </NotificationProvider>
