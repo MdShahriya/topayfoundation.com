@@ -1,12 +1,20 @@
 /* Roadmap Section Styling */
 .about-roadmap {
   padding: 60px 20px;
-  background: rgba(225, 225, 225, 1); /* Same background as Services page */
+  background: rgba(225, 225, 225, 1); /* Background for uniformity */
   position: relative;
   margin: 80px auto;
   max-width: 1200px;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.about-roadmap.fade-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Roadmap Heading Styling */
@@ -39,6 +47,7 @@
   animation: fadeInUp 0.8s ease-in-out forwards;
 }
 
+/* Fade-in animation for roadmap step */
 @keyframes fadeInUp {
   to {
     opacity: 1;
@@ -75,11 +84,6 @@
   z-index: 2;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.step-circle:hover {
-  transform: translateX(-50%) scale(1.1);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Step Content Box */
@@ -126,17 +130,6 @@
   height: 100%;
   background: #0D7CE9;
   z-index: -1;
-}
-
-.about-roadmap {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.about-roadmap.fade-in {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* Responsive Design for Tablet */

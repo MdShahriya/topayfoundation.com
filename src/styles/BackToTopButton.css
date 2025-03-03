@@ -16,3 +16,11 @@
 .back-to-top:active {
   transform: scale(0.95);
 }
+
+@media (max-width: 768px) {
+  .back-to-top {
+    position: fixed;
+    bottom: 60px;
+    right: 30px;
+  }
+}

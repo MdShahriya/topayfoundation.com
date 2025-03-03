@@ -1,7 +1,7 @@
 /* Event Card Base Styles */
 .event-card {
   display: flex;
-  height: 300px; /* Maintain a rectangular height */
+  height: 300px; /* Maintain rectangular height */
   width: calc(100% - 10px); /* Leave 5px margin on each side */
   max-width: 900px;
   border-radius: 10px;
@@ -127,7 +127,6 @@
 
 /* Media Queries for Mobile Optimization */
 @media screen and (max-width: 768px) {
-  /* Adjust event card layout to keep them horizontal */
   .event-card {
     flex-direction: row; /* Ensure cards stay in a row */
     height: 250px; /* Maintain rectangular shape */

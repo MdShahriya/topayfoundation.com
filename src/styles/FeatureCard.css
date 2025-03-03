@@ -6,10 +6,10 @@
 
 /* Feature Cards Layout */
 .features-content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
+  justify-items: center;
 }
 
 /* Feature Card */
@@ -23,12 +23,6 @@
   will-change: transform, box-shadow; /* Performance optimization */
 }
 
-/* Hover Effect - Subtle and Fast */
-.feature-card:hover {
-  transform: translate3d(0, -5px, 0);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
 /* Feature Card Icon */
 .feature-card i {
   font-size: 2.2rem;
@@ -39,28 +33,28 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .features-content {
-      gap: 15px;
+    gap: 15px;
   }
   .feature-card {
-      width: 45%;
+    width: 45%;
   }
 }
 
 @media (max-width: 768px) {
   .feature-card {
-      width: 100%;
-      padding: 15px;
+    width: 100%;
+    padding: 15px;
   }
 }
 
 @media (max-width: 480px) {
   .feature-card {
-      padding: 12px;
-      font-size: 0.9rem;
-      border-radius: 8px;
+    padding: 12px;
+    font-size: 0.9rem;
+    border-radius: 8px;
   }
   .feature-card i {
-      font-size: 1.8rem;
+    font-size: 1.8rem;
   }
 }
 

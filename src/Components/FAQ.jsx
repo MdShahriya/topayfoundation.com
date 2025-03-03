@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useMemo } from "react";
 import "../styles/FAQ.css"; // Import CSS file
 
 const faqs = [
@@ -21,7 +20,6 @@ const faqs = [
   }
 ];
 
-
 const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -29,24 +27,36 @@ const FAQ = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  // Memoize FAQ list for better performance on re-renders
+  const faqItems = useMemo(
+    () => faqs.map((faq, index) => (
+      <div key={index} className="faq-item">
+        <button 
+          className="faq-question" 
+          onClick={() => toggleFAQ(index)} 
+          aria-expanded={openIndex === index ? "true" : "false"}
+          aria-controls={`faq-answer-${index}`}
+        >
+          {faq.question}
+          <span className={`faq-toggle ${openIndex === index ? "open" : ""}`}>
+            {openIndex === index ? "⨉" : "▼"}
+          </span>
+        </button>
+        <p 
+          id={`faq-answer-${index}`} 
+          className={`faq-answer ${openIndex === index ? "show" : ""}`}
+        >
+          {faq.answer}
+        </p>
+      </div>
+    )),
+    [openIndex] // Only re-calculate when openIndex changes
+  );
+
   return (
     <div className="faq-container">
       <h2 className="faq-title">Frequently Asked Questions</h2>
-      <div>
-        {faqs.map((faq, index) => (
-          <div key={index} className="faq-item">
-            <button className="faq-question" onClick={() => toggleFAQ(index)}>
-              {faq.question}
-              <span className={`faq-toggle ${openIndex === index ? "open" : ""}`}>
-                {openIndex === index ? "⨉" : "▼"}
-              </span>
-            </button>
-            <p className={`faq-answer ${openIndex === index ? "show" : ""}`}>
-              {faq.answer}
-            </p>
-          </div>
-        ))}
-      </div>
+      <div>{faqItems}</div>
     </div>
   );
 };
