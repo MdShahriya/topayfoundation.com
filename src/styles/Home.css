@@ -63,10 +63,6 @@ canvas {
   margin: 10px 0 20px;
 }
 
-.hero-cta {
-  z-index: 2;
-}
-
 .btn {
   width: 16rem;
   height: 4rem;
@@ -156,6 +152,14 @@ canvas {
     font-size: 1.5rem; /* Keep subtitle font size consistent */
     color: #333; /* Keep text color the same */
     margin: 10px 0 20px;
+  }
+
+  .shortmap {
+    display: none;
+  }
+
+  .event {
+    display: none;
   }
 
   .btn {
