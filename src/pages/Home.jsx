@@ -33,7 +33,7 @@ const Home = () => {
             <div className="hero-content">
               <h1 className="hero-title">Welcome to TOPAY Foundation</h1>
               <p className="hero-subtitle">
-                The First Islamic Blockchain – Ethical, Transparent, and Riba-Free
+                The First Islamic Blockchain & Services – Ethical, Transparent, and Riba-Free
               </p>
             </div>
           </section>
