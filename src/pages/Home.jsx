@@ -38,12 +38,12 @@ const Home = () => {
             </div>
           </section>
         </BoxReveal>
-        
-        <FeatureCard />
-        <ShortRoadmap />
-        <EventCard />
-        <FAQ />
-      </Suspense>
+        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}><FeatureCard /></Suspense>
+        <Suspense fallback={<div>Loading...</div>}><ShortRoadmap /></Suspense>
+        <Suspense fallback={<div>Loading...</div>}><EventCard /></Suspense>
+        <Suspense fallback={<div>Loading...</div>}><FAQ /></Suspense>
+      
     </div>
   );
 };
