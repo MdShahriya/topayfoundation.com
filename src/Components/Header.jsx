@@ -2,13 +2,11 @@ import React, { useState, useEffect, useRef, memo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import '../styles/Header.css';
 
+// Use React.memo for optimization
 const Header = memo(() => {
-  const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef(null);
   const location = useLocation();
-
-  const toggleMenu = () => setIsOpen(prev => !prev);
 
   useEffect(() => {
     let ticking = false;
@@ -22,6 +20,12 @@ const Header = memo(() => {
       }
     };
 
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        // setIsOpen(false);  // Not used anymore
+      }
+    };
+
     document.addEventListener('mousedown', handleClickOutside);
     window.addEventListener('scroll', handleScroll);
 
@@ -30,12 +34,6 @@ const Header = memo(() => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-
-  const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setIsOpen(false);
-    }
-  };
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -52,24 +50,13 @@ const Header = memo(() => {
         </Link>
       </div>
 
-      <div
-        className={`hamburger ${isOpen ? 'open' : ''}`}
-        onClick={toggleMenu}
-        aria-label="Toggle navigation"
-        aria-expanded={isOpen ? 'true' : 'false'}
-      >
-        <span className="bar"></span>
-        <span className="bar"></span>
-        <span className="bar"></span>
-      </div>
-
-      <nav ref={menuRef} className={`nav ${isOpen ? 'open' : ''}`}>
+      <nav ref={menuRef} className="nav">
         <ul>
           {navLinks.map(
             (link) =>
               link.path !== location.pathname && (
                 <li key={link.path}>
-                  <Link to={link.path} onClick={() => setIsOpen(false)}>
+                  <Link to={link.path}>
                     <strong>{link.label}</strong>
                   </Link>
                 </li>
@@ -77,8 +64,6 @@ const Header = memo(() => {
           )}
         </ul>
       </nav>
-
-      {isOpen && <div className="overlay show" onClick={() => setIsOpen(false)}></div>}
     </header>
   );
 });

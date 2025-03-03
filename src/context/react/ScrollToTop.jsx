@@ -5,9 +5,16 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Scroll to top after the page has fully loaded
-    window.scrollTo(0, 0);
-  }, [pathname]); // Scroll to top whenever the route changes
+    const timer = setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth',
+      });
+    }, 50); // Add a short delay (50ms) to ensure page has rendered
+
+    return () => clearTimeout(timer);
+  }, [pathname]);
 
   return null;
 };
