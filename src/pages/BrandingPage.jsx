@@ -36,7 +36,7 @@ const BrandingPage = () => {
           {/* Logo Section */}
           <div className="branding-element">
             <h3>Logo</h3>
-            <img src="/images/Logo.png" alt="Topay Foundation Logo" className="branding-logo" />
+            <img src="/images/Logo.webp" alt="Topay Foundation Logo" className="branding-logo" />
             <p>
               Our logo embodies our commitment to transparency and security. Use it with adequate spacing and in proper color variations.
             </p>

@@ -19,7 +19,7 @@ const Home = () => {
         <div className="popup-overlay">
           <div className="popup-box">
             <h2>Ramadan Mubarak!</h2>
-            <img src="/images/ramadan.png" alt="Ramadan" className="popup-image" />
+            <img src="/images/ramadan.webp" alt="Ramadan" className="popup-image" />
             <p>Welcome to TOPAY Foundation! May this Ramadan bring you peace, blessings, and prosperity.</p>
             <button onClick={closePopup} className="popup-close-btn">Close</button>
           </div>

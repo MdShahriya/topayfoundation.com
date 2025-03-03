@@ -1,9 +1,8 @@
-import React from "react";
-import  { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useRef, memo } from "react";
+import { Link, useLocation } from "react-router-dom";
 import '../styles/Header.css';
 
-function Header() {
+const Header = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef(null);
@@ -12,13 +11,16 @@ function Header() {
   const toggleMenu = () => setIsOpen(prev => !prev);
 
   useEffect(() => {
-    const handleClickOutside = event => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsOpen(false);
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
 
     document.addEventListener('mousedown', handleClickOutside);
     window.addEventListener('scroll', handleScroll);
@@ -28,6 +30,12 @@ function Header() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setIsOpen(false);
+    }
+  };
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -40,11 +48,16 @@ function Header() {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="logo">
         <Link to="/" className="logo-link">
-          <img src="/images/Logo.png" className="logo-image" alt="Logo" />
+          <img src="/images/Logo.webp" className="logo-image" alt="Logo" />
         </Link>
       </div>
 
-      <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
+      <div
+        className={`hamburger ${isOpen ? 'open' : ''}`}
+        onClick={toggleMenu}
+        aria-label="Toggle navigation"
+        aria-expanded={isOpen ? 'true' : 'false'}
+      >
         <span className="bar"></span>
         <span className="bar"></span>
         <span className="bar"></span>
@@ -68,6 +81,6 @@ function Header() {
       {isOpen && <div className="overlay show" onClick={() => setIsOpen(false)}></div>}
     </header>
   );
-}
+});
 
 export default Header;

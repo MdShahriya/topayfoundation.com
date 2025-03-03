@@ -7,7 +7,7 @@ function EventCard() {
 
   const serviceEvents = [
     {
-      src: "/events/vevent.png",
+      src: "/events/vevent.webp",
       link: "https://www.linkedin.com/events/fromvolunteertovisionary-buildi7285378117110530048/",
       eventType: "Online event",
       title: "Start Journey with us",
