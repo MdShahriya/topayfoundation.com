@@ -2,7 +2,7 @@ import React from "react";
 import  { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 
-const BoxReveal = ({ children, animationDuration = "0.5s", triggerOffset = 100 }) => {
+const BoxReveal = ({ children, animationDuration = "0s", triggerOffset = 0 }) => {
   const revealRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
