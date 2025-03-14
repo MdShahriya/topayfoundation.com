@@ -3,7 +3,7 @@ import React from "react";
 const Maintenance = () => {
   // Calculate estimated time (2 hours from now)
   const estimatedTime = new Date();
-  estimatedTime.setHours(estimatedTime.getHours() + 2);
+  estimatedTime.setHours(estimatedTime.getHours() + 6);
   
   const formattedTime = estimatedTime.toLocaleTimeString([], {
     hour: '2-digit',
