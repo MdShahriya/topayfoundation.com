@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../../styles/BackToTopButton.css';
+import '../styles/BackToTopButton.css';
 
 const BackToTopButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,6 +12,7 @@ const BackToTopButton: React.FC = () => {
           setIsVisible(window.scrollY > 200);
           ticking = false;
         });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         ticking = true;
       }
     };

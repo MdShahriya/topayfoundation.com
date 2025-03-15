@@ -25,7 +25,7 @@
   background: transparent; /* Fully transparent background */
   border-radius: 10px;
   padding: 20px;
-  margin: 50px;
+  margin: 0px;
   overflow: hidden;
 }
 
@@ -33,6 +33,10 @@ canvas {
   width: 100%;
   height: 100%;
   display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
   background: linear-gradient(135deg, var(--dark-bg), var(--darker-bg)); /* Using theme variables */
 }
 
@@ -48,7 +52,8 @@ canvas {
 }
 
 .hero-content {
-  z-index: 2; /* Ensure content is above */
+  position: relative;
+  z-index: 10; /* Higher z-index to ensure content is above canvas */
   max-width: 800px;
   color: inherit; /* Maintain text color */
 }
@@ -59,12 +64,14 @@ canvas {
   color: var(--light-text);
   margin: 0 0 20px;
   line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
   color: var(--light-text);
   font-size: 1.5rem;
   margin: 10px 0 20px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Hero CTA styles */
@@ -74,6 +81,8 @@ canvas {
   margin-top: 30px;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 10;
 }
 
 .btn {
@@ -91,6 +100,8 @@ canvas {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 2;
 }
 
 .btn:hover {
@@ -102,7 +113,6 @@ canvas {
 .primary-btn {
   background-color: var(--primary-blue);
   color: var(--light-text);
-  border-color: var(--primary-blue);
 }
 
 .primary-btn:hover {
@@ -669,7 +679,7 @@ canvas {
   }
 
   canvas {
-    visibility: hidden; /* Hide canvas to improve performance */
+    visibility: visible; /* Ensure canvas is visible */
   }
 
   .hero-content {
@@ -684,7 +694,7 @@ canvas {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 70vh; /* Keep same as desktop */
+    min-height: 70vh;
     margin: 20px;
   }
 
@@ -695,25 +705,27 @@ canvas {
     left: 0;
     width: 100%;
     height: 100%;
-    background: transparent; /* Same transparent pseudo-element */
+    background: transparent;
     z-index: 1;
   }
 
   .hero-content {
-    z-index: 2;
+    z-index: 10;
   }
   
   .hero-title {
-    font-size: 3.5em; /* Keep the title font size similar */
-    color: var(--text-color); /* Use theme variable */
+    font-size: 3.5em;
+    color: var(--light-text);
     font-weight: 1000;
     margin: 0 0 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
   
   .hero-subtitle {
-    font-size: 1.5rem; /* Keep subtitle font size consistent */
-    color: var(--text-color); /* Use theme variable */
+    font-size: 1.5rem;
+    color: var(--light-text);
     margin: 10px 0 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .shortmap {
@@ -788,11 +800,11 @@ canvas {
 /* General Responsive Styles for Small Displays */
 @media (max-width: 480px) {
   .home-container {
-    padding: 10px; /* Add some padding for smaller screens */
+    padding: 10px;
   }
 
   canvas {
-    visibility: hidden; /* Hide canvas for better performance */
+    visibility: visible;
   }
 
   /* Hero Section */
@@ -802,29 +814,31 @@ canvas {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 70vh; /* Keep hero height same as desktop */
+    min-height: 70vh;
     padding: 10px;
     margin: 10px;
   }
 
   .hero-title {
-    font-size: 2.5rem; /* Slightly reduce font size for small screens */
-    color: var(--text-color); /* Use theme variable */
+    font-size: 2.5rem;
+    color: var(--light-text);
     font-weight: 1000;
     margin: 0;
     line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .hero-subtitle {
-    font-size: 1.2rem; /* Adjust subtitle size */
-    color: var(--text-color); /* Use theme variable */
+    font-size: 1.2rem;
+    color: var(--light-text);
     margin: 5px 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 
   .btn {
-    width: 12rem; /* Reduce button width */
-    height: 3.5rem; /* Reduce button height */
-    font-size: 1.2rem; /* Reduce button font size */
+    width: 12rem;
+    height: 3.5rem;
+    font-size: 1.2rem;
   }
 
   .hero-cta .btn {
@@ -836,7 +850,7 @@ canvas {
   }
 
   .section-title, .roadmap-title, .faq-title {
-    font-size: 1.8rem; /* Reduce section title size */
+    font-size: 1.8rem;
     margin-bottom: 20px;
   }
   
@@ -860,7 +874,7 @@ canvas {
   }
   
   .faq-answer.show {
-    max-height: 600px; /* Increase for mobile to accommodate more text */
+    max-height: 600px;
   }
   
   /* Popup */
