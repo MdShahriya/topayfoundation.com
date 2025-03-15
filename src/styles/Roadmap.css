@@ -1,9 +1,9 @@
 /* Roadmap Section Styling */
 .roadmap {
-    padding: 60px 20px;
+    padding: 10px 20px;
     background: var(--card-bg); /* Changed to use theme variable */
     color: var(--text-color); /* Changed to use theme variable */
-    margin: 80px auto;
+    margin: 10px auto;
     text-align: center;
     border-radius: 20px;
     box-shadow: var(--card-shadow); /* Changed to use theme variable */
