@@ -58,7 +58,6 @@ const Services: React.FC = () => {
       <div className="services-cta">
         <h3>Ready to Transform Your Blockchain Strategy?</h3>
         <p>Contact us today to discuss how our services can benefit your organization.</p>
-        <a href="mailto:contact@topayfoundation.com" className="contact-btn">Get in Touch</a>
       </div>
     </section>
   );

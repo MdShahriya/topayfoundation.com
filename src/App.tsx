@@ -111,6 +111,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
       <div className="logo">
         <Link to="/" className="logo-link">
           <img src="/images/Logo.webp" className="logo-image" alt="Logo" />
+          <h1 className="logo-text">TOPAY</h1>
         </Link>
       </div>
 

@@ -29,7 +29,11 @@
   overflow: hidden;
 }
 
-.For {color: #0D7CE9;}
+.For {
+  color: #0D7CE9;
+  font-family: "Inter";
+}
+
 
 canvas {
   width: 100%;
