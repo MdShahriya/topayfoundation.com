@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import { NotificationProvider } from './context/NotificationProvider';
 import BackToTopButton from './context/BackToTopButton';
 import ScrollToTop from './context/ScrollToTop';
-import Loading from './context/Loading';
-import { FaLinkedin, FaTelegram, FaGithub, FaTwitter, FaMedium, FaSun, FaMoon } from "react-icons/fa";
+import { FaLinkedin, FaTelegram, FaGithub, FaTwitter, FaMedium } from "react-icons/fa";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './styles/App.css';
 
@@ -17,10 +16,36 @@ interface ThemeContextType {
   toggleTheme: () => void;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const ThemeContext = createContext<ThemeContextType>({
   theme: 'light',
   toggleTheme: () => {}
 });
+
+// Loading Component with minimum display time
+const Loading: React.FC = () => {
+  const [show, setShow] = useState(true);
+  
+  useEffect(() => {
+    // Keep loading screen visible for at least 2 seconds
+    const timer = setTimeout(() => {
+      setShow(false);
+    }, 1000);
+    
+    return () => clearTimeout(timer);
+  }, []);
+  
+  if (!show) return null;
+  
+  return (
+    <div className="loading-overlay">
+      <div className="loading-popup">
+        <div className="spinner"></div>
+        <p className="loading-text">Loading...</p>
+      </div>
+    </div>
+  );
+};
 
 // Lazy Load Frequently Used Pages
 const Home = React.lazy(() => import('./pages/Home'));
@@ -36,7 +61,6 @@ import License from './pages/License';
 import Invest from './pages/Invest';
 import Brand from './pages/Brandingpage';
 
-// Header Component Props
 interface HeaderProps {
   theme: ThemeType;
   toggleTheme: () => void;
@@ -106,18 +130,81 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
       </nav>
       
       <div className="header-actions">
-        <button 
-          onClick={toggleTheme} 
-          className="theme-toggle-btn"
-          aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-        >
-          {theme === 'dark' ? <FaSun /> : <FaMoon />}
-        </button>
+        <label className="switch" title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}>
+          <input 
+            type="checkbox" 
+            id="input" 
+            checked={theme === 'dark'} 
+            onChange={toggleTheme}
+            aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          />
+          <span className="slider round">
+            <div className="sun-moon">
+              <svg className="moon-dot" id="moon-dot-1" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50"></circle>
+              </svg>
+              <svg className="moon-dot" id="moon-dot-2" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50"></circle>
+              </svg>
+              <svg className="moon-dot" id="moon-dot-3" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50"></circle>
+              </svg>
+              <svg className="light-ray" id="light-ray-1" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50"></circle>
+              </svg>
+              <svg className="light-ray" id="light-ray-2" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50"></circle>
+              </svg>
+              <svg className="light-ray" id="light-ray-3" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50"></circle>
+              </svg>
+              <svg className="cloud-dark" id="cloud-1" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50"></circle>
+              </svg>
+              <svg className="cloud-dark" id="cloud-2" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50"></circle>
+              </svg>
+              <svg className="cloud-dark" id="cloud-3" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50"></circle>
+              </svg>
+              <svg className="cloud-light" id="cloud-4" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50"></circle>
+              </svg>
+              <svg className="cloud-light" id="cloud-5" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50"></circle>
+              </svg>
+              <svg className="cloud-light" id="cloud-6" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="50"></circle>
+              </svg>
+            </div>
+            <div className="stars">
+              <svg className="star" id="star-1" viewBox="0 0 20 20">
+                <path
+                  d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"
+                ></path>
+              </svg>
+              <svg className="star" id="star-2" viewBox="0 0 20 20">
+                <path
+                  d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"
+                ></path>
+              </svg>
+              <svg className="star" id="star-3" viewBox="0 0 20 20">
+                <path
+                  d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"
+                ></path>
+              </svg>
+              <svg className="star" id="star-4" viewBox="0 0 20 20">
+                <path
+                  d="M 0 10 C 10 10,10 10 ,0 10 C 10 10 , 10 10 , 10 20 C 10 10 , 10 10 , 20 10 C 10 10 , 10 10 , 10 0 C 10 10,10 10 ,0 10 Z"
+                ></path>
+              </svg>
+            </div>
+          </span>
+        </label>
         
         <div className="dashboard-btn-container">
           <a 
             href="https://dashboard.topayfoundation.com" 
-            target="_blank" 
             rel="noopener noreferrer" 
             className="dashboard-btn"
           >
@@ -188,7 +275,7 @@ const Footer: React.FC<FooterProps> = ({ theme }) => {
             Patreon
           </Link>
         </div>
-        <div className="footer-section">
+        <div className="footer-section dev">
           <h4>Developer Resources</h4>
           <Link to="/brand">Brand</Link>
         </div>
@@ -287,11 +374,36 @@ function App() {
 
             <div className="content">
               <Routes>
-                <Route path="/" element={<Suspense fallback={<Loading />}><Home /></Suspense>} />
-                <Route path="/about" element={<Suspense fallback={<Loading />}><About /></Suspense>} />
-                <Route path="/services" element={<Suspense fallback={<Loading />}><Services /></Suspense>} />
-                <Route path="/roadmap" element={<Suspense fallback={<Loading />}><Roadmap /></Suspense>} />
-                <Route path="/projects" element={<Suspense fallback={<Loading />}><Projects /></Suspense>} />
+              <Route path="/" element={
+                  <Suspense fallback={<div></div>}>
+                    <Loading />
+                    <Home />
+                  </Suspense>
+                } />
+                <Route path="/about" element={
+                  <Suspense fallback={<div></div>}>
+                    <Loading />
+                    <About />
+                  </Suspense>
+                } />
+                <Route path="/services" element={
+                  <Suspense fallback={<div></div>}>
+                    <Loading />
+                    <Services />
+                  </Suspense>
+                } />
+                <Route path="/roadmap" element={
+                  <Suspense fallback={<div></div>}>
+                    <Loading />
+                    <Roadmap />
+                  </Suspense>
+                } />
+                <Route path="/projects" element={
+                  <Suspense fallback={<div></div>}>
+                    <Loading />
+                    <Projects />
+                  </Suspense>
+                } />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms-of-service" element={<TermsOfService />} />
                 <Route path="/licenses" element={<License />} />

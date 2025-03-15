@@ -1,15 +1,19 @@
 /* Basic styling for the  page */
 .projects-page {
   padding: 20px;
-  background: rgb(255, 255, 255);
+  background: var(--bg-color); /* Changed to use theme variable */
   margin: 80px auto;
   max-width: 1200px;
   text-align: center;
+  color: var(--text-color); /* Added to use theme variable */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Center the title */
 .projects-page h1 {
   margin-bottom: 20px;
+  color: var(--text-color); /* Added to use theme variable */
+  transition: color 0.3s ease;
 }
 
 /* project list with added padding */
@@ -22,25 +26,26 @@
 
 /* Style for each project item */
 .project-item {
-  border: 1px solid #ddd;
+  border: 1px solid var(--footer-border); /* Changed to use theme variable */
   padding: 20px;
   border-radius: 10px;
   width: 350px;  /* Increased width */
-  background-color: rgb(255, 255, 255);
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: var(--card-bg); /* Changed to use theme variable */
+  transition: all 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: var(--card-shadow); /* Changed to use theme variable */
   overflow: hidden;
   text-align: center;
+  color: var(--text-color); /* Added to use theme variable */
 }
 
 .project-item:hover {
-  background-color: #f1f1f183;
+  background-color: var(--bg-color); /* Changed to use theme variable */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* Button styling */
 .details {
-  background-color: #0D7CE9;
+  background-color: var(--primary-blue); /* Changed to use theme variable */
   color: white;
   border: none;
   padding: 12px 24px;
@@ -51,12 +56,12 @@
 }
 
 .details:hover {
-  background-color: #0056b3;
+  background-color: var(--button-hover); /* Changed to use theme variable */
 }
 
 .details.disabled {
   background-color: #7b7b7b;
-  color: rgb(255, 255, 255)dfd;
+  color: var(--light-text); /* Changed to use theme variable */
   cursor: not-allowed;
   opacity: 0.6;
   border: none;

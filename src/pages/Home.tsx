@@ -1,7 +1,6 @@
 import React, { useState, Suspense, useMemo, useEffect, useCallback } from "react";
+import TypeWriter from "../components/TypeWriter";
 import "../styles/Home.css";
-
-const AnimatedBackground = React.lazy(() => import("../components/NonInteractiveBlockWeb").then(module => ({ default: module.default || module })));
 
 interface Feature {
   icon: string;
@@ -21,7 +20,6 @@ interface FAQ {
 }
 
 const Home: React.FC = () => {
-  const [isPopupOpen, setIsPopupOpen] = useState<boolean>(true);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const [visibleSections, setVisibleSections] = useState<Record<string, boolean>>({
     mission: false,
@@ -32,7 +30,6 @@ const Home: React.FC = () => {
     newsletter: false
   });
 
-  const closePopup = (): void => setIsPopupOpen(false);
 
   // Intersection Observer for scroll animations
   useEffect(() => {
@@ -157,29 +154,19 @@ const Home: React.FC = () => {
 
   return (
     <div className="home-container">
-      {isPopupOpen && (
-        <div className="popup-overlay">
-          <div className="popup-box">
-            <h2>Ramadan Mubarak!</h2>
-            <img src="/images/ramadan.webp" alt="Ramadan" className="popup-image" />
-            <p>Welcome to TOPAY Foundation! May this Ramadan bring you peace, blessings, and prosperity.</p>
-            <button onClick={closePopup} className="popup-close-btn">Close</button>
-          </div>
-        </div>
-      )}
-
       {/* Hero Section */}
       <Suspense fallback={<div className="loading-placeholder">Loading...</div>}>
         <section className="hero">
-          <AnimatedBackground />
           <div className="hero-content" style={{ position: 'relative', zIndex: 10 }}>
-            <h1 className="hero-title">Welcome to TOPAY Foundation</h1>
+          <h1 className="hero-title">
+            TOPAY Foundation <b className="For">For</b> <TypeWriter words={["Innovation", "Transparency", "Inclusion", "Tomorrow"]} delay={150} />
+          </h1>
             <p className="hero-subtitle">
               The First Islamic Blockchain & Services – Ethical, Transparent, and Riba-Free
             </p>
             <div className="hero-cta">
-              <a href="#features" className="btn primary-btn">Explore Our Services</a>
-              <a href="https://docs.topayfoundation.com" className="btn secondary-btn">Read Documentation</a>
+              <a href="https://docs.topayfoundation.com" className="btn primary-btn">Read Documentation</a>
+              <a href="https://dashboard.topayfoundation.com" className="btn primary-btn">Dashboard</a>
             </div>
           </div>
         </section>

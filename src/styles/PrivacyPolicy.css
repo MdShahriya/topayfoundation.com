@@ -1,23 +1,30 @@
 .privacy-policy-container {
-    padding: 20px;
-    background: rgb(255, 255, 255);
-    color: #333;
-    max-width: 800px;
-    margin: 80px auto;
-  }
+  padding: 20px;
+  background: var(--card-bg);
+  color: var(--text-color);
+  max-width: 800px;
+  margin: 80px auto;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
   
-  .privacy-policy-heading {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
+.privacy-policy-heading {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
   
-  .privacy-policy-paragraph {
-    font-size: 1em;
-    line-height: 1.6;
-    margin-bottom: 15px;
-  }
+.privacy-policy-paragraph {
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
   
-  .privacy-policy-paragraph strong {
-    font-weight: bold;
-  }
-  
+.privacy-policy-paragraph strong {
+  font-weight: bold;
+  color: var(--text-color);
+}

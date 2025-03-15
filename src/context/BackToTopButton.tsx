@@ -1,19 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../styles/BackToTopButton.css';
 
 const BackToTopButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  let ticking = false; // Prevents excessive function calls
+  const tickingRef = useRef(false); // Using useRef to persist the value between renders
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!ticking) {
+      if (!tickingRef.current) {
         requestAnimationFrame(() => {
           setIsVisible(window.scrollY > 200);
-          ticking = false;
+          tickingRef.current = false;
         });
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        ticking = true;
+        tickingRef.current = true;
       }
     };
 

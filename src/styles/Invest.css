@@ -3,37 +3,153 @@
   max-width: 100%;
   margin: 80px auto;
   padding: 15px;
-  background-color: #f4f4f4;
+  background-color: var(--bg-color);
   overflow-x: hidden;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.invest-header {
+  text-align: center;
+  position: relative;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .invest-header h1 {
   text-align: center;
   font-size: 28px;
   margin-bottom: 10px;
-  color: #333;
+  color: var(--text-color);
 }
 
-/* Section for details */
+.invest-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--primary-blue);
+  border-radius: 2px;
+}
+
+.invest-tagline {
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-color);
+  opacity: 0.8;
+  margin-bottom: 20px;
+}
+
+/* Intro section */
+.invest-intro {
+  background-color: var(--card-bg);
+  padding: 40px;
+  margin-bottom: 40px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: var(--card-shadow);
+}
+
+.invest-intro-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.invest-intro-content h2 {
+  color: var(--text-color);
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.invest-intro-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Grid layout for cards */
+.invest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.invest-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.invest-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.invest-card h2 {
+  color: var(--text-color);
+  font-size: 22px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--primary-blue);
+  padding-bottom: 10px;
+}
+
+.card-icon {
+  color: var(--primary-blue);
+  margin-bottom: 15px;
+  font-size: 40px;
+  text-align: center;
+}
+
+.invest-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.invest-list li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  color: var(--text-color);
+  font-size: 14px;
+}
+
+.list-icon {
+  margin-right: 10px;
+  margin-top: 4px;
+  flex-shrink: 0;
+  color: var(--primary-blue);
+}
+
+/* Section for details (original layout) */
 .invest-section {
   padding: 15px;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--card-bg);
   border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow);
   margin-top: 30px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .invest-details {
   margin-bottom: 30px;
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
 .invest-details h2 {
   font-size: 24px;
-  color: #333;
+  color: var(--text-color);
   margin-bottom: 15px;
   text-transform: uppercase;
-  border-bottom: 2px solid #0D7CE9;
+  border-bottom: 2px solid var(--primary-blue);
   padding-bottom: 10px;
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .invest-details ul {
@@ -44,44 +160,80 @@
 .invest-details li {
   font-size: 14px;
   margin-bottom: 15px;
-  color: #555;
+  color: var(--text-color);
+  opacity: 0.8;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.invest-details li i, 
+.invest-details li svg {
+  margin-right: 10px;
+  flex-shrink: 0;
 }
 
 /* Icon Colors for Different Sections */
 
 /* Benefits Section */
-.invest-details:nth-of-type(2) i {
-  color: #4CAF50; /* Green for positive benefits */
+.invest-details:nth-of-type(2) i,
+.invest-card:nth-of-type(2) .list-icon {
+  color: #4CAF50;
 }
 
 /* Warnings Section */
-.invest-details:nth-of-type(3) i {
-  color: #FFEB3B; /* Yellow for caution */
+.invest-details:nth-of-type(3) i,
+.invest-card:nth-of-type(3) .list-icon {
+  color: #FFEB3B;
   background: #000;
   border-radius: 100%;
 }
 
 /* Risks Section */
-.invest-details:nth-of-type(4) i {
-  color: #F44336; /* Red for high risk */
+.invest-details:nth-of-type(4) i,
+.invest-card:nth-of-type(4) .list-icon {
+  color: #F44336;
 }
 
 /* Why Investors Choose Us Section - Unique Styling */
 .invest-details:nth-of-type(1) {
-  background-color: #0D7CE9; /* Bold orange background */
-  color: white;
-  padding: 50px; /* Increased padding for prominence */
+  background-color: var(--primary-blue);
+  color: var(--light-text);
+  padding: 50px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow);
   margin-bottom: 50px;
-  text-align: center; /* Centering content */
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.invest-details:nth-of-type(1)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
 }
 
 .invest-details:nth-of-type(1) h2 {
   font-size: 30px;
   margin-bottom: 20px;
-  color: rgb(255, 255, 255); /* White text for contrast */
+  color: var(--light-text);
   font-weight: bold;
+  border-bottom-color: var(--light-text);
+  position: relative;
+}
+
+.invest-details:nth-of-type(1) p {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .invest-details:nth-of-type(1) ul {
@@ -90,108 +242,450 @@
 
 .invest-details:nth-of-type(1) li {
   font-size: 16px;
-  color: rgb(255, 255, 255); /* White text */
+  color: var(--light-text);
   margin-bottom: 15px;
+  opacity: 1;
 }
 
 .invest-details:nth-of-type(1) i {
-  color: rgb(255, 255, 255); /* White icons */
+  color: var(--light-text);
   margin-right: 10px;
   font-size: 20px;
   transition: color 0.3s ease;
 }
 
 .invest-details:nth-of-type(1) i:hover {
-  color: #FFC107; /* Light gold hover effect */
+  color: #FFC107;
 }
 
 /* How to Invest Section */
 .invest-details:nth-of-type(5) {
-  background-color: #f0f4f7; /* Light blue background */
+  background-color: var(--card-bg);
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow);
   margin-bottom: 40px;
   text-align: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .invest-details:nth-of-type(5) h2 {
   font-size: 28px;
-  margin-bottom: 15px;
-  color: #333; /* Dark text for readability */
+  margin-bottom: 25px;
+  color: var(--text-color);
+  position: relative;
+  display: inline-block;
+}
+
+.invest-details:nth-of-type(5) h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-blue);
+  border-radius: 2px;
 }
 
 .invest-details:nth-of-type(5) ul {
   padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .invest-details:nth-of-type(5) li {
   font-size: 16px;
-  color: #555; /* Dark text */
+  color: var(--text-color);
   margin-bottom: 15px;
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.invest-details:nth-of-type(5) li:hover {
+  background-color: rgba(0, 0, 0, 0.06);
 }
 
 .invest-details:nth-of-type(5) i {
-  color: #0D7CE9; /* Matching icon color */
+  color: var(--primary-blue);
   margin-right: 10px;
   font-size: 20px;
   transition: color 0.3s ease;
 }
 
 .invest-details:nth-of-type(5) i:hover {
-  color: #FFC107; /* Light gold hover effect */
+  color: #FFC107;
+}
+
+/* Investment process section */
+.invest-process {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 30px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+}
+
+.invest-process h2 {
+  color: var(--text-color);
+  font-size: 26px;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.invest-process h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: var(--primary-blue);
+  border-radius: 2px;
+}
+
+.invest-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.invest-step {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: var(--card-shadow);
+  width: 220px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.invest-step:hover {
+  transform: translateY(-5px);
+}
+
+.step-number {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 40px;
+  height: 40px;
+  background: var(--primary-blue);
+  color: var(--light-text);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.step-icon {
+  font-size: 30px;
+  color: var(--primary-blue);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.invest-step h3 {
+  color: var(--text-color);
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.invest-step p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-color);
+  text-align: center;
+}
+
+/* Call to action section */
+.invest-cta {
+  background: linear-gradient(135deg, var(--primary-blue), #004080);
+  color: var(--light-text);
+  padding: 50px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 50px;
+  box-shadow: var(--card-shadow);
+}
+
+.invest-cta h2 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  color: var(--light-text);
+  border-bottom: none;
+}
+
+.invest-cta p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Button container */
 .invest-button-container {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.invest-button-container::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .invest-button {
   padding: 15px 50px;
   font-size: 25px;
-  background-color: #0D7CE9;
-  color: white;
+  background-color: var(--primary-blue);
+  color: var(--light-text);
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.invest-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.7s ease;
 }
 
 .invest-button:hover {
-  background-color: #0052ce;
+  background-color: var(--button-hover);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.invest-button:hover::after {
+  left: 100%;
 }
 
 .invest-button:active {
   transform: translateY(2px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation for elements */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.invest-header,
+.invest-intro,
+.invest-card,
+.invest-process,
+.invest-step,
+.invest-cta {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .invest-container {
+    padding: 30px;
+    max-width: 1200px;
+  }
+  
+  .invest-header h1 {
+    font-size: 36px;
+  }
+  
+  .invest-tagline {
+    font-size: 18px;
+  }
+}
+
+/* Tablet layout */
+@media (min-width: 601px) and (max-width: 767px) {
+  .invest-container {
+    padding: 20px;
+  }
+  
+  .invest-intro {
+    padding: 30px;
+  }
+  
+  .invest-card h2,
+  .invest-details h2 {
+    font-size: 22px;
+  }
+  
+  .invest-button {
+    padding: 12px 40px;
+    font-size: 20px;
+  }
+  
+  .invest-process {
+    padding: 25px;
+  }
+  
+  .invest-cta {
+    padding: 35px 25px;
+  }
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 600px) {
+  .invest-container {
+    margin: 40px auto;
+  }
+  
   .invest-header h1 {
     font-size: 24px;
   }
 
-  .invest-header p {
+  .invest-tagline {
     font-size: 14px;
   }
-
+  
+  .invest-intro {
+    padding: 25px 15px;
+  }
+  
+  .invest-intro h2 {
+    font-size: 22px;
+  }
+  
+  .invest-intro p {
+    font-size: 14px;
+  }
+  
+  .invest-card {
+    padding: 20px;
+  }
+  
+  .invest-card h2,
   .invest-details h2 {
     font-size: 20px;
   }
-
-  .invest-details ul {
-    padding-left: 15px;
-  }
-
+  
+  .invest-list li,
   .invest-details li {
     font-size: 12px;
+  }
+  
+  .card-icon {
+    font-size: 30px;
+  }
+  
+  .invest-process h2 {
+    font-size: 22px;
+  }
+  
+  .invest-step {
+    padding: 20px;
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .invest-step h3 {
+    font-size: 16px;
+  }
+  
+  .invest-step p {
+    font-size: 12px;
+  }
+  
+  .invest-cta {
+    padding: 30px 15px;
+  }
+  
+  .invest-cta h2 {
+    font-size: 22px;
+  }
+  
+  .invest-cta p {
+    font-size: 14px;
   }
 
   .invest-button {
     padding: 10px 20px;
-    font-size: 14px;
+    font-size: 16px;
     width: 100%;
+  }
+}
+
+/* Dark mode specific adjustments */
+@media (prefers-color-scheme: dark) {
+  .invest-card:hover,
+  .invest-step:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+  
+  .invest-details:nth-of-type(1) {
+    background-color: var(--primary-blue-dark);
+  }
+  
+  .invest-cta {
+    background: linear-gradient(135deg, var(--primary-blue-dark, #004080), #15CFF1);
+  }
+}
+
+/* Print styles */
+@media print {
+  .invest-container {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .invest-button-container {
+    display: none;
+  }
+  
+  .invest-card,
+  .invest-step,
+  .invest-intro,
+  .invest-process,
+  .invest-cta {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+  
+  .invest-grid {
+    display: block;
+  }
+  
+  .invest-card {
+    margin-bottom: 20px;
+    page-break-inside: avoid;
+  }
+  
+  .invest-steps {
+    display: block;
+  }
+  
+  .invest-step {
+    width: 100%;
+    margin-bottom: 20px;
+    page-break-inside: avoid;
   }
 }

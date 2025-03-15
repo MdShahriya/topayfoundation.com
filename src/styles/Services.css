@@ -2,10 +2,11 @@
 .services {
   margin: 80px auto;
   padding: 60px 20px;
-  background: rgba(225, 225, 225, 1); /* Soft light gray background */
+  background: var(--card-bg); /* Changed to use theme variable */
   text-align: center;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow); /* Changed to use theme variable */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Header styling */
@@ -17,37 +18,43 @@
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #0D7CE9;
+  color: var(--primary-blue); /* Changed to use theme variable */
   text-transform: uppercase;
   letter-spacing: 1.5px;
+  transition: color 0.3s ease;
 }
 
 .services-header p {
   font-size: 1.1rem;
-  color: #555;
+  color: var(--text-color); /* Changed to use theme variable */
   max-width: 600px;
   margin: 0 auto;
+  transition: color 0.3s ease;
 }
 
 /* "Coming Soon" section */
 .services-coming-soon {
   margin-bottom: 40px;
   padding: 20px;
-  background: rgba(225, 225, 225, 0.7); /* Lighter overlay */
+  background: var(--bg-color); /* Changed to use theme variable */
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--card-shadow); /* Changed to use theme variable */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .services-coming-soon h3 {
   font-size: 1.8rem;
   font-weight: 600;
-  color: #333;
+  color: var(--text-color); /* Changed to use theme variable */
   margin-bottom: 10px;
+  transition: color 0.3s ease;
 }
 
 .services-coming-soon p {
   font-size: 1rem;
-  color: #666;
+  color: var(--text-color); /* Changed to use theme variable */
+  opacity: 0.8;
+  transition: color 0.3s ease;
 }
 
 /* Services layout */
@@ -61,16 +68,17 @@
 
 /* Service Card Styling */
 .service {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
+  background-color: var(--card-bg); /* Changed to use theme variable */
+  border: 1px solid var(--footer-border); /* Changed to use theme variable */
   border-radius: 12px;
   padding: 20px;
   width: 90%;
   max-width: 350px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--card-shadow); /* Changed to use theme variable */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
   position: relative;
   overflow: hidden;
+  color: var(--text-color); /* Added to use theme variable */
 }
 
 .service:hover {
@@ -83,19 +91,21 @@
 .service h4 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #222;
+  color: var(--text-color); /* Changed to use theme variable */
   margin-bottom: 12px;
   transition: color 0.3s ease;
 }
 
 .service:hover h4 {
-  color: #0D7CE9;
+  color: var(--primary-blue); /* Changed to use theme variable */
 }
 
 .service p {
   font-size: 1rem;
-  color: #666;
+  color: var(--text-color); /* Changed to use theme variable */
+  opacity: 0.8;
   line-height: 1.6;
+  transition: color 0.3s ease;
 }
 
 /* Link styling for service items */
@@ -117,7 +127,7 @@
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(0, 123, 255, 0.1), transparent);
+  background: radial-gradient(circle, rgba(13, 124, 233, 0.1), transparent); /* Using primary blue */
   transition: opacity 0.4s ease;
   opacity: 0;
 }

@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useContext } from "react";
+import { ThemeContext } from "../App";
 import "../styles/OptimizedBlockWeb.css";
 
 class Block {
@@ -9,13 +10,13 @@ class Block {
   speedY: number;
   color: string;
 
-  constructor(x: number, y: number, size: number) {
+  constructor(x: number, y: number, size: number, color: string) {
     this.x = x;
     this.y = y;
     this.size = size;
     this.speedX = Math.random() * 2 - 1;
     this.speedY = Math.random() * 2 - 1;
-    this.color = "#15CFF1";
+    this.color = color;
   }
 
   draw(ctx: CanvasRenderingContext2D): void {
@@ -44,6 +45,7 @@ class Block {
 
 const NonInteractiveBlockWeb: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { theme } = useContext(ThemeContext);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -55,6 +57,9 @@ const NonInteractiveBlockWeb: React.FC = () => {
     let blocksArray: Block[] = [];
     const baseDensity = 0.00005; // Adjust for the number of blocks
     let animationFrameId: number;
+    
+    // Get theme colors
+    const blockColor = theme === 'dark' ? "#15CFF1" : "#0D7CE9"; // Use secondary-blue for dark, primary-blue for light
 
     // Initialize canvas size
     const resizeCanvas = (): void => {
@@ -72,7 +77,7 @@ const NonInteractiveBlockWeb: React.FC = () => {
         const size = Math.random() * 5 + 2;
         const x = Math.random() * (canvas.width - size);
         const y = Math.random() * (canvas.height - size);
-        blocksArray.push(new Block(x, y, size));
+        blocksArray.push(new Block(x, y, size, blockColor));
       }
     };
 
@@ -86,7 +91,9 @@ const NonInteractiveBlockWeb: React.FC = () => {
           
           if (distance < 150) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(21, 207, 241, ${0.15 - distance / 1000})`;
+            // Use rgba with the theme color
+            const colorBase = theme === 'dark' ? "21, 207, 241" : "13, 124, 233"; // RGB values for the colors
+            ctx.strokeStyle = `rgba(${colorBase}, ${0.15 - distance / 1000})`;
             ctx.lineWidth = 0.5;
             ctx.moveTo(blocksArray[i].x, blocksArray[i].y);
             ctx.lineTo(blocksArray[j].x, blocksArray[j].y);
@@ -125,7 +132,7 @@ const NonInteractiveBlockWeb: React.FC = () => {
       window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [theme]); // Added theme as a dependency to re-render when theme changes
 
   return <canvas ref={canvasRef} className="block-web-canvas"></canvas>;
 };

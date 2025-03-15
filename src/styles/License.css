@@ -1,129 +1,127 @@
 /* General Styles */
-body {
-    background-color: #f9f9f9;
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
+.license-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
   
-  .license-container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-  }
+/* Header Styles */
+.license-header {
+  text-align: center;
+  margin: 60px;
+  color: var(--text-color);
+}
   
-  /* Header Styles */
-  .license-header {
-    text-align: center;
-    margin: 60px;
-    color: #2c3e50;
-  }
+.license-header h1 {
+  font-size: 2.8em;
+  font-weight: 700;
+  margin-bottom: 10px;
+  justify-content: right;
+  color: var(--text-color);
+}
   
+.license-header p {
+  font-size: 1.2em;
+  color: var(--text-color);
+  opacity: 0.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+  
+/* Table Section */
+.license-section {
+  margin-bottom: 20px;
+}
+  
+.license-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+  
+.license-table th,
+.license-table td {
+  text-align: left;
+  padding: 12px 15px;
+  border: 1px solid var(--footer-border);
+  font-size: 1.1em;
+  color: var(--text-color);
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+  
+.license-table th {
+  background-color: var(--card-bg);
+  font-weight: bold;
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+  
+.license-table tr:nth-child(even) {
+  background-color: var(--bg-color);
+}
+  
+.license-table td {
+  font-size: 1em;
+}
+  
+/* Status Column */
+.status {
+  font-weight: bold;
+  text-align: center;
+}
+  
+.status-active {
+  color: #27ae60;
+}
+  
+.status-inactive {
+  color: #e74c3c;
+}
+  
+/* Footer Styles */
+.license-footer {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--footer-border);
+  transition: border-color 0.3s ease;
+}
+  
+.license-footer p {
+  font-size: 1.1em;
+  color: var(--text-color);
+  opacity: 0.7;
+}
+  
+/* Responsive Design */
+@media (max-width: 768px) {
   .license-header h1 {
-    font-size: 2.8em;
-    font-weight: 700;
-    margin-bottom: 10px;
-    justify-content: right;
-    color: #333;
+    font-size: 2.2em;
   }
   
   .license-header p {
-    font-size: 1.2em;
-    color: #7f8c8d;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  
-  /* Table Section */
-  .license-section {
+    font-size: 1em;
     margin-bottom: 20px;
-  }
-  
-  .license-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
   }
   
   .license-table th,
   .license-table td {
-    text-align: left;
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-    font-size: 1.1em;
-    color: #34495e;
-  }
-  
-  .license-table th {
-    background-color: #f1f1f1;
-    font-weight: bold;
-    color: #333;
-    text-transform: uppercase;
-  }
-  
-  .license-table tr:nth-child(even) {
-    background-color: #ecf0f1;
-  }
-  
-  .license-table td {
+    padding: 10px;
     font-size: 1em;
   }
   
-  /* Status Column */
-  .status {
-    font-weight: bold;
-    text-align: center;
-  }
-  
-  .status-active {
-    color: #27ae60;
-  }
-  
-  .status-inactive {
-    color: #e74c3c;
-  }
-  
-  /* Footer Styles */
-  .license-footer {
-    text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
+  .license-container {
+    margin: 20px;
+    padding: 15px;
   }
   
   .license-footer p {
-    font-size: 1.1em;
-    color: #7f8c8d;
+    font-size: 1em;
   }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .license-header h1 {
-      font-size: 2.2em;
-    }
-  
-    .license-header p {
-      font-size: 1em;
-      margin-bottom: 20px;
-    }
-  
-    .license-table th,
-    .license-table td {
-      padding: 10px;
-      font-size: 1em;
-    }
-  
-    .license-container {
-      margin: 20px;
-      padding: 15px;
-    }
-  
-    .license-footer p {
-      font-size: 1em;
-    }
-  }
-  
+}

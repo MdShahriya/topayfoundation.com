@@ -2,7 +2,7 @@
 .home-container {
   background: transparent;
   color: var(--text-color);
-  margin: 50px auto;
+  margin: -50px auto;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -29,6 +29,8 @@
   overflow: hidden;
 }
 
+.For {color: #0D7CE9;}
+
 canvas {
   width: 100%;
   height: 100%;
@@ -37,7 +39,8 @@ canvas {
   top: 0;
   left: 0;
   z-index: 1;
-  background: linear-gradient(135deg, var(--dark-bg), var(--darker-bg)); /* Using theme variables */
+  background: linear-gradient(135deg, var(--bg-color), var(--card-bg)); /* Updated to use theme variables */
+  transition: background 0.3s ease;
 }
 
 .hero::before {
@@ -61,17 +64,19 @@ canvas {
 .hero-title {
   font-size: 5em;
   font-weight: 1000;
-  color: var(--light-text);
+  color: var(--text-color); /* Changed to use theme variable */
   margin: 0 0 20px;
   line-height: 1.2;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: color 0.3s ease;
 }
 
 .hero-subtitle {
-  color: var(--light-text);
+  color: var(--text-color); /* Changed to use theme variable */
   font-size: 1.5rem;
   margin: 10px 0 20px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: color 0.3s ease;
 }
 
 /* Hero CTA styles */
@@ -86,8 +91,9 @@ canvas {
 }
 
 .btn {
-  width: 16rem;
-  height: 4rem;
+  width: auto;
+  padding: 20px;
+  height: auto;
   border-radius: 50px;
   background-color: var(--light-text);
   color: var(--primary-blue);
@@ -95,7 +101,7 @@ canvas {
   font-weight: 500;
   border: 2px solid var(--light-text);
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -117,18 +123,6 @@ canvas {
 
 .primary-btn:hover {
   background-color: var(--button-hover);
-  color: var(--light-text);
-  border-color: var(--button-hover);
-}
-
-.secondary-btn {
-  background-color: transparent;
-  color: var(--light-text);
-  border: 2px solid var(--light-text);
-}
-
-.secondary-btn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
   color: var(--light-text);
 }
 
@@ -420,6 +414,7 @@ canvas {
   border-radius: 10px;
   margin: 3rem 0;
   box-shadow: var(--card-shadow);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-container {
@@ -438,11 +433,15 @@ canvas {
 .cta-container h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: var(--light-text);
+  transition: color 0.3s ease;
 }
 
 .cta-container p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  color: var(--light-text);
+  transition: color 0.3s ease;
 }
 
 .cta-buttons {
@@ -454,6 +453,30 @@ canvas {
 
 .cta-buttons .btn {
   margin: 0;
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.cta-buttons .primary-btn {
+  background-color: var(--light-text);
+  color: var(--primary-blue);
+  border-color: var(--light-text);
+}
+
+.cta-buttons .primary-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--secondary-blue);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-buttons .secondary-btn {
+  background-color: transparent;
+  color: var(--light-text);
+  border: 2px solid var(--light-text);
+}
+
+.cta-buttons .secondary-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--light-text);
 }
 
 /* FAQ Styles */
@@ -715,17 +738,19 @@ canvas {
   
   .hero-title {
     font-size: 3.5em;
-    color: var(--light-text);
+    color: var(--text-color);
     font-weight: 1000;
     margin: 0 0 20px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: color 0.3s ease;
   }
   
   .hero-subtitle {
     font-size: 1.5rem;
-    color: var(--light-text);
+    color: var(--text-color);
     margin: 10px 0 20px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: color 0.3s ease;
   }
 
   .shortmap {
@@ -742,13 +767,14 @@ canvas {
     width: 14rem;
     height: 4rem;
     border-radius: 50px;
+    border-color: var(--primary-blue);
     background-color: var(--light-text);
     color: var(--primary-blue);
     font-size: 1.5rem;
     font-weight: 500;
     border: 2px solid var(--light-text);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   }
   
   .features-content {
@@ -791,6 +817,18 @@ canvas {
     font-size: 2rem;
   }
   
+  .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
   .mission-section, 
   .newsletter-section {
     padding: 3rem 1rem;
@@ -821,34 +859,51 @@ canvas {
 
   .hero-title {
     font-size: 2.5rem;
-    color: var(--light-text);
+    color: var(--text-color);
     font-weight: 1000;
     margin: 0;
     line-height: 1.2;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: color 0.3s ease;
   }
 
   .hero-subtitle {
     font-size: 1.2rem;
-    color: var(--light-text);
+    color: var(--text-color);
     margin: 5px 0;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    transition: color 0.3s ease;
   }
 
   .btn {
     width: 12rem;
     height: 3.5rem;
     font-size: 1.2rem;
+    border-color: var(--primary-blue);
   }
 
   .hero-cta .btn {
     width: 100%;
   }
   
-  .cta-buttons .btn {
-    width: 100%;
+  .cta-section {
+    padding: 2.5rem 1rem;
   }
-
+  
+  .cta-container h2 {
+    font-size: 1.8rem;
+  }
+  
+  .cta-container p {
+    font-size: 1rem;
+  }
+  
+  .cta-buttons .btn {
+    height: 3.5rem;
+    font-size: 1.2rem;
+    max-width: 250px;
+  }
+  
   .section-title, .roadmap-title, .faq-title {
     font-size: 1.8rem;
     margin-bottom: 20px;
@@ -894,10 +949,6 @@ canvas {
   
   .mission-statement {
     font-size: 1rem;
-  }
-  
-  .cta-container h2 {
-    font-size: 1.8rem;
   }
   
   .newsletter-container h2 {
@@ -975,7 +1026,7 @@ canvas {
 /* Dark theme specific adjustments */
 .dark-theme .hero-title,
 .dark-theme .hero-subtitle {
-  color: var(--light-text);
+  color: var(--light-text); /* This ensures white text in dark mode */
 }
 
 .dark-theme .mission-statement {

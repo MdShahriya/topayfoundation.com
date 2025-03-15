@@ -1,13 +1,13 @@
 /* Roadmap Section Styling */
 .roadmap {
     padding: 60px 20px;
-    background: rgba(225, 225, 225, 1); /* Soft light gray background */
-    color: #333;
+    background: var(--card-bg); /* Changed to use theme variable */
+    color: var(--text-color); /* Changed to use theme variable */
     margin: 80px auto;
     text-align: center;
     border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
+    box-shadow: var(--card-shadow); /* Changed to use theme variable */
+    transition: all 0.3s ease-in-out, background-color 0.3s ease, color 0.3s ease;
     overflow: hidden;
 }
 
@@ -18,10 +18,11 @@
 .roadmap h2 {
     font-size: 2.8rem;
     margin-bottom: 45px;
-    color: #0D7CE9;
+    color: var(--primary-blue); /* Changed to use theme variable */
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1.5px;
+    transition: color 0.3s ease;
 }
 
 /* Timeline Container */
@@ -48,12 +49,12 @@
 
 /* Timeline Content */
 .timeline-content {
-    background: #fff;
+    background: var(--card-bg); /* Changed to use theme variable */
     border-radius: 12px;
     padding: 20px 25px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--card-shadow); /* Changed to use theme variable */
     width: calc(100% - 50px);
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     position: relative;
 }
@@ -71,7 +72,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(0, 123, 255, 0.1), transparent);
+    background: radial-gradient(circle, rgba(13, 124, 233, 0.1), transparent); /* Using primary blue */
     transition: opacity 0.4s ease;
     opacity: 0;
 }
@@ -83,21 +84,22 @@
 .timeline-content h3 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #222;
+    color: var(--text-color); /* Changed to use theme variable */
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .timeline-content:hover h3 {
-    color: #0D7CE9;
+    color: var(--primary-blue); /* Changed to use theme variable */
 }
 
 .timeline-content .date {
     font-size: 0.9rem;
-    color: #777;
+    color: var(--footer-link); /* Changed to use theme variable */
     margin-bottom: 10px;
     display: block;
     font-style: italic;
+    transition: color 0.3s ease;
 }
 
 .timeline-content ul {
@@ -108,11 +110,12 @@
 
 .timeline-content ul li {
     font-size: 1rem;
-    color: #555;
+    color: var(--text-color); /* Changed to use theme variable */
     line-height: 1.6;
     margin-bottom: 8px;
     padding-left: 24px;
     position: relative;
+    transition: color 0.3s ease;
 }
 
 .timeline-content ul li::before {
@@ -122,14 +125,15 @@
     top: 7px;
     width: 10px;
     height: 10px;
-    background: #15CFF1;
+    background: var(--secondary-blue); /* Changed to use theme variable */
     border-radius: 50%;
+    transition: background-color 0.3s ease;
 }
 
 /* Ticked Tasks */
 .timeline-content ul li.ticked {
     font-weight: bold;
-    color: #1e3c72;
+    color: var(--primary-blue); /* Changed to use theme variable */
 }
 
 .timeline-content ul li.ticked::before {
@@ -137,7 +141,7 @@
     left: 0;
     top: 0;
     font-size: 1rem;
-    color: #10c02d;
+    color: #10c02d; /* Keeping green for checkmarks */
     background: none;
     font-weight: bold;
 }

@@ -1,15 +1,15 @@
 /* Roadmap Section Styling */
 .about-roadmap {
   padding: 60px 20px;
-  background: rgba(225, 225, 225, 1); /* Background for uniformity */
+  background: var(--card-bg); /* Changed to use theme variable */
   position: relative;
   margin: 80px auto;
   max-width: 1200px;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow); /* Changed to use theme variable */
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, background-color 0.3s ease;
 }
 
 .about-roadmap.fade-in {
@@ -21,7 +21,7 @@
 .roadmap-heading {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #0D7CE9;
+  color: var(--primary-blue); /* Changed to use theme variable */
   text-align: center;
   margin-bottom: 50px;
   text-transform: uppercase;
@@ -71,8 +71,8 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #0D7CE9;
-  color: #ffffffd8;
+  background: var(--primary-blue); /* Changed to use theme variable */
+  color: var(--light-text); /* Changed to use theme variable */
   font-size: 1.5rem;
   font-weight: bold;
   display: flex;
@@ -82,20 +82,21 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: var(--card-shadow); /* Changed to use theme variable */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease;
 }
 
 /* Step Content Box */
 .step-content {
-  background: white;
+  background: var(--card-bg); /* Changed to use theme variable */
   padding: 20px 25px;
   border-radius: 10px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow); /* Changed to use theme variable */
   flex: 1;
   max-width: 45%;
   text-align: left;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease, color 0.3s ease;
+  color: var(--text-color); /* Added to use theme variable */
 }
 
 .step-content:hover {
@@ -107,18 +108,19 @@
 .step-content h2 {
   font-size: 1.8rem;
   margin-bottom: 10px;
-  color: #222;
+  color: var(--text-color); /* Changed to use theme variable */
   transition: color 0.3s ease;
 }
 
 .step-content:hover h2 {
-  color: #0D7CE9;
+  color: var(--primary-blue); /* Changed to use theme variable */
 }
 
 .step-content p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #555;
+  color: var(--text-color); /* Changed to use theme variable */
+  opacity: 0.8;
 }
 
 /* Vertical Line Between Steps */
@@ -128,7 +130,7 @@
   left: 50%;
   width: 2px;
   height: 100%;
-  background: #0D7CE9;
+  background: var(--primary-blue); /* Changed to use theme variable */
   z-index: -1;
 }
 
