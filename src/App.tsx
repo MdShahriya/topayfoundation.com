@@ -238,7 +238,7 @@ const Footer: React.FC<FooterProps> = ({ theme }) => {
         <div className="footer-section">
           <h4>Resources</h4>
           <a
-            href="https://docs.topayfoundation.com/docs/resources/whitepaper"
+            href="https://docs.topayfoundation.com/docs/topay-basics/resources/whitepaper"
             target="_blank"
             rel="noopener noreferrer"
             title="Read the WhitePaper"
@@ -246,7 +246,7 @@ const Footer: React.FC<FooterProps> = ({ theme }) => {
             WhitePaper
           </a>
           <a
-            href="https://docs.topayfoundation.com/docs/resources/tokenomics"
+            href="https://docs.topayfoundation.com/docs/topay-basics/resources/tokenomics"
             target="_blank"
             rel="noopener noreferrer"
             title="Check Tokenomics"
